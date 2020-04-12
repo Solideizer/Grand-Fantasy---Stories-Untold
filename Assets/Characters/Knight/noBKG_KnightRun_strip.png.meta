@@ -1,0 +1,428 @@
+fileFormatVersion: 2
+guid: da8198faf6b70e64082ab48188f8f8c3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4642488333796919354
+    second: noBKG_KnightRun_strip_0
+  - first:
+      213: 495554865105711156
+    second: noBKG_KnightRun_strip_1
+  - first:
+      213: 2538924062860662314
+    second: noBKG_KnightRun_strip_2
+  - first:
+      213: 8279640131836260173
+    second: noBKG_KnightRun_strip_3
+  - first:
+      213: 8690424439161563917
+    second: noBKG_KnightRun_strip_4
+  - first:
+      213: 2414606530831258917
+    second: noBKG_KnightRun_strip_5
+  - first:
+      213: -7988999087367062319
+    second: noBKG_KnightRun_strip_6
+  - first:
+      213: -5332772850423390575
+    second: noBKG_KnightRun_strip_7
+  - first:
+      213: -4047367417610543978
+    second: noBKG_KnightRun_strip_8
+  - first:
+      213: -2657437807023641156
+    second: noBKG_KnightRun_strip_9
+  - first:
+      213: 7461640708524456769
+    second: noBKG_KnightRun_strip_10
+  - first:
+      213: 2269508605543741717
+    second: noBKG_KnightRun_strip_11
+  - first:
+      213: 5445490684570729893
+    second: noBKG_KnightRun_strip_12
+  - first:
+      213: 2797575451979126927
+    second: noBKG_KnightRun_strip_13
+  - first:
+      213: -4362415689510748072
+    second: noBKG_KnightRun_strip_14
+  - first:
+      213: -253650540088366844
+    second: noBKG_KnightRun_strip_15
+  - first:
+      213: 7604051828624460055
+    second: noBKG_KnightRun_strip_16
+  - first:
+      213: -4384986007018005923
+    second: noBKG_KnightRun_strip_17
+  - first:
+      213: -1519783145269030419
+    second: noBKG_KnightRun_strip_18
+  - first:
+      213: 4267656339895991135
+    second: noBKG_KnightRun_strip_19
+  - first:
+      213: -6272457630513348134
+    second: noBKG_KnightRun_strip_20
+  - first:
+      213: 8802178170302971873
+    second: noBKG_KnightRun_strip_21
+  - first:
+      213: 4116297065354732155
+    second: noBKG_KnightRun_strip_22
+  - first:
+      213: 2015941403139508827
+    second: noBKG_KnightRun_strip_23
+  - first:
+      213: -4152434749956142187
+    second: noBKG_KnightRun_strip_24
+  - first:
+      213: 4861300976076664967
+    second: noBKG_KnightRun_strip_25
+  - first:
+      213: 7327727648521162429
+    second: noBKG_KnightRun_strip_26
+  - first:
+      213: 471954100102890385
+    second: noBKG_KnightRun_strip_27
+  - first:
+      213: -6782600037763889705
+    second: noBKG_KnightRun_strip_28
+  - first:
+      213: -1506376258578979267
+    second: noBKG_KnightRun_strip_29
+  - first:
+      213: 531150563901935266
+    second: noBKG_KnightRun_strip_30
+  - first:
+      213: -383294474857025408
+    second: noBKG_KnightRun_strip_31
+  - first:
+      213: -463621061958537847
+    second: noBKG_KnightRun_strip_32
+  - first:
+      213: 2127571594795745054
+    second: noBKG_KnightRun_strip_33
+  - first:
+      213: 1528448194484494479
+    second: noBKG_KnightRun_strip_34
+  - first:
+      213: 7567746543835059011
+    second: noBKG_KnightRun_strip_35
+  - first:
+      213: 6210811035212694601
+    second: noBKG_KnightRun_strip_36
+  - first:
+      213: 101171518551600909
+    second: noBKG_KnightRun_strip_37
+  - first:
+      213: 7171779220278972199
+    second: noBKG_KnightRun_strip_38
+  - first:
+      213: 1084956253640855838
+    second: noBKG_KnightRun_strip_39
+  - first:
+      213: 7902836732917274694
+    second: noBKG_KnightRun_strip_40
+  - first:
+      213: 2944575865656586494
+    second: noBKG_KnightRun_strip_41
+  - first:
+      213: 1332624315216457522
+    second: noBKG_KnightRun_strip_42
+  - first:
+      213: -4669236718680812450
+    second: noBKG_KnightRun_strip_43
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 15
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: noBKG_KnightRun_strip_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a384cd9ea8e6d6040800000000000000
+      internalID: 4642488333796919354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noBKG_KnightRun_strip_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 430b755368090e600800000000000000
+      internalID: 495554865105711156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noBKG_KnightRun_strip_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a26508ebbf11c3320800000000000000
+      internalID: 2538924062860662314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noBKG_KnightRun_strip_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4f2b2e15d037e270800000000000000
+      internalID: 8279640131836260173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noBKG_KnightRun_strip_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0b299bcbf69a9870800000000000000
+      internalID: 8690424439161563917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noBKG_KnightRun_strip_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 525198eb8d7628120800000000000000
+      internalID: 2414606530831258917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noBKG_KnightRun_strip_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dcf09658af512190800000000000000
+      internalID: -7988999087367062319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noBKG_KnightRun_strip_7
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e9aa6c85f2ef5b0800000000000000
+      internalID: -5332772850423390575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
