@@ -12,8 +12,10 @@ public class BattleSystem : MonoBehaviour
 {
     private GameState gameState;
     private UnitState unitState;
-    Unit enemyToAttack;    
+    Unit enemyToAttack;
+    Unit attackedPlayerUnit;
     int enemyID;
+    int playerUnitID;
 
     [SerializeField] private GameObject Knight;
     [SerializeField] private GameObject Warrior;
@@ -91,25 +93,31 @@ public class BattleSystem : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos2D = new Vector2(mousePos.x, mousePos.y);
-            hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+            if (gameState == GameState.PLAYERTURN)
+            {
+                mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                mousePos2D = new Vector2(mousePos.x, mousePos.y);
+                hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
 
-            SelectEnemy(hit);
-            Debug.Log(hit.collider.gameObject.name);
-        }
-       
+                SelectEnemy(hit);
+                Debug.Log(hit.collider.gameObject.name);
+            }
+           
+        }     
+        
+
     }
+   
 
     private void SetupBattle()
     {
         //Health Points
         SetEnemyHP (EnemyUnits[0].maxHP,4);
-        SetEnemyHP(EnemyUnits[1].maxHP,5);
+        SetEnemyHP (EnemyUnits[1].maxHP,5);
 
-        SetKnightHP(PlayerUnits[0].maxHP);
-        SetWarriorHP(PlayerUnits[1].maxHP);
-        SetWizardHP(PlayerUnits[2].maxHP);
+        SetPlayerUnitHP(PlayerUnits[0].maxHP,0);
+        SetPlayerUnitHP(PlayerUnits[1].maxHP,1);
+        SetPlayerUnitHP(PlayerUnits[2].maxHP,2);
 
         //ui
         SetPlayerHUD();
@@ -120,7 +128,7 @@ public class BattleSystem : MonoBehaviour
 
         ShowSkillHUD();                     //-- KNIGHT SKILL HUD IS ACTIVE
 
-        //WAITING FOR BUTTON CLICK EVENTS
+        //WAITING FOR PLAYER TO CLICK 
     }
 
     private void PlayAnim(string animName, int UnitID)
@@ -154,20 +162,22 @@ public class BattleSystem : MonoBehaviour
 
 
     //*********************************** HP SETTERS **************************************
-    public void SetKnightHP(float hp)
+    public void SetPlayerUnitHP(float hp, int playerUnitID)
     {
-        KnightHPSlider.value = hp;
-    }
+        switch (playerUnitID)
+        {
+            case 0:
+                KnightHPSlider.value = hp;
+                break;
+            case 1:
+                WarriorHPSlider.value = hp;
+                break;
+            case 2:
+                WizardHPSlider.value = hp;
+                break;
+        }
 
-    public void SetWarriorHP(float hp)
-    {
-        WarriorHPSlider.value = hp;
-    }
-
-    public void SetWizardHP(float hp)
-    {
-        WizardHPSlider.value = hp;
-    }
+    }  
 
     public void SetEnemyHP(float hp,int enemyID)
     {
@@ -253,10 +263,7 @@ public class BattleSystem : MonoBehaviour
     }
 
     //************************************* Skill HUDs & UI END *****************************
-
-
-
-
+       
     
     public void SelectEnemy(RaycastHit2D hit)
     {
@@ -614,36 +621,41 @@ public class BattleSystem : MonoBehaviour
     }
     //************************************ Character Skills END ******************************
 
+    
 
-
-    //*********************************** ENEMY TURN *****************************************
+    //*********************************** ENEMY TURNS *****************************************
     private IEnumerator EnemyTurn()
-    {        
-        PlayAnim("Dash", 5);
+    {
         Vector2 startingPos = Enemy1.transform.position;
 
+        int randomPlayerUnit = Random.Range(0, PlayerUnits.Count);
+        attackedPlayerUnit = PlayerUnits[randomPlayerUnit];
+
+        PlayAnim("Dash", 4);
+
+        
         //hangi üniteye saldırcağını belirle
-        Enemy1.transform.position += -Knight.transform.right * (Time.deltaTime * 500);
+        Enemy1.transform.position += -attackedPlayerUnit.transform.right * (Time.deltaTime * 500);
         float errorDistance = 10f;
 
-        if (Vector3.Distance(Knight.transform.position, Enemy1.transform.position) < errorDistance)
+        if (Vector3.Distance(attackedPlayerUnit.transform.position, Enemy1.transform.position) < errorDistance)
         {
-            Enemy1.transform.position = Knight.transform.position;          
+            Enemy1.transform.position = attackedPlayerUnit.transform.position;          
         }
 
         yield return new WaitForSeconds(0.5f);
-        PlayAnim("Attack", 5);
+        PlayAnim("Attack", 4);
         AudioManager.PlaySound("basicAttack");
-        PlayAnim("Hit", 0);
+        PlayAnim("Hit", randomPlayerUnit);
 
         //calculate damage
         float damageDone = EnemyUnits[0].calculateDamage();
-        bool isDead = PlayerUnits[0].TakeDamage(damageDone);
+        bool isDead = attackedPlayerUnit.TakeDamage(damageDone);
 
 
         //damagePopup ******************************************************************************          
         
-        GameObject floatingDamageGO = Instantiate(floatingDamage, Knight.transform.position + damageOffset, Quaternion.identity);
+        GameObject floatingDamageGO = Instantiate(floatingDamage, attackedPlayerUnit.transform.position + damageOffset, Quaternion.identity);
         if (damageDone > EnemyUnits[0].baseDamage + (EnemyUnits[0].baseDamage / 10))
         {
             Color newColor = new Color(0.8679f, 0.2941f, 0f, 1f);
@@ -660,15 +672,87 @@ public class BattleSystem : MonoBehaviour
         }
         //******************************************************************************************
 
-        SetKnightHP(PlayerUnits[0].currentHP);
+        SetPlayerUnitHP(attackedPlayerUnit.currentHP,playerUnitID);
         AudioManager.PlaySound("hurtSound");
 
         yield return new WaitForSeconds(0.5f);
-        PlayAnim("Idle", 0);       
+        PlayAnim("Idle", randomPlayerUnit);       
                 
         
         Enemy1.transform.position = startingPos;
-        PlayAnim("Idle", 5);        
+        PlayAnim("Idle", 4);        
+
+        if (isDead)
+        {
+            AudioManager.PlaySound("KnightDeath");
+            gameState = GameState.LOST;
+            EndBattle();
+        }
+        else
+        {
+            gameState = GameState.ENEMYTURN;
+            unitState = UnitState.ENEMY2;
+            yield return new WaitForSeconds(0.5f);
+            StartCoroutine(Enemy2Turn());
+
+        }
+    }
+
+    private IEnumerator Enemy2Turn()
+    {
+        Vector2 startingPos = Enemy2.transform.position;
+
+        int randomPlayerUnit = Random.Range(0, PlayerUnits.Count);
+        attackedPlayerUnit = PlayerUnits[randomPlayerUnit];
+
+        PlayAnim("Dash", 5);
+        
+        Enemy2.transform.position += -attackedPlayerUnit.transform.right * (Time.deltaTime * 500);
+        float errorDistance = 10f;
+
+        if (Vector3.Distance(attackedPlayerUnit.transform.position, Enemy2.transform.position) < errorDistance)
+        {
+            Enemy2.transform.position = attackedPlayerUnit.transform.position;
+        }
+
+        yield return new WaitForSeconds(0.5f);
+        PlayAnim("Attack", 5);
+        AudioManager.PlaySound("basicAttack");
+        PlayAnim("Hit", randomPlayerUnit);
+
+        //calculate damage
+        float damageDone = EnemyUnits[1].calculateDamage();
+        bool isDead = attackedPlayerUnit.TakeDamage(damageDone);
+
+
+        //damagePopup ******************************************************************************          
+
+        GameObject floatingDamageGO = Instantiate(floatingDamage, attackedPlayerUnit.transform.position + damageOffset, Quaternion.identity);
+        if (damageDone > EnemyUnits[1].baseDamage + (EnemyUnits[1].baseDamage / 10))
+        {
+            Color newColor = new Color(0.8679f, 0.2941f, 0f, 1f);
+            floatingDamageGO.GetComponent<TextMesh>().fontSize = 250;
+            floatingDamageGO.GetComponent<TextMesh>().color = newColor;
+            floatingDamageGO.GetComponent<TextMesh>().text = damageDone.ToString("F0");
+
+            Destroy(floatingDamageGO, 2f);
+        }
+        else
+        {
+            floatingDamageGO.GetComponent<TextMesh>().text = damageDone.ToString("F0");
+            Destroy(floatingDamageGO, 1f);
+        }
+        //******************************************************************************************
+
+        SetPlayerUnitHP(attackedPlayerUnit.currentHP, playerUnitID);
+        AudioManager.PlaySound("hurtSound");
+
+        yield return new WaitForSeconds(0.5f);
+        PlayAnim("Idle", randomPlayerUnit);
+
+
+        Enemy2.transform.position = startingPos;
+        PlayAnim("Idle", 5);
 
         if (isDead)
         {
@@ -679,11 +763,11 @@ public class BattleSystem : MonoBehaviour
         else
         {
             gameState = GameState.PLAYERTURN;
-            unitState = UnitState.KNIGHT;
-            ShowSkillHUD();
+            unitState = UnitState.KNIGHT;           
+            
         }
     }
-    //*********************************** ENEMY TURN END *************************************
+    //*********************************** ENEMY TURNS END *************************************
 
 
     private void EndBattle()
