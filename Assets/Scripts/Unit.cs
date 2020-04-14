@@ -15,7 +15,7 @@ public class Unit : MonoBehaviour
     public float criticalStrikeChance;
 
     private float criticalMultiplier;
-    private float criticalDamage;
+    private float criticalDamage;    
     
     public bool TakeDamage(float damage)
     {
@@ -33,7 +33,7 @@ public class Unit : MonoBehaviour
 
     public float calculateDamage()
     {
-        damage = Random.Range(baseDamage - 5f, baseDamage + 5f);
+        damage = Random.Range(baseDamage - (baseDamage/10), baseDamage + (baseDamage/10));
         damage += calculateCrit();
         return damage;
         
@@ -42,11 +42,14 @@ public class Unit : MonoBehaviour
     {
         criticalMultiplier = Random.Range(1.5f, 3f);
         if (Random.value <= criticalStrikeChance)
-        {
+        {            
             criticalDamage = damage * criticalMultiplier;
             return criticalDamage;
         }
         else
+        {            
             return 0f;
+        }
+            
     }
 }
