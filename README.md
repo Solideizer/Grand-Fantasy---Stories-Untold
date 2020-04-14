@@ -5,8 +5,8 @@ A 2D pixel art RPG with a strong emphasis on turn based combat. Basically a homa
 
 ## **Implemented Features :** 
 - [x] Base Turn Based Combat System 
-- [x] 2 Heroes
-- [x] 1 Enemy
+- [x] 3 Different Player Units
+- [x] 2 Different Enemy
 - [x] Critical Strikes
 - [x] Audio
 - [x] Animations
@@ -18,4 +18,4 @@ A 2D pixel art RPG with a strong emphasis on turn based combat. Basically a homa
 - [ ] More Skills will be added
 - [ ] Mana System 
 
-![screenshot](https://github.com/Solideizer/Grand-Fantasy---Stories-Untold/blob/master/Screenshots/image_0000.jpg)
+![screenshot](https://github.com/Solideizer/Grand-Fantasy---Stories-Untold/blob/master/Screenshots/image_0001.jpg)
