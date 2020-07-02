@@ -19,5 +19,5 @@ A 2D pixel art RPG with a strong emphasis on turn based combat.
 - [ ] More Skills will be added
 - [ ] Mana System 
 
-[![Grand Fantasy : Stories Untold](https://github.com/Solideizer/Grand-Fantasy---Stories-Untold/blob/master/Screenshots/image_0001.jpg)](https://www.youtube.com/watch?v=a6fEhdbtpB4)
+[![Grand Fantasy : Stories Untold](https://github.com/Solideizer/Grand-Fantasy---Stories-Untold/blob/master/Screenshots/1.jpg)](https://www.youtube.com/watch?v=a6fEhdbtpB4)
 
