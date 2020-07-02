@@ -3507,12 +3507,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &521261749
 GameObject:
@@ -7177,6 +7177,8 @@ MonoBehaviour:
   Wizard: {fileID: 1565822773}
   Enemy1: {fileID: 6739126713648804338}
   Enemy2: {fileID: 1397993519}
+  explosionAnim: {fileID: 6840546004793303992, guid: c2ec5867d47fb7344be2ce42af745501,
+    type: 3}
   WizardAttack1Button: {fileID: 266453492}
   WizardAttack2Button: {fileID: 967170853}
   KnightNameText: {fileID: 1283692370}
@@ -7936,7 +7938,7 @@ PrefabInstance:
     - target: {fileID: 2725647606251427267, guid: d87621978b4a9f449b8e40f27a6afa95,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 40
+      value: 98
       objectReference: {fileID: 0}
     - target: {fileID: 2725647606251427267, guid: d87621978b4a9f449b8e40f27a6afa95,
         type: 3}
@@ -8722,7 +8724,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1397993519}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.556219, y: -3.3747542, z: 5}
+  m_LocalPosition: {x: 8.556219, y: -3.3747542, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1369546084}
@@ -10078,7 +10080,7 @@ PrefabInstance:
     - target: {fileID: 2725647606251427267, guid: d87621978b4a9f449b8e40f27a6afa95,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 40
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 2725647606251427267, guid: d87621978b4a9f449b8e40f27a6afa95,
         type: 3}
@@ -10394,7 +10396,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2008045906
 GameObject:
@@ -10891,7 +10893,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6739126713648804338}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.05, y: -3.28, z: 5}
+  m_LocalPosition: {x: 4.05, y: -3.28, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1369546084}

@@ -29,6 +29,8 @@ public class BattleSystem : MonoBehaviour
     private Animator Enemy1Anim;
     private Animator Enemy2Anim;
 
+    [SerializeField] private GameObject explosionAnim;
+
     private List<Unit> PlayerUnits = new List<Unit>();
     private List<Unit> EnemyUnits = new List<Unit>();
 
@@ -494,8 +496,12 @@ public class BattleSystem : MonoBehaviour
         
         PlayAnim("Attack1", 2);
 
+        Vector3 enemyPos = new Vector3(4.05f, -3.28f, 5f);
+        GameObject explosionGO = Instantiate(explosionAnim, enemyPos, Quaternion.identity);
+        Destroy(explosionGO, 1f);
+        //explosionAnim.GetComponent<Animator>
         //play sound
-        AudioManager.PlaySound("basicAttack");
+        //AudioManager.PlaySound("basicAttack");
 
         //calculate damage        
         float damageDone = PlayerUnits[2].calculateDamage();
@@ -560,7 +566,7 @@ public class BattleSystem : MonoBehaviour
         PlayAnim("Attack2", 2);
 
         //play sound
-        AudioManager.PlaySound("basicAttack");
+        //AudioManager.PlaySound("basicAttack");
 
         //calculate damage        
         float damageDone = PlayerUnits[2].calculateDamage();
