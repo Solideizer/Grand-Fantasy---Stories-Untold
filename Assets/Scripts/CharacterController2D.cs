@@ -3,21 +3,19 @@ using System.Collections;
 
 public class CharacterController2D: MonoBehaviour
 {
-
-    public float speed;              
-
-    //private Rigidbody2D rb2d;    
-    private Animator anim;
-    private bool facingRight;
-    private SpriteRenderer renderer2D;
+    public float speed;            
+      
+    private Animator _anim;
+    private bool _facingRight;
+    private SpriteRenderer _renderer2D;
 
     // Use this for initialization
     void Awake()
-    {        
-        //rb2d = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        renderer2D = transform.GetComponent<SpriteRenderer>();
-        facingRight = true;
+    {     
+        
+        _anim = GetComponent<Animator>();
+        _renderer2D = transform.GetComponent<SpriteRenderer>();
+        _facingRight = true;
     }
     
     void Update()
@@ -26,22 +24,22 @@ public class CharacterController2D: MonoBehaviour
 
         if (moveHorizontal == 1f)
         {
-            if (!facingRight)
-                renderer2D.flipX = false;
+            if (!_facingRight)
+                _renderer2D.flipX = false;
 
             transform.Translate(Vector2.right * (Time.deltaTime * speed));
-            anim.SetTrigger("Run");
+            _anim.SetTrigger("Run");
 
         }else if (moveHorizontal == -1f){
 
-            renderer2D.flipX = true;
-            facingRight = false;
+            _renderer2D.flipX = true;
+            _facingRight = false;
             transform.Translate(Vector2.left * (Time.deltaTime * speed));            
-            anim.SetTrigger("Run");
+            _anim.SetTrigger("Run");
         }
         else
         {
-            anim.SetTrigger("Idle");
+            _anim.SetTrigger("Idle");
         }
 
         

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class sorting : MonoBehaviour
+public class Sorting : MonoBehaviour
 {
     public int SortingOrder = 0;
     // Start is called before the first frame update

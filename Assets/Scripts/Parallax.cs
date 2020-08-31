@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class backgroundLoop : MonoBehaviour
+public class Parallax : MonoBehaviour
 {
     public GameObject[] levels;
     private Camera mainCamera;
