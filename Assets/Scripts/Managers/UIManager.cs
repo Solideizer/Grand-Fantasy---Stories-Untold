@@ -100,12 +100,12 @@ public class UIManager : MonoBehaviour {
         // Enemy1
         Enemy1NameText.text = battleSystemScript.EnemyUnits[0].name;
         Enemy1HPSlider.maxValue = battleSystemScript.EnemyUnits[0].maxHP;
-        Enemy1HPSlider.value = battleSystemScript.EnemyUnits[0].maxHP;
+        Enemy1HPSlider.value = battleSystemScript.EnemyUnits[0].currentHP;
 
         // Enemy2
         Enemy2NameText.text = battleSystemScript.EnemyUnits[1].name;
         Enemy2HPSlider.maxValue = battleSystemScript.EnemyUnits[1].maxHP;
-        Enemy2HPSlider.value = battleSystemScript.EnemyUnits[1].maxHP;
+        Enemy2HPSlider.value = battleSystemScript.EnemyUnits[1].currentHP;
     }
 
     //************************************* Skill HUDs & UI END *****************************
@@ -117,10 +117,10 @@ public class UIManager : MonoBehaviour {
             damageText.color = newColor;
             damageText.text = damageDone.ToString ("F0");
 
-            Destroy (damageText.gameObject, 2f);
+            Destroy (damageText, 2f);
         } else {
             damageText.text = damageDone.ToString ("F0");
-            Destroy (damageText.gameObject, 1f);
+            Destroy (damageText, 1f);
         }
     }
     private void Start () {

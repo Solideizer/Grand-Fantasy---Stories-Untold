@@ -185,19 +185,19 @@ public class BattleSystem : MonoBehaviour {
         uiManager.SetEnemyHP (EnemyUnits[0].currentHP, 4);
 
         //enemy hit animation
-        animationManager.PlayAnim ("Hit", 5);
+        animationManager.PlayAnim ("Hit", 4);
         //enemy hurt sound
         AudioManager.PlaySound ("hurtSound");
         yield return new WaitForSeconds (0.5f);
         //enemy goes back to idle animation
-        animationManager.PlayAnim ("Idle", 5);
+        animationManager.PlayAnim ("Idle", 4);
         //unit goes back to idle animation
         animationManager.PlayAnim ("Idle", 2);
 
         uiManager.HideSkillHUD ();
 
         if (isDead) {
-            animationManager.PlayAnim ("Dead", 5);
+            animationManager.PlayAnim ("Dead", 4);
             gameState = GameState.WON;
             EndBattle ();
         } else {
@@ -240,12 +240,12 @@ public class BattleSystem : MonoBehaviour {
         uiManager.SetEnemyHP (EnemyUnits[0].currentHP, 4);
 
         //enemy hit animation
-        animationManager.PlayAnim ("Hit", 5);
+        animationManager.PlayAnim ("Hit", 4);
         //enemy hurt sound
         AudioManager.PlaySound ("hurtSound");
         yield return new WaitForSeconds (0.5f);
         //enemy goes back to idle animation
-        animationManager.PlayAnim ("Idle", 5);
+        animationManager.PlayAnim ("Idle", 4);
         //unit goes back to its starting position
         //Knight.transform.position = startingPos;
         //unit is idling
@@ -254,7 +254,7 @@ public class BattleSystem : MonoBehaviour {
         uiManager.HideSkillHUD ();
 
         if (isDead) {
-            animationManager.PlayAnim ("Dead", 5);
+            animationManager.PlayAnim ("Dead", 4);
             gameState = GameState.WON;
             EndBattle ();
         } else {
