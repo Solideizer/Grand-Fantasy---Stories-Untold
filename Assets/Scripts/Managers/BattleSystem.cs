@@ -273,8 +273,8 @@ public class BattleSystem : MonoBehaviour {
     private IEnumerator EnemyTurn () {
         Vector2 startingPos = Enemy1.transform.position;
 
-        int randomPlayerUnit = Random.Range (0, PlayerUnits.Count);
-        attackedPlayerUnit = PlayerUnits[randomPlayerUnit];
+        int randomPlayerUnitIndex = Random.Range (0, PlayerUnits.Count);
+        attackedPlayerUnit = PlayerUnits[randomPlayerUnitIndex];
 
         animationManager.PlayAnim ("Dash", 4);
 
@@ -289,7 +289,7 @@ public class BattleSystem : MonoBehaviour {
         yield return new WaitForSeconds (0.5f);
         animationManager.PlayAnim ("Attack", 4);
         AudioManager.PlaySound ("basicAttack");
-        animationManager.PlayAnim ("Hit", randomPlayerUnit);
+        animationManager.PlayAnim ("Hit", randomPlayerUnitIndex);
 
         //calculate damage
         float damageDone = EnemyUnits[0].calculateDamage ();
@@ -311,11 +311,11 @@ public class BattleSystem : MonoBehaviour {
         }
         //******************************************************************************************
 
-        uiManager.SetPlayerUnitHP (attackedPlayerUnit.currentHP, playerUnitID);
+        uiManager.SetPlayerUnitHP (attackedPlayerUnit.currentHP, randomPlayerUnitIndex);
         AudioManager.PlaySound ("hurtSound");
 
         yield return new WaitForSeconds (0.5f);
-        animationManager.PlayAnim ("Idle", randomPlayerUnit);
+        animationManager.PlayAnim ("Idle", randomPlayerUnitIndex);
 
         Enemy1.transform.position = startingPos;
         animationManager.PlayAnim ("Idle", 4);
@@ -336,8 +336,8 @@ public class BattleSystem : MonoBehaviour {
     private IEnumerator Enemy2Turn () {
         Vector2 startingPos = Enemy2.transform.position;
 
-        int randomPlayerUnit = Random.Range (0, PlayerUnits.Count);
-        attackedPlayerUnit = PlayerUnits[randomPlayerUnit];
+        int randomPlayerUnitIndex = Random.Range (0, PlayerUnits.Count);
+        attackedPlayerUnit = PlayerUnits[randomPlayerUnitIndex];
 
         animationManager.PlayAnim ("Dash", 5);
 
@@ -351,7 +351,7 @@ public class BattleSystem : MonoBehaviour {
         yield return new WaitForSeconds (0.5f);
         animationManager.PlayAnim ("Attack", 5);
         AudioManager.PlaySound ("basicAttack");
-        animationManager.PlayAnim ("Hit", randomPlayerUnit);
+        animationManager.PlayAnim ("Hit", randomPlayerUnitIndex);
 
         //calculate damage
         float damageDone = EnemyUnits[1].calculateDamage ();
@@ -373,11 +373,11 @@ public class BattleSystem : MonoBehaviour {
         }
         //******************************************************************************************
 
-        uiManager.SetPlayerUnitHP (attackedPlayerUnit.currentHP, playerUnitID);
+        uiManager.SetPlayerUnitHP (attackedPlayerUnit.currentHP, randomPlayerUnitIndex);
         AudioManager.PlaySound ("hurtSound");
 
         yield return new WaitForSeconds (0.5f);
-        animationManager.PlayAnim ("Idle", randomPlayerUnit);
+        animationManager.PlayAnim ("Idle", randomPlayerUnitIndex);
 
         Enemy2.transform.position = startingPos;
         animationManager.PlayAnim ("Idle", 5);

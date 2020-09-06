@@ -117,10 +117,10 @@ public class UIManager : MonoBehaviour {
             damageText.color = newColor;
             damageText.text = damageDone.ToString ("F0");
 
-            Destroy (damageText, 2f);
+            //Destroy (damageText, 2f);
         } else {
             damageText.text = damageDone.ToString ("F0");
-            Destroy (damageText, 1f);
+            //Destroy (damageText, 1f);
         }
     }
     private void Start () {
