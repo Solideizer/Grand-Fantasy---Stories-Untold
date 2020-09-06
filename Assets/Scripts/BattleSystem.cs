@@ -1,18 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public enum GameState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
 public enum UnitState { KNIGHT, WARRIOR, WIZARD, ENEMY1, ENEMY2 }
 
 public class BattleSystem : MonoBehaviour {
-    private GameState gameState;
+    public GameState gameState;
     public UnitState unitState;
-    Unit enemyToAttack;
-    Unit attackedPlayerUnit;
-    int enemyID;
-    int playerUnitID;
+    private Unit enemyToAttack;
+    private Unit attackedPlayerUnit;
+    private int enemyID;
+    private int playerUnitID;
     //************** Managers *****************
     private AnimationManager animationManager;
     private UIManager uiManager;
@@ -35,10 +36,16 @@ public class BattleSystem : MonoBehaviour {
     RaycastHit2D hit;
     Vector3 mousePos;
     Vector2 mousePos2D;
-    private void Awake () {
-        //get managers
+
+    private Knight knightClass;
+    private Warrior warriorClass;
+    private void Awake ()
+    {        
         animationManager = GetComponent<AnimationManager> ();
         uiManager = GetComponent<UIManager> ();
+        
+        knightClass = GetComponent<Knight>();
+        warriorClass = GetComponent<Warrior>();
     }
     private void Start () {
         //PlayerUnit 0 --> Knight --> UnitID 0
@@ -75,8 +82,7 @@ public class BattleSystem : MonoBehaviour {
                 mousePos2D = new Vector2 (mousePos.x, mousePos.y);
                 hit = Physics2D.Raycast (mousePos2D, Vector2.zero);
 
-                SelectEnemy (hit);
-                Debug.Log (hit.collider.gameObject.name);
+                SelectEnemy (hit);                
             }
 
         }
@@ -87,30 +93,32 @@ public class BattleSystem : MonoBehaviour {
         if (gameState != GameState.PLAYERTURN) {
             return;
         }
+        string enemyName = hit.collider.gameObject.name;  
 
         switch (unitState) {
             case UnitState.KNIGHT:
-                if (hit.collider.gameObject.name == "Skeleton") {
-                    enemyToAttack = EnemyUnits[0];
+                if (enemyName == "Skeleton") {
+                    knightClass.enemyToAttack = EnemyUnits[0];
                     enemyID = 4;
                 }
-                if (hit.collider.gameObject.name == "Undead") {
-                    enemyToAttack = EnemyUnits[1];
+                if (enemyName == "Undead") {
+                    knightClass.enemyToAttack = EnemyUnits[1];
                     enemyID = 5;
                 }
-                StartCoroutine (KnightBasicAttack (enemyID));
+                knightClass.KnightAttack(enemyID);
+                
                 break;
 
             case UnitState.WARRIOR:
-                if (hit.collider.gameObject.name == "Skeleton") {
-                    enemyToAttack = EnemyUnits[0];
+                if (enemyName == "Skeleton") {
+                    warriorClass.enemyToAttack = EnemyUnits[0];
                     enemyID = 4;
                 }
-                if (hit.collider.gameObject.name == "Undead") {
-                    enemyToAttack = EnemyUnits[1];
+                if (enemyName == "Undead") {
+                    warriorClass.enemyToAttack = EnemyUnits[1];
                     enemyID = 5;
                 }
-                StartCoroutine (WarriorBasicAttack (enemyID));
+                warriorClass.WarriorAttack(enemyID);
                 break;
         }
     }
@@ -142,138 +150,7 @@ public class BattleSystem : MonoBehaviour {
 
 
     //************************************ Character Skills *********************************
-    private IEnumerator KnightBasicAttack (int enemyID) {
-        AudioManager.PlaySound ("KnightOpeners");
-        //starting position of the unit
-        Vector2 startingPos = Knight.transform.position;
-
-        //play dashing animation
-        animationManager.PlayAnim ("Dash", 0);
-
-        Knight.transform.position += Knight.transform.right * (Time.deltaTime * 1000);
-        float errorDistance = 15f;
-
-        if (Vector3.Distance (Knight.transform.position, enemyToAttack.transform.position) < errorDistance) {
-            Knight.transform.position = enemyToAttack.transform.position;
-        }
-        yield return new WaitForSeconds (0.5f);
-        animationManager.PlayAnim ("Attack", 0);
-
-        //play sound
-        AudioManager.PlaySound ("basicAttack");
-
-        //calculate damage        
-        float damageDone = PlayerUnits[0].calculateDamage ();
-        bool isDead = enemyToAttack.TakeDamage (damageDone);
-
-        //damagePopup
-        GameObject floatingDamageGO = Instantiate (floatingDamage, enemyToAttack.transform.position + damageOffset, Quaternion.identity);
-        if (damageDone > PlayerUnits[0].baseDamage + (PlayerUnits[0].baseDamage / 10)) {
-            Color newColor = new Color (0.8679f, 0.2941f, 0f, 1f);
-            floatingDamageGO.GetComponent<TextMesh> ().fontSize = 250;
-            floatingDamageGO.GetComponent<TextMesh> ().color = newColor;
-            floatingDamageGO.GetComponent<TextMesh> ().text = damageDone.ToString ("F0");
-
-            Destroy (floatingDamageGO, 2f);
-        } else {
-            floatingDamageGO.GetComponent<TextMesh> ().text = damageDone.ToString ("F0");
-            Destroy (floatingDamageGO, 1f);
-        }
-        //**************************************************************************
-
-        // update hp
-        uiManager.SetEnemyHP (enemyToAttack.currentHP, enemyID);
-
-        //enemy hit animation
-        animationManager.PlayAnim ("Hit", enemyID);
-        //enemy hurt sound
-        AudioManager.PlaySound ("hurtSound");
-        yield return new WaitForSeconds (0.5f);
-        //enemy goes back to idle animation
-        animationManager.PlayAnim ("Idle", enemyID);
-        //unit goes back to its starting position
-        Knight.transform.position = startingPos;
-        //unit is idling
-        animationManager.PlayAnim ("Idle", 0);
-
-        uiManager.HideSkillHUD ();
-
-        if (isDead) {
-            animationManager.PlayAnim ("Dead", enemyID);
-            gameState = GameState.WON;
-            EndBattle ();
-        } else {
-            //Warrior's turn starts
-            unitState = UnitState.WARRIOR;
-            //show warrior's skills
-            uiManager.ShowSkillHUD ();
-        }
-    }
-
-    private IEnumerator WarriorBasicAttack (int enemyID) {
-        Debug.Log ("Warrior Basic attack");
-        //starting position of the unit
-        Vector2 startingPos = Warrior.transform.position;
-
-        //play dashing animation
-        animationManager.PlayAnim ("Dash", 1);
-
-        Warrior.transform.position += Warrior.transform.right * (Time.deltaTime * 1000);
-        float errorDistance = 15f;
-        if (Vector3.Distance (Warrior.transform.position, enemyToAttack.transform.position) < errorDistance) {
-            Warrior.transform.position = enemyToAttack.transform.position;
-        }
-        yield return new WaitForSeconds (0.5f);
-        animationManager.PlayAnim ("Attack", 1);
-
-        //play sound
-        AudioManager.PlaySound ("basicAttack");
-
-        //calculate damage        
-        float damageDone = PlayerUnits[1].calculateDamage ();
-        bool isDead = enemyToAttack.TakeDamage (damageDone);
-
-        //damagePopup
-        GameObject floatingDamageGO = Instantiate (floatingDamage, enemyToAttack.transform.position + damageOffset, Quaternion.identity);
-        if (damageDone > PlayerUnits[1].baseDamage + (PlayerUnits[1].baseDamage / 10)) {
-            Color newColor = new Color (0.8679f, 0.2941f, 0f, 1f);
-            floatingDamageGO.GetComponent<TextMesh> ().fontSize = 250;
-            floatingDamageGO.GetComponent<TextMesh> ().color = newColor;
-            floatingDamageGO.GetComponent<TextMesh> ().text = damageDone.ToString ("F0");
-
-            Destroy (floatingDamageGO, 2f);
-        } else {
-            floatingDamageGO.GetComponent<TextMesh> ().text = damageDone.ToString ("F0");
-            Destroy (floatingDamageGO, 1f);
-        }
-
-        // update hp
-        uiManager.SetEnemyHP (enemyToAttack.currentHP, enemyID);
-
-        //enemy hit animation
-        animationManager.PlayAnim ("Hit", enemyID);
-        //enemy hurt sound
-        AudioManager.PlaySound ("hurtSound");
-        //enemy goes back to idle animation
-        yield return new WaitForSeconds (1f);
-        animationManager.PlayAnim ("Idle", enemyID);
-
-        //unit goes back to its starting position
-        Warrior.transform.position = startingPos;
-        //unit is idling
-        animationManager.PlayAnim ("Idle", 1);
-
-        uiManager.HideSkillHUD ();
-
-        if (isDead) {
-            gameState = GameState.WON;
-            EndBattle ();
-        } else {
-            unitState = UnitState.WIZARD;
-            uiManager.ShowSkillHUD ();
-        }
-    }
-
+    
     private IEnumerator WizardAttack1 () {
 
         animationManager.PlayAnim ("Attack1", 2);
@@ -293,13 +170,13 @@ public class BattleSystem : MonoBehaviour {
         GameObject floatingDamageGO = Instantiate (floatingDamage, Enemy1.transform.position + damageOffset, Quaternion.identity);
         if (damageDone > PlayerUnits[2].baseDamage + (PlayerUnits[2].baseDamage / 10)) {
             Color newColor = new Color (0.8679f, 0.2941f, 0f, 1f);
-            floatingDamageGO.GetComponent<TextMesh> ().fontSize = 250;
-            floatingDamageGO.GetComponent<TextMesh> ().color = newColor;
-            floatingDamageGO.GetComponent<TextMesh> ().text = damageDone.ToString ("F0");
+            floatingDamageGO.GetComponent<TextMeshPro> ().fontSize = 250;
+            floatingDamageGO.GetComponent<TextMeshPro> ().color = newColor;
+            floatingDamageGO.GetComponent<TextMeshPro> ().text = damageDone.ToString ("F0");
 
             Destroy (floatingDamageGO, 2f);
         } else {
-            floatingDamageGO.GetComponent<TextMesh> ().text = damageDone.ToString ("F0");
+            floatingDamageGO.GetComponent<TextMeshPro> ().text = damageDone.ToString ("F0");
             Destroy (floatingDamageGO, 1f);
         }
         //**************************************************************************
@@ -314,9 +191,7 @@ public class BattleSystem : MonoBehaviour {
         yield return new WaitForSeconds (0.5f);
         //enemy goes back to idle animation
         animationManager.PlayAnim ("Idle", 5);
-        //unit goes back to its starting position
-        //Knight.transform.position = startingPos;
-        //unit is idling
+        //unit goes back to idle animation
         animationManager.PlayAnim ("Idle", 2);
 
         uiManager.HideSkillHUD ();
@@ -350,13 +225,13 @@ public class BattleSystem : MonoBehaviour {
         GameObject floatingDamageGO = Instantiate (floatingDamage, Enemy1.transform.position + damageOffset, Quaternion.identity);
         if (damageDone > PlayerUnits[2].baseDamage + (PlayerUnits[2].baseDamage / 10)) {
             Color newColor = new Color (0.8679f, 0.2941f, 0f, 1f);
-            floatingDamageGO.GetComponent<TextMesh> ().fontSize = 250;
-            floatingDamageGO.GetComponent<TextMesh> ().color = newColor;
-            floatingDamageGO.GetComponent<TextMesh> ().text = damageDone.ToString ("F0");
+            floatingDamageGO.GetComponent<TextMeshPro> ().fontSize = 250;
+            floatingDamageGO.GetComponent<TextMeshPro> ().color = newColor;
+            floatingDamageGO.GetComponent<TextMeshPro> ().text = damageDone.ToString ("F0");
 
             Destroy (floatingDamageGO, 2f);
         } else {
-            floatingDamageGO.GetComponent<TextMesh> ().text = damageDone.ToString ("F0");
+            floatingDamageGO.GetComponent<TextMeshPro> ().text = damageDone.ToString ("F0");
             Destroy (floatingDamageGO, 1f);
         }
         //**************************************************************************
@@ -403,7 +278,7 @@ public class BattleSystem : MonoBehaviour {
 
         animationManager.PlayAnim ("Dash", 4);
 
-        //hangi üniteye saldırcağını belirle
+        //hangi üniteye saldıracağını belirle
         Enemy1.transform.position += -attackedPlayerUnit.transform.right * (Time.deltaTime * 500);
         float errorDistance = 10f;
 
@@ -425,13 +300,13 @@ public class BattleSystem : MonoBehaviour {
         GameObject floatingDamageGO = Instantiate (floatingDamage, attackedPlayerUnit.transform.position + damageOffset, Quaternion.identity);
         if (damageDone > EnemyUnits[0].baseDamage + (EnemyUnits[0].baseDamage / 10)) {
             Color newColor = new Color (0.8679f, 0.2941f, 0f, 1f);
-            floatingDamageGO.GetComponent<TextMesh> ().fontSize = 250;
-            floatingDamageGO.GetComponent<TextMesh> ().color = newColor;
-            floatingDamageGO.GetComponent<TextMesh> ().text = damageDone.ToString ("F0");
+            floatingDamageGO.GetComponent<TextMeshPro> ().fontSize = 250;
+            floatingDamageGO.GetComponent<TextMeshPro> ().color = newColor;
+            floatingDamageGO.GetComponent<TextMeshPro> ().text = damageDone.ToString ("F0");
 
             Destroy (floatingDamageGO, 2f);
         } else {
-            floatingDamageGO.GetComponent<TextMesh> ().text = damageDone.ToString ("F0");
+            floatingDamageGO.GetComponent<TextMeshPro> ().text = damageDone.ToString ("F0");
             Destroy (floatingDamageGO, 1f);
         }
         //******************************************************************************************
@@ -487,13 +362,13 @@ public class BattleSystem : MonoBehaviour {
         GameObject floatingDamageGO = Instantiate (floatingDamage, attackedPlayerUnit.transform.position + damageOffset, Quaternion.identity);
         if (damageDone > EnemyUnits[1].baseDamage + (EnemyUnits[1].baseDamage / 10)) {
             Color newColor = new Color (0.8679f, 0.2941f, 0f, 1f);
-            floatingDamageGO.GetComponent<TextMesh> ().fontSize = 250;
-            floatingDamageGO.GetComponent<TextMesh> ().color = newColor;
-            floatingDamageGO.GetComponent<TextMesh> ().text = damageDone.ToString ("F0");
+            floatingDamageGO.GetComponent<TextMeshPro> ().fontSize = 250;
+            floatingDamageGO.GetComponent<TextMeshPro> ().color = newColor;
+            floatingDamageGO.GetComponent<TextMeshPro> ().text = damageDone.ToString ("F0");
 
             Destroy (floatingDamageGO, 2f);
         } else {
-            floatingDamageGO.GetComponent<TextMesh> ().text = damageDone.ToString ("F0");
+            floatingDamageGO.GetComponent<TextMeshPro> ().text = damageDone.ToString ("F0");
             Destroy (floatingDamageGO, 1f);
         }
         //******************************************************************************************
@@ -519,7 +394,7 @@ public class BattleSystem : MonoBehaviour {
     }
     //*********************************** ENEMY TURNS END *************************************
 
-    private void EndBattle () {
+    public void EndBattle () {
         if (gameState == GameState.WON) {
             //load next level
         } else if (gameState == GameState.LOST) {

@@ -57,8 +57,9 @@ MonoBehaviour:
   material: {fileID: 3716041219405397455}
   materialHashCode: 1786730573
   m_Version: 1.1.0
-  m_SourceFontFileGUID: 2163570423492794db8b43de666c3ffb
-  m_SourceFontFile_EditorRef: {fileID: 0}
+  m_SourceFontFileGUID: 5792244a3e2f0e14c8bc956b6cca47cc
+  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 5792244a3e2f0e14c8bc956b6cca47cc,
+    type: 3}
   m_SourceFontFile: {fileID: 0}
   m_AtlasPopulationMode: 0
   m_FaceInfo:
@@ -2436,7 +2437,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: m5x7 SDF Material
   m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
-  m_ShaderKeywords: GLOW_ON
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0

@@ -2910,7 +2910,7 @@ Transform:
   - {fileID: 2641961575148288956}
   - {fileID: 1565822777}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &336308883
 GameObject:
@@ -7166,6 +7166,8 @@ GameObject:
   - component: {fileID: 1098618360}
   - component: {fileID: 1098618359}
   - component: {fileID: 1098618361}
+  - component: {fileID: 1098618362}
+  - component: {fileID: 1098618363}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -7185,6 +7187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: affff583264175142b101bf32a889637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameState: 0
   unitState: 0
   Knight: {fileID: 2641961575148288959}
   Warrior: {fileID: 890594293099458579}
@@ -7362,6 +7365,40 @@ MonoBehaviour:
   WizardHPSlider: {fileID: 944083028}
   Enemy1HPSlider: {fileID: 1016583104}
   Enemy2HPSlider: {fileID: 1351766182}
+--- !u!114 &1098618362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098618355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 357f89947ca9b7649b1cd3cfdb936bb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knightGO: {fileID: 2641961575148288959}
+  floatingDamage: {fileID: 222366804528847911, guid: 79884bb96a13b3b41919b30e61518047,
+    type: 3}
+  damageOffset: {x: 0, y: 3, z: 0}
+  enemyToAttack: {fileID: 0}
+--- !u!114 &1098618363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098618355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ed6d9fc72f8c4428d6c0a4206a5c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  warriorGO: {fileID: 890594293099458579}
+  floatingDamage: {fileID: 222366804528847911, guid: 79884bb96a13b3b41919b30e61518047,
+    type: 3}
+  damageOffset: {x: 0, y: 3, z: 0}
+  enemyToAttack: {fileID: 0}
 --- !u!213 &1100643342
 Sprite:
   m_ObjectHideFlags: 0
@@ -8590,7 +8627,7 @@ Transform:
   - {fileID: 980297209}
   - {fileID: 1970887684}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1369546083
 GameObject:
@@ -8622,7 +8659,7 @@ Transform:
   - {fileID: 4159399976058815915}
   - {fileID: 1397993523}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1397993519
 GameObject:
@@ -8657,10 +8694,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 127d9ad2e487beb499eb74cf7aa6d208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Undead
-  baseDamage: 100
   maxHP: 1000
   currentHP: 1000
+  baseDamage: 100
   baseArmor: 5
   criticalStrikeChance: 0.1
 --- !u!95 &1397993521
@@ -9344,7 +9380,7 @@ Transform:
   m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1554063291
 GameObject:
@@ -9449,7 +9485,7 @@ RectTransform:
   - {fileID: 266453496}
   - {fileID: 967170851}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9506,10 +9542,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 127d9ad2e487beb499eb74cf7aa6d208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Wizard
-  baseDamage: 200
   maxHP: 500
   currentHP: 500
+  baseDamage: 200
   baseArmor: 0
   criticalStrikeChance: 0.2
 --- !u!212 &1565822776
@@ -9656,7 +9691,7 @@ Transform:
   m_LocalScale: {x: 1.3, y: 1.3, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1689896068
 MonoBehaviour:
@@ -10649,10 +10684,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 127d9ad2e487beb499eb74cf7aa6d208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Knight
-  baseDamage: 50
   maxHP: 500
   currentHP: 500
+  baseDamage: 50
   baseArmor: 50
   criticalStrikeChance: 0.1
 --- !u!212 &890594293099458578
@@ -10751,10 +10785,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 127d9ad2e487beb499eb74cf7aa6d208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Skeleton
-  baseDamage: 40
   maxHP: 1000
   currentHP: 1000
+  baseDamage: 40
   baseArmor: 10
   criticalStrikeChance: 0.3
 --- !u!114 &1115323467008858990
@@ -10769,10 +10802,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 127d9ad2e487beb499eb74cf7aa6d208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Warrior
-  baseDamage: 100
   maxHP: 300
   currentHP: 300
+  baseDamage: 100
   baseArmor: 20
   criticalStrikeChance: 0.4
 --- !u!212 &2641961575148288954
