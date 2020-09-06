@@ -1,8 +1,6 @@
 # Grand Fantasy : Stories Untold
 A 2D pixel art RPG with a strong emphasis on turn based combat.
 
-*Project is developed on Unity 2019.3.8f1* 
-
 ## **Implemented Features :** 
 - [x] Base Turn Based Combat System 
 - [x] 3 Different Player Units
