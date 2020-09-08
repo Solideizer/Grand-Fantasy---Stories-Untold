@@ -2,7 +2,7 @@
 A 2D pixel art RPG with a strong emphasis on turn based combat.
 
 ## **Implemented Features :** 
-- [x] Base Turn Based Combat System 
+- [x] Core Turn Based Combat System 
 - [x] 3 Different Player Units
 - [x] 2 Different Enemies
 - [x] Critical Strikes
