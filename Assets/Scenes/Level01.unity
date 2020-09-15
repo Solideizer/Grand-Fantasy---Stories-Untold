@@ -4870,7 +4870,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 500
+  m_MaxValue: 200
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -7125,7 +7125,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1000
+  m_MaxValue: 500
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
@@ -7162,6 +7162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1098618357}
   - component: {fileID: 1098618356}
+  - component: {fileID: 1098618364}
   - component: {fileID: 1098618358}
   - component: {fileID: 1098618360}
   - component: {fileID: 1098618359}
@@ -7187,20 +7188,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: affff583264175142b101bf32a889637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameState: 0
-  unitState: 0
+  explosionAnim: {fileID: 6840546004793303992, guid: c2ec5867d47fb7344be2ce42af745501,
+    type: 3}
+  floatingDamage: {fileID: 222366804528847911, guid: 79884bb96a13b3b41919b30e61518047,
+    type: 3}
+  damageOffset: {x: 0, y: 3, z: 0}
   Knight: {fileID: 2641961575148288959}
   Warrior: {fileID: 890594293099458579}
   Wizard: {fileID: 1565822773}
   Enemy1: {fileID: 6739126713648804338}
   Enemy2: {fileID: 1397993519}
-  explosionAnim: {fileID: 6840546004793303992, guid: c2ec5867d47fb7344be2ce42af745501,
-    type: 3}
-  PlayerUnits: []
-  EnemyUnits: []
-  floatingDamage: {fileID: 222366804528847911, guid: 79884bb96a13b3b41919b30e61518047,
-    type: 3}
-  damageOffset: {x: 0, y: 3, z: 0}
+  gameState: 0
+  unitState: 0
+  playerUnitGOs: []
+  enemyUnitGOs: []
+  playerUnits: []
+  enemyUnits: []
 --- !u!4 &1098618357
 Transform:
   m_ObjectHideFlags: 0
@@ -7353,18 +7356,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battleSystemScript: {fileID: 1098618356}
-  WizardAttack1Button: {fileID: 266453492}
-  WizardAttack2Button: {fileID: 967170853}
-  KnightNameText: {fileID: 1283692370}
-  WarriorNameText: {fileID: 521261752}
-  WizardNameText: {fileID: 542500772}
-  Enemy1NameText: {fileID: 854773899}
-  Enemy2NameText: {fileID: 346839146}
-  KnightHPSlider: {fileID: 1536515300}
-  WarriorHPSlider: {fileID: 1227694440}
-  WizardHPSlider: {fileID: 944083028}
-  Enemy1HPSlider: {fileID: 1016583104}
-  Enemy2HPSlider: {fileID: 1351766182}
+  wizardAttack1Button: {fileID: 266453492}
+  wizardAttack2Button: {fileID: 967170853}
+  knightNameText: {fileID: 1283692370}
+  warriorNameText: {fileID: 521261752}
+  wizardNameText: {fileID: 542500772}
+  enemy1NameText: {fileID: 854773899}
+  enemy2NameText: {fileID: 346839146}
+  knightHpSlider: {fileID: 1536515300}
+  warriorHpSlider: {fileID: 1227694440}
+  wizardHpSlider: {fileID: 944083028}
+  enemy1HpSlider: {fileID: 1016583104}
+  enemy2HpSlider: {fileID: 1351766182}
 --- !u!114 &1098618362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7381,7 +7384,6 @@ MonoBehaviour:
   floatingDamage: {fileID: 222366804528847911, guid: 79884bb96a13b3b41919b30e61518047,
     type: 3}
   damageOffset: {x: 0, y: 3, z: 0}
-  enemyToAttack: {fileID: 0}
 --- !u!114 &1098618363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7398,7 +7400,18 @@ MonoBehaviour:
   floatingDamage: {fileID: 222366804528847911, guid: 79884bb96a13b3b41919b30e61518047,
     type: 3}
   damageOffset: {x: 0, y: 3, z: 0}
-  enemyToAttack: {fileID: 0}
+--- !u!114 &1098618364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098618355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e3d0d5fcd0041fb8911c7be4b8adbe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!213 &1100643342
 Sprite:
   m_ObjectHideFlags: 0
@@ -8577,7 +8590,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1000
+  m_MaxValue: 500
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
@@ -8671,10 +8684,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1397993523}
   - component: {fileID: 1397993522}
-  - component: {fileID: 1397993520}
   - component: {fileID: 1397993524}
   - component: {fileID: 1397993521}
   - component: {fileID: 1397993525}
+  - component: {fileID: 1397993520}
   m_Layer: 0
   m_Name: Undead
   m_TagString: EnemyUnit
@@ -8691,14 +8704,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1397993519}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 127d9ad2e487beb499eb74cf7aa6d208, type: 3}
+  m_Script: {fileID: 11500000, guid: 32e9b2ccb97ab734d88a4aacedfd0bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 1000
-  currentHP: 1000
-  baseDamage: 100
-  baseArmor: 5
-  criticalStrikeChance: 0.1
+  unitData: {fileID: 11400000, guid: e4e0fe1d6c9d9c242aaf5f487e0bf234, type: 2}
+  currentHp: 500
 --- !u!95 &1397993521
 Animator:
   serializedVersion: 3
@@ -9502,8 +9512,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1565822777}
   - component: {fileID: 1565822776}
-  - component: {fileID: 1565822775}
   - component: {fileID: 1565822774}
+  - component: {fileID: 1565822775}
   m_Layer: 0
   m_Name: Wizard
   m_TagString: Untagged
@@ -9539,14 +9549,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1565822773}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 127d9ad2e487beb499eb74cf7aa6d208, type: 3}
+  m_Script: {fileID: 11500000, guid: 32e9b2ccb97ab734d88a4aacedfd0bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 500
-  currentHP: 500
-  baseDamage: 200
-  baseArmor: 0
-  criticalStrikeChance: 0.2
+  unitData: {fileID: 11400000, guid: 0e87ab45ca3f03d4cb671fa3b5662a07, type: 2}
+  currentHp: 200
 --- !u!212 &1565822776
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10672,23 +10679,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2131691563}
   m_CullTransparentMesh: 0
---- !u!114 &843128805221031375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2641961575148288959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 127d9ad2e487beb499eb74cf7aa6d208, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 500
-  currentHP: 500
-  baseDamage: 50
-  baseArmor: 50
-  criticalStrikeChance: 0.1
 --- !u!212 &890594293099458578
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10750,8 +10740,8 @@ GameObject:
   m_Component:
   - component: {fileID: 890594293099458581}
   - component: {fileID: 890594293099458578}
-  - component: {fileID: 1115323467008858990}
   - component: {fileID: 4771336572015640615}
+  - component: {fileID: 890594293099458580}
   m_Layer: 0
   m_Name: Warrior
   m_TagString: Untagged
@@ -10759,6 +10749,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &890594293099458580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890594293099458579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e9b2ccb97ab734d88a4aacedfd0bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitData: {fileID: 11400000, guid: f2bcea5c192a7db4ebfd4573df460862, type: 2}
+  currentHp: 300
 --- !u!4 &890594293099458581
 Transform:
   m_ObjectHideFlags: 0
@@ -10773,40 +10777,6 @@ Transform:
   m_Father: {fileID: 336068800}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1003467429464139461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6739126713648804338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 127d9ad2e487beb499eb74cf7aa6d208, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 1000
-  currentHP: 1000
-  baseDamage: 40
-  baseArmor: 10
-  criticalStrikeChance: 0.3
---- !u!114 &1115323467008858990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890594293099458579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 127d9ad2e487beb499eb74cf7aa6d208, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 300
-  currentHP: 300
-  baseDamage: 100
-  baseArmor: 20
-  criticalStrikeChance: 0.4
 --- !u!212 &2641961575148288954
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10882,8 +10852,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2641961575148288956}
   - component: {fileID: 2641961575148288954}
-  - component: {fileID: 843128805221031375}
   - component: {fileID: 5968309218217518343}
+  - component: {fileID: 2641961575148288960}
   m_Layer: 0
   m_Name: 'Knight '
   m_TagString: Untagged
@@ -10891,6 +10861,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2641961575148288960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2641961575148288959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e9b2ccb97ab734d88a4aacedfd0bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitData: {fileID: 11400000, guid: ccf44c59a32c61347a9cb700f24f823f, type: 2}
+  currentHp: 500
 --- !u!212 &3023847759287982568
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11004,10 +10988,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4159399976058815915}
   - component: {fileID: 3023847759287982568}
-  - component: {fileID: 1003467429464139461}
   - component: {fileID: 6868692422638294010}
   - component: {fileID: 6739126713648804339}
   - component: {fileID: 6739126713648804340}
+  - component: {fileID: 6739126713648804341}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: EnemyUnit
@@ -11053,6 +11037,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dfe3f14757e2ad4cb3f17906fdec844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6739126713648804341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6739126713648804338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e9b2ccb97ab734d88a4aacedfd0bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitData: {fileID: 11400000, guid: 6c49903bf60bf8642ab68864373b7f79, type: 2}
+  currentHp: 500
 --- !u!95 &6868692422638294010
 Animator:
   serializedVersion: 3

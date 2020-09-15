@@ -2,147 +2,164 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-public class UIManager : MonoBehaviour {
-    public BattleSystem battleSystemScript;
 
-    //*********************************** UI ******************************************
-    [SerializeField] private Button WizardAttack1Button;
-    [SerializeField] private Button WizardAttack2Button;
-    [SerializeField] private TextMeshProUGUI KnightNameText;
-    [SerializeField] private TextMeshProUGUI WarriorNameText;
-    [SerializeField] private TextMeshProUGUI WizardNameText;
-    [SerializeField] private TextMeshProUGUI Enemy1NameText;
-    [SerializeField] private TextMeshProUGUI Enemy2NameText;
-    [SerializeField] private Slider KnightHPSlider;
-    [SerializeField] private Slider WarriorHPSlider;
-    [SerializeField] private Slider WizardHPSlider;
-    [SerializeField] private Slider Enemy1HPSlider;
-    [SerializeField] private Slider Enemy2HPSlider;
-    private CanvasGroup skillHUD;
-    //*********************************** END UI ******************************************
+public class UIManager : MonoBehaviour
+{
+	public BattleSystem battleSystemScript;
 
-    //*********************************** HP SETTERS **************************************
-    public void SetPlayerUnitHP (float hp, int playerUnitID) {
-        switch (playerUnitID) {
-            case 0:
-                KnightHPSlider.value = hp;
-                break;
-            case 1:
-                WarriorHPSlider.value = hp;
-                break;
-            case 2:
-                WizardHPSlider.value = hp;
-                break;
-        }
+	//*********************************** UI ******************************************
+#pragma warning disable 0649
+	[SerializeField] private Button wizardAttack1Button;
+	[SerializeField] private Button wizardAttack2Button;
+	[SerializeField] private TextMeshProUGUI knightNameText;
+	[SerializeField] private TextMeshProUGUI warriorNameText;
+	[SerializeField] private TextMeshProUGUI wizardNameText;
+	[SerializeField] private TextMeshProUGUI enemy1NameText;
+	[SerializeField] private TextMeshProUGUI enemy2NameText;
+	[SerializeField] private Slider knightHpSlider;
+	[SerializeField] private Slider warriorHpSlider;
+	[SerializeField] private Slider wizardHpSlider;
+	[SerializeField] private Slider enemy1HpSlider;
+	[SerializeField] private Slider enemy2HpSlider;
+#pragma warning restore 0649
 
-    }
-    public void SetEnemyHP (float hp, int enemyID) {
-        switch (enemyID) {
-            case 4:
-                Enemy1HPSlider.value = hp;
-                break;
-            case 5:
-                Enemy2HPSlider.value = hp;
-                break;
-        }
+	private CanvasGroup _skillHud;
+	//*********************************** END UI ******************************************
 
-    }
-    //*********************************** HP SETTERS END ************************************
+	//*********************************** HP SETTERS **************************************
+	public void SetPlayerUnitHP(float hp, int playerUnitID)
+	{
+		switch (playerUnitID)
+		{
+			case 0:
+				knightHpSlider.value = hp;
+				break;
+			case 1:
+				warriorHpSlider.value = hp;
+				break;
+			case 2:
+				wizardHpSlider.value = hp;
+				break;
+		}
+	}
 
-    //************************************* Skill HUDs & UI *********************************
-    public void HideSkillHUD () {
+	public void SetEnemyHP(float hp, int enemyID)
+	{
+		switch (enemyID)
+		{
+			case 4:
+				enemy1HpSlider.value = hp;
+				break;
+			case 5:
+				enemy2HpSlider.value = hp;
+				break;
+		}
+	}
+	//*********************************** HP SETTERS END ************************************
 
-        skillHUD = WizardAttack1Button.GetComponent<CanvasGroup> ();
-        skillHUD.alpha = 0f;
-        skillHUD.interactable = false;
-        skillHUD.blocksRaycasts = false;
+	//************************************* Skill HUDs & UI *********************************
+	public void HideSkillHUD()
+	{
+		_skillHud = wizardAttack1Button.GetComponent<CanvasGroup>();
+		_skillHud.alpha = 0f;
+		_skillHud.interactable = false;
+		_skillHud.blocksRaycasts = false;
 
-        skillHUD = WizardAttack2Button.GetComponent<CanvasGroup> ();
-        skillHUD.alpha = 0f;
-        skillHUD.interactable = false;
-        skillHUD.blocksRaycasts = false;
-    }
+		_skillHud = wizardAttack2Button.GetComponent<CanvasGroup>();
+		_skillHud.alpha = 0f;
+		_skillHud.interactable = false;
+		_skillHud.blocksRaycasts = false;
+	}
 
-    public void ShowSkillHUD () {
-        switch (battleSystemScript.unitState) {
-            case UnitState.WIZARD:
-                skillHUD = WizardAttack1Button.GetComponent<CanvasGroup> ();
-                skillHUD.alpha = 1f;
-                skillHUD.interactable = true;
-                skillHUD.blocksRaycasts = true;
+	public void ShowSkillHUD()
+	{
+		switch (battleSystemScript.unitState)
+		{
+			case UnitState.WIZARD:
+				_skillHud = wizardAttack1Button.GetComponent<CanvasGroup>();
+				_skillHud.alpha = 1f;
+				_skillHud.interactable = true;
+				_skillHud.blocksRaycasts = true;
 
-                skillHUD = WizardAttack2Button.GetComponent<CanvasGroup> ();
-                skillHUD.alpha = 1f;
-                skillHUD.interactable = true;
-                skillHUD.blocksRaycasts = true;
-                break;
-        }
-    }
+				_skillHud = wizardAttack2Button.GetComponent<CanvasGroup>();
+				_skillHud.alpha = 1f;
+				_skillHud.interactable = true;
+				_skillHud.blocksRaycasts = true;
+				break;
+		}
+	}
 
-    public void SetPlayerHUD () {
-        //Knight
-        KnightNameText.text = battleSystemScript.PlayerUnits[0].name;
-        KnightHPSlider.maxValue = battleSystemScript.PlayerUnits[0].maxHP;
-        KnightHPSlider.value = battleSystemScript.PlayerUnits[0].currentHP;
+	public void SetPlayerHUD()
+	{
+		//Knight
+		knightNameText.text = battleSystemScript.playerUnits[0].name;
+		knightHpSlider.maxValue = battleSystemScript.playerUnits[0].unitData._maxHp;
+		knightHpSlider.value = battleSystemScript.playerUnits[0].currentHp;
 
-        //Warrior
-        WarriorNameText.text = battleSystemScript.PlayerUnits[1].name;
-        WarriorHPSlider.maxValue = battleSystemScript.PlayerUnits[1].maxHP;
-        WarriorHPSlider.value = battleSystemScript.PlayerUnits[1].currentHP;
+		//Warrior
+		warriorNameText.text = battleSystemScript.playerUnits[1].name;
+		warriorHpSlider.maxValue = battleSystemScript.playerUnits[1].unitData._maxHp;
+		warriorHpSlider.value = battleSystemScript.playerUnits[1].currentHp;
 
-        //Wizard
-        WizardNameText.text = battleSystemScript.PlayerUnits[2].name;
-        WizardHPSlider.maxValue = battleSystemScript.PlayerUnits[2].maxHP;
-        WizardHPSlider.value = battleSystemScript.PlayerUnits[2].currentHP;
-    }
+		//Wizard
+		wizardNameText.text = battleSystemScript.playerUnits[2].name;
+		wizardHpSlider.maxValue = battleSystemScript.playerUnits[2].unitData._maxHp;
+		wizardHpSlider.value = battleSystemScript.playerUnits[2].currentHp;
+	}
 
-    public void SetEnemyHUD () {
-        // Enemy1
-        Enemy1NameText.text = battleSystemScript.EnemyUnits[0].name;
-        Enemy1HPSlider.maxValue = battleSystemScript.EnemyUnits[0].maxHP;
-        Enemy1HPSlider.value = battleSystemScript.EnemyUnits[0].currentHP;
+	private void SetEnemyHUD()
+	{
+		// Enemy1
+		enemy1NameText.text = battleSystemScript.enemyUnits[0].name;
+		enemy1HpSlider.maxValue = battleSystemScript.enemyUnits[0].unitData._maxHp;
+		enemy1HpSlider.value = battleSystemScript.enemyUnits[0].currentHp;
 
-        // Enemy2
-        Enemy2NameText.text = battleSystemScript.EnemyUnits[1].name;
-        Enemy2HPSlider.maxValue = battleSystemScript.EnemyUnits[1].maxHP;
-        Enemy2HPSlider.value = battleSystemScript.EnemyUnits[1].currentHP;
-    }
+		// Enemy2
+		enemy2NameText.text = battleSystemScript.enemyUnits[1].name;
+		enemy2HpSlider.maxValue = battleSystemScript.enemyUnits[1].unitData._maxHp;
+		enemy2HpSlider.value = battleSystemScript.enemyUnits[1].currentHp;
+	}
 
-    //************************************* Skill HUDs & UI END *****************************
-    public void DamagePopup (float damageDone,Unit unit,TextMeshPro damageText) {
-        
-        if (damageDone > unit.baseDamage + (unit.baseDamage / 10)) {
-            Color newColor = new Color (0.8679f, 0.2941f, 0f, 1f);
-            damageText.fontSize = 250;
-            damageText.color = newColor;
-            damageText.text = damageDone.ToString ("F0");
+	//************************************* Skill HUDs & UI END *****************************
+	public void DamagePopup(float damageDone, UnitData unitData, TextMeshPro damageText)
+	{
+		Debug.Log("damageDone from uimanager: " + damageDone);
 
-            //Destroy (damageText, 2f);
-        } else {
-            damageText.text = damageDone.ToString ("F0");
-            //Destroy (damageText, 1f);
-        }
-    }
-    private void Start () {
+		if (damageDone > unitData._baseDamage + (unitData._baseDamage / 10))
+		{
+			Color newColor = new Color(0.8679f, 0.2941f, 0f, 1f);
+			damageText.fontSize = 250;
+			damageText.color = newColor;
+			damageText.text = damageDone.ToString("F0");
+			//Destroy (damageText, 2f);
+		}
+		else
+		{
+			damageText.text = damageDone.ToString("F0");
+			//Destroy (damageText, 1f);
+		}
+	}
 
-        StartCoroutine(SetupBattle ());
-    }
+	private void Start()
+	{
+		StartCoroutine(SetupBattle());
+	}
 
-    IEnumerator SetupBattle () {
-              
-        yield return new WaitForSeconds(0.1f); // waiting for BattleSystem class
-        SetPlayerUnitHP (battleSystemScript.PlayerUnits[0].maxHP, 0);
-        SetPlayerUnitHP (battleSystemScript.PlayerUnits[1].maxHP, 1);
-        SetPlayerUnitHP (battleSystemScript.PlayerUnits[2].maxHP, 2);
+	IEnumerator SetupBattle()
+	{
+		yield return new WaitForSeconds(0.1f); // waiting for BattleSystem class
+		SetPlayerUnitHP(battleSystemScript.playerUnits[0].unitData._maxHp, 0);
+		SetPlayerUnitHP(battleSystemScript.playerUnits[1].unitData._maxHp, 1);
+		SetPlayerUnitHP(battleSystemScript.playerUnits[2].unitData._maxHp, 2);
 
-        SetEnemyHP (battleSystemScript.EnemyUnits[0].maxHP, 4);
-        SetEnemyHP (battleSystemScript.EnemyUnits[1].maxHP, 5);
+		SetEnemyHP(battleSystemScript.enemyUnits[0].unitData._maxHp, 4);
+		SetEnemyHP(battleSystemScript.enemyUnits[1].unitData._maxHp, 5);
 
-        SetPlayerHUD ();
-        SetEnemyHUD ();
+		SetPlayerHUD();
+		SetEnemyHUD();
 
-        ShowSkillHUD (); //-- KNIGHT SKILL HUD IS ACTIVE
+		ShowSkillHUD(); //-- KNIGHT SKILL HUD IS ACTIVE
 
-        //WAITING FOR PLAYER TO CLICK 
-    }
+		//WAITING FOR PLAYER TO CLICK 
+	}
 }

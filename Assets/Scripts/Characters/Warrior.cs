@@ -1,79 +1,83 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-public class Warrior : MonoBehaviour {
-    [SerializeField] private GameObject warriorGO;
-    [SerializeField] private GameObject floatingDamage;
-    [SerializeField] private Vector3 damageOffset = new Vector3 (0f, 3f, 0f);
-    private AnimationManager animationManager;
-    private UIManager uiManager;
-    private Unit warriorUnit;
-    private BattleSystem battleSystemClass;
-    public Unit enemyToAttack;
-    private void Awake () {
-        warriorUnit = warriorGO.GetComponent<Unit> ();
-        animationManager = GetComponent<AnimationManager> ();
-        uiManager = GetComponent<UIManager> ();
-        battleSystemClass = GetComponent<BattleSystem> ();
 
-    }
-    private IEnumerator WarriorBasicAttack (int enemyID) {
+public class Warrior : MonoBehaviour
+{
+#pragma warning disable 0649
+	[SerializeField] private GameObject warriorGO;
+	[SerializeField] private GameObject floatingDamage;
+	[SerializeField] private Vector3 damageOffset = new Vector3(0f, 3f, 0f);
+#pragma warning restore 0649
 
-        Vector2 startingPos = warriorGO.transform.position;
+	private AnimationManager _animationManager;
+	private UIManager _uiManager;
+	private BattleSystem _battleSystemClass;
+	private CalculationManager _calculationManager;
 
-        //play dashing animation
-        animationManager.PlayAnim ("Dash", 1);
+	private UnitData _warriorUnitData;
+	private const float ErrorDistance = 15f;
 
-        warriorGO.transform.Translate (Vector3.right);
-        float errorDistance = 15f;
+	private void Awake()
+	{
+		_warriorUnitData = warriorGO.GetComponent<Unit>().unitData;
+		_animationManager = GetComponent<AnimationManager>();
+		_uiManager = GetComponent<UIManager>();
+		_battleSystemClass = GetComponent<BattleSystem>();
+		_calculationManager = GetComponent<CalculationManager>();
+	}
 
-        if (Vector3.Distance (warriorGO.transform.position, enemyToAttack.transform.position) < errorDistance) {
-            warriorGO.transform.position = enemyToAttack.transform.position;
-        }
-        yield return new WaitForSeconds (0.5f);
-        animationManager.PlayAnim ("Attack", 1);
+	private IEnumerator WarriorBasicAttack(int enemyID, GameObject enemyToAttackGO)
+	{
+		Vector2 startingPos = warriorGO.transform.position;
+		//play dashing animation
+		_animationManager.PlayAnim("Dash", 1);
 
-        //play sound
-        AudioManager.PlaySound ("basicAttack");
+		warriorGO.transform.Translate(Vector3.right);
 
-        //calculate damage        
-        float damageDone = warriorUnit.calculateDamage ();
-        bool isDead = enemyToAttack.TakeDamage (damageDone);
+		if (Vector3.Distance(warriorGO.transform.position, enemyToAttackGO.transform.position) < ErrorDistance)
+		{
+			warriorGO.transform.position = enemyToAttackGO.transform.position;
+		}
 
-        //damagePopup
-        GameObject floatingDamageGO = Instantiate (floatingDamage, enemyToAttack.transform.position + damageOffset, Quaternion.identity);
-        TextMeshPro damageText = floatingDamage.GetComponent<TextMeshPro> ();
-        uiManager.DamagePopup (damageDone, warriorUnit, damageText);
+		yield return new WaitForSeconds(0.5f);
+		_animationManager.PlayAnim("Attack", 1);
+		AudioManager.PlaySound("basicAttack");
 
-        // update hp
-        uiManager.SetEnemyHP (enemyToAttack.currentHP, enemyID);
+		//calculate damage        
+		float damageDone = _calculationManager.CalculateDamage(_warriorUnitData);
+		bool isDead = _calculationManager.TakeDamage(damageDone, enemyToAttackGO.GetComponent<Unit>());
 
-        //enemy hit animation
-        animationManager.PlayAnim ("Hit", enemyID);
-        //enemy hurt sound
-        AudioManager.PlaySound ("hurtSound");
-        //enemy goes back to idle animation
-        yield return new WaitForSeconds (1f);
-        animationManager.PlayAnim ("Idle", enemyID);
+		//damagePopup
+		GameObject floatingDamageGO = Instantiate(floatingDamage, enemyToAttackGO.transform.position + damageOffset,
+			Quaternion.identity);
+		TextMeshPro damageText = floatingDamage.GetComponent<TextMeshPro>();
+		_uiManager.DamagePopup(damageDone, _warriorUnitData, damageText);
 
-        //unit goes back to its starting position
-        warriorGO.transform.position = startingPos;
-        //unit is idling
-        animationManager.PlayAnim ("Idle", 1);
+		_uiManager.SetEnemyHP(enemyToAttackGO.GetComponent<Unit>().currentHp, enemyID);
 
-        uiManager.HideSkillHUD ();
+		_animationManager.PlayAnim("Hit", enemyID);
+		AudioManager.PlaySound("hurtSound");
+		yield return new WaitForSeconds(1f);
+		_animationManager.PlayAnim("Idle", enemyID);
+		warriorGO.transform.position = startingPos;
+		_animationManager.PlayAnim("Idle", 1);
 
-        if (isDead) {
-            animationManager.PlayAnim ("Dead", enemyID);
-            battleSystemClass.gameState = GameState.WON;
-            battleSystemClass.EndBattle ();
-        } else {
-            battleSystemClass.unitState = UnitState.WIZARD;
-            uiManager.ShowSkillHUD ();
-        }
-    }
-    public void WarriorAttack (int enemyID) {
-        StartCoroutine (WarriorBasicAttack (enemyID));
-    }
+		if (isDead)
+		{
+			_animationManager.PlayAnim("Dead", enemyID);
+			_battleSystemClass.gameState = GameState.WON;
+			_battleSystemClass.EndBattle();
+		}
+		else
+		{
+			_battleSystemClass.unitState = UnitState.WIZARD;
+			_uiManager.ShowSkillHUD();
+		}
+	}
 
+	public void WarriorAttack(int enemyID, GameObject enemyToAttackGO)
+	{
+		StartCoroutine(WarriorBasicAttack(enemyID, enemyToAttackGO));
+	}
 }

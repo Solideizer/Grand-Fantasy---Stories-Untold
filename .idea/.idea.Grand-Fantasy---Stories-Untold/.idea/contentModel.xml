@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\MSI\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\MSI\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Grand-Fantasy---Stories-Untold.-114960813.00" t="ExcludeRecursive" />
+    <e p="E:\Solideizer\Grand-Fantasy---Stories-Untold" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="Characters" t="Include">
+            <e p="Knight.cs" t="Include" />
+            <e p="Unit.cs" t="Include" />
+            <e p="UnitData.cs" t="Include" />
+            <e p="Warrior.cs" t="Include" />
+            <e p="Wizard.cs" t="Include" />
+          </e>
+          <e p="Managers" t="Include">
+            <e p="AnimationManager.cs" t="Include" />
+            <e p="AudioManager.cs" t="Include" />
+            <e p="BattleSystem.cs" t="Include" />
+            <e p="CalculationManager.cs" t="Include" />
+            <e p="UIManager.cs" t="Include" />
+          </e>
+          <e p="NOT IMPLEMENTED" t="Include">
+            <e p="CameraFollow.cs" t="Include" />
+            <e p="CharacterController2D.cs" t="Include" />
+            <e p="DialogSystem.cs" t="Include" />
+          </e>
+          <e p="Utilities" t="Include">
+            <e p="OnMouseOverScript.cs" t="Include" />
+            <e p="Parallax.cs" t="Include" />
+            <e p="Sorting.cs" t="Include" />
+          </e>
+        </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="LiberationSans - OFL.txt" t="Include" />
+          </e>
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+            <e p="Shaders" t="Include">
+              <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+              <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+              <e p="TMP_Bitmap.shader" t="Include" />
+              <e p="TMP_SDF Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface.shader" t="Include" />
+              <e p="TMP_SDF.shader" t="Include" />
+              <e p="TMP_Sprite.shader" t="Include" />
+              <e p="TMPro.cginc" t="Include" />
+              <e p="TMPro_Properties.cginc" t="Include" />
+              <e p="TMPro_Surface.cginc" t="Include" />
+            </e>
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Grand-Fantasy---Stories-Untold.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
