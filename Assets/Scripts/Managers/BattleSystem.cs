@@ -53,7 +53,6 @@ public class BattleSystem : MonoBehaviour
 	//************** Managers *****************
 	private AnimationManager _animationManager;
 	private UIManager _uiManager;
-
 	private CalculationManager _calculationManager;
 	//********** END Managers *****************
 
@@ -61,6 +60,14 @@ public class BattleSystem : MonoBehaviour
 	private Warrior _warriorClass;
 	private Wizard _wizardClass;
 
+	//PlayerUnit 0 --> Knight --> UnitID 0
+	//PlayerUnit 1 --> Warrior--> UnitID 1
+	//PlayerUnit 2 --> Wizard --> UnitID 2
+	//PlayerUnit 3 --> ****** --> UnitID 3
+
+	//EnemyUnit0 --> Skeleton --> UnitID 4
+	//EnemyUnit1 --> ******** --> UnitID 5
+	
 	private void Awake()
 	{
 		_animationManager = GetComponent<AnimationManager>();
@@ -72,23 +79,13 @@ public class BattleSystem : MonoBehaviour
 		_wizardClass = GetComponent<Wizard>();
 	}
 
-	//PlayerUnit 0 --> Knight --> UnitID 0
-	//PlayerUnit 1 --> Warrior--> UnitID 1
-	//PlayerUnit 2 --> Wizard --> UnitID 2
-	//PlayerUnit 3 --> ****** --> UnitID 3
-
-	//EnemyUnit0 --> Skeleton --> UnitID 4
-	//EnemyUnit1 --> ******** --> UnitID 5
-
 	private void Start()
 	{
 		gameState = GameState.START;
-		_uiManager.HideSkillHUD();
-
 		PopulateUnitList();
-
-		gameState = GameState.PLAYERTURN; //players turn
-		unitState = UnitState.KNIGHT; //-- KNIGHT STARTS
+		PopulateGameobjetList();
+		gameState = GameState.PLAYERTURN; 
+		unitState = UnitState.KNIGHT; 
 	}
 
 	private void Update()
@@ -103,6 +100,13 @@ public class BattleSystem : MonoBehaviour
 		playerUnits.Add(Wizard.GetComponent<Unit>());
 		enemyUnits.Add(Enemy1.GetComponent<Unit>());
 		enemyUnits.Add(Enemy2.GetComponent<Unit>());
+	}
+
+	private void PopulateGameobjetList()
+	{
+		playerUnitGOs.Add(Knight);
+		playerUnitGOs.Add(Warrior);
+		playerUnitGOs.Add(Wizard);
 	}
 
 	private void SelectTarget()
@@ -176,113 +180,9 @@ public class BattleSystem : MonoBehaviour
 		}
 	}
 
-	//************************************* Button Events ***********************************
-	public void WizardAttack1Event()
-	{
-		if (gameState != GameState.PLAYERTURN)
-		{
-			return;
-		}
-
-		switch (unitState)
-		{
-			case UnitState.WIZARD:
-				SelectTarget();
-				break;
-		}
-	}
-
-	public void WizardAttack2Event()
-	{
-		if (gameState != GameState.PLAYERTURN)
-		{
-			return;
-		}
-
-		switch (unitState)
-		{
-			case UnitState.WIZARD:
-				SelectTarget();
-				break;
-		}
-	}
-	//************************************ Button Events END ********************************
-
-
 	//*********************************** ENEMY TURNS *****************************************
-	public IEnumerator EnemyTurn()
-	{
-		Vector2 startingPos = Enemy1.transform.position;
-
-		int randomPlayerUnitIndex = Random.Range(0, playerUnitGOs.Count);
-		GameObject _attackedPlayerGO = playerUnitGOs[randomPlayerUnitIndex];
-
-
-		_animationManager.PlayAnim("Dash", 4);
-
-		//hangi üniteye saldırcağını belirle
-		Enemy1.transform.position += -_attackedPlayerGO.transform.right * (Time.deltaTime * 500);
-		float errorDistance = 10f;
-
-		if (Vector3.Distance(_attackedPlayerGO.transform.position, Enemy1.transform.position) < errorDistance)
-		{
-			Enemy1.transform.position = _attackedPlayerGO.transform.position;
-		}
-
-		yield return new WaitForSeconds(0.5f);
-		_animationManager.PlayAnim("Attack", 4);
-		AudioManager.PlaySound("basicAttack");
-		_animationManager.PlayAnim("Hit", randomPlayerUnitIndex);
-
-		//calculate damage
-		float damageDone = _calculationManager.CalculateDamage(enemyUnits[0].unitData);
-		bool isDead = _calculationManager.TakeDamage(damageDone, _attackedPlayerGO.GetComponent<Unit>());
-
-		//damagePopup ******************************************************************************          
-
-		GameObject floatingDamageGO = Instantiate(floatingDamage, _attackedPlayerGO.transform.position + damageOffset,
-			Quaternion.identity);
-		if (damageDone > enemyUnits[0].unitData._baseDamage + (enemyUnits[0].unitData._baseDamage / 10))
-		{
-			Color newColor = new Color(0.8679f, 0.2941f, 0f, 1f);
-			floatingDamageGO.GetComponent<TextMeshPro>().fontSize = 250;
-			floatingDamageGO.GetComponent<TextMeshPro>().color = newColor;
-			floatingDamageGO.GetComponent<TextMeshPro>().text = damageDone.ToString("F0");
-
-			Destroy(floatingDamageGO, 2f);
-		}
-		else
-		{
-			floatingDamageGO.GetComponent<TextMeshPro>().text = damageDone.ToString("F0");
-			Destroy(floatingDamageGO, 1f);
-		}
-		//******************************************************************************************
-
-		_uiManager.SetPlayerUnitHP(_attackedPlayerGO.GetComponent<Unit>().currentHp, randomPlayerUnitIndex);
-		AudioManager.PlaySound("hurtSound");
-
-		yield return new WaitForSeconds(0.5f);
-		_animationManager.PlayAnim("Idle", randomPlayerUnitIndex);
-
-		Enemy1.transform.position = startingPos;
-		_animationManager.PlayAnim("Idle", 4);
-
-		if (isDead)
-		{
-			AudioManager.PlaySound("KnightDeath");
-			gameState = GameState.LOST;
-			EndBattle();
-		}
-		else
-		{
-			gameState = GameState.ENEMYTURN;
-			unitState = UnitState.ENEMY2;
-			yield return new WaitForSeconds(0.5f);
-			StartCoroutine(Enemy2Turn());
-		}
-	}
-
-	private IEnumerator Enemy2Turn()
+	
+	public IEnumerator Enemy2Turn()
 	{
 		Vector2 startingPos = Enemy2.transform.position;
 

@@ -14,7 +14,7 @@ public class CalculationManager : MonoBehaviour
 	public float CalculateDamage(UnitData unitData)
 	{
 		float damage = Random.Range(unitData._baseDamage - (unitData._baseDamage / 10),
-			unitData._baseDamage + (unitData._baseDamage / 10));
+									unitData._baseDamage + (unitData._baseDamage / 10));
 		damage += CalculateCrit(damage, unitData);
 		return damage;
 	}

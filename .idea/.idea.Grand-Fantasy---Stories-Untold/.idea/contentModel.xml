@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Characters" t="Include">
+            <e p="EnemyAttack.cs" t="Include" />
             <e p="Knight.cs" t="Include" />
             <e p="Unit.cs" t="Include" />
             <e p="UnitData.cs" t="Include" />
@@ -27,6 +28,7 @@
             <e p="DialogSystem.cs" t="Include" />
           </e>
           <e p="Utilities" t="Include">
+            <e p="CameraShake.cs" t="Include" />
             <e p="OnMouseOverScript.cs" t="Include" />
             <e p="Parallax.cs" t="Include" />
             <e p="Sorting.cs" t="Include" />

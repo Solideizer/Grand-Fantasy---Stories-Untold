@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Wizard
   m_EditorClassIdentifier: 
   _maxHp: 200
-  _currentHp: 200
-  _baseDamage: 60
+  _baseDamage: 70
   _baseArmor: 10
-  _criticalStrikeChance: 0.5
+  _criticalStrikeChance: 0.4
+  floatingDamagePrefab: {fileID: 222366804528847911, guid: 79884bb96a13b3b41919b30e61518047,
+    type: 3}
+  damageOffset: {x: 0, y: 3, z: 0}
+  errorDistance: 0.5

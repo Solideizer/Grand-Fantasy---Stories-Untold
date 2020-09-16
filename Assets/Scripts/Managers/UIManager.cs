@@ -7,10 +7,7 @@ public class UIManager : MonoBehaviour
 {
 	public BattleSystem battleSystemScript;
 
-	//*********************************** UI ******************************************
 #pragma warning disable 0649
-	[SerializeField] private Button wizardAttack1Button;
-	[SerializeField] private Button wizardAttack2Button;
 	[SerializeField] private TextMeshProUGUI knightNameText;
 	[SerializeField] private TextMeshProUGUI warriorNameText;
 	[SerializeField] private TextMeshProUGUI wizardNameText;
@@ -24,8 +21,7 @@ public class UIManager : MonoBehaviour
 #pragma warning restore 0649
 
 	private CanvasGroup _skillHud;
-	//*********************************** END UI ******************************************
-
+	
 	//*********************************** HP SETTERS **************************************
 	public void SetPlayerUnitHP(float hp, int playerUnitID)
 	{
@@ -57,38 +53,7 @@ public class UIManager : MonoBehaviour
 	}
 	//*********************************** HP SETTERS END ************************************
 
-	//************************************* Skill HUDs & UI *********************************
-	public void HideSkillHUD()
-	{
-		_skillHud = wizardAttack1Button.GetComponent<CanvasGroup>();
-		_skillHud.alpha = 0f;
-		_skillHud.interactable = false;
-		_skillHud.blocksRaycasts = false;
-
-		_skillHud = wizardAttack2Button.GetComponent<CanvasGroup>();
-		_skillHud.alpha = 0f;
-		_skillHud.interactable = false;
-		_skillHud.blocksRaycasts = false;
-	}
-
-	public void ShowSkillHUD()
-	{
-		switch (battleSystemScript.unitState)
-		{
-			case UnitState.WIZARD:
-				_skillHud = wizardAttack1Button.GetComponent<CanvasGroup>();
-				_skillHud.alpha = 1f;
-				_skillHud.interactable = true;
-				_skillHud.blocksRaycasts = true;
-
-				_skillHud = wizardAttack2Button.GetComponent<CanvasGroup>();
-				_skillHud.alpha = 1f;
-				_skillHud.interactable = true;
-				_skillHud.blocksRaycasts = true;
-				break;
-		}
-	}
-
+	
 	public void SetPlayerHUD()
 	{
 		//Knight
@@ -121,22 +86,27 @@ public class UIManager : MonoBehaviour
 	}
 
 	//************************************* Skill HUDs & UI END *****************************
-	public void DamagePopup(float damageDone, UnitData unitData, TextMeshPro damageText)
+	public void DamagePopup(float damageDone, UnitData unitData, GameObject cloneTextGO)
 	{
+		TextMeshPro damageText = cloneTextGO.GetComponent<TextMeshPro>();
 		Debug.Log("damageDone from uimanager: " + damageDone);
 
-		if (damageDone > unitData._baseDamage + (unitData._baseDamage / 10))
+		if (damageDone > (unitData._baseDamage + (unitData._baseDamage / 10)))
 		{
-			Color newColor = new Color(0.8679f, 0.2941f, 0f, 1f);
-			damageText.fontSize = 250;
+			Color newColor = new Color(1f, 0.1949452f, 0.145098f, 1f);
+			damageText.fontSize = 500f;
 			damageText.color = newColor;
 			damageText.text = damageDone.ToString("F0");
-			//Destroy (damageText, 2f);
+			CameraShake.Instance.ShakeCamera(3f,0.5f);
+			Destroy (cloneTextGO, 2f);
 		}
 		else
 		{
+			Color newColor = new Color(1f,0.8182157f,0.145098f,1f);
+			damageText.color = newColor;
+			CameraShake.Instance.ShakeCamera(1f,0.5f);
 			damageText.text = damageDone.ToString("F0");
-			//Destroy (damageText, 1f);
+			Destroy (cloneTextGO, 1f);
 		}
 	}
 
@@ -158,8 +128,5 @@ public class UIManager : MonoBehaviour
 		SetPlayerHUD();
 		SetEnemyHUD();
 
-		ShowSkillHUD(); //-- KNIGHT SKILL HUD IS ACTIVE
-
-		//WAITING FOR PLAYER TO CLICK 
 	}
 }

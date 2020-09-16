@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 127d9ad2e487beb499eb74cf7aa6d208, type: 3}
-  m_Name: Skeleton
+  m_Name: Undead
   m_EditorClassIdentifier: 
   _maxHp: 500
-  _currentHp: 500
   _baseDamage: 50
   _baseArmor: 20
   _criticalStrikeChance: 0.2
+  floatingDamagePrefab: {fileID: 222366804528847911, guid: 79884bb96a13b3b41919b30e61518047,
+    type: 3}
+  damageOffset: {x: 0, y: 3, z: 0}
+  errorDistance: 0.5
