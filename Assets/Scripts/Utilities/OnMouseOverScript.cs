@@ -1,18 +1,56 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 public class OnMouseOverScript : MonoBehaviour
 {
-    private Vector3 _scaleChange;
-    
-    void OnMouseOver()
-    {        
-        _scaleChange = new Vector3(1.2f, 1.2f, 0f);
-        transform.localScale = _scaleChange;
+    private bool coroutineAllowed;
+    private Vector2 localScale;
+    private void Start()
+    {
+        coroutineAllowed = true;
+        localScale = transform.localScale;
     }
 
-    void OnMouseExit()
+    private void OnMouseOver()
     {
-        _scaleChange = new Vector3(1f, 1f, 0f);
-        transform.localScale = _scaleChange;
-        
+        if (coroutineAllowed)
+        {
+            StartCoroutine("StartPulsing");
+        }
+    }
+
+    private IEnumerator StartPulsing()
+    {
+        coroutineAllowed = false;
+
+        for (float i = 0f; i <= 1f; i+=0.2f)
+        {
+            transform.localScale = new Vector3(
+                (Mathf.Lerp(localScale.x, localScale.x + 0.2f, Mathf.SmoothStep(0f, 1f, i))),
+                (Mathf.Lerp(localScale.y, localScale.y + 0.2f, Mathf.SmoothStep(0f, 1f, i))));
+            yield return  new WaitForSeconds(0.05f);
+        }
+       
+        for (float i = 0; i <= 1f; i+=0.2f)
+        {
+            transform.localScale = new Vector3(
+                (Mathf.Lerp(localScale.x + 0.2f, localScale.x , Mathf.SmoothStep(0f, 1f, i))),
+                (Mathf.Lerp(localScale.y + 0.2f, localScale.y, Mathf.SmoothStep(0f, 1f, i))));
+            yield return  new WaitForSeconds(0.05f);
+        }
+
+        coroutineAllowed = true;
+
+    }
+
+    private void OnMouseEnter()
+    {
+        CursorManager.Instance.SetActiveCursorType(CursorManager.CursorType.Attack);
+    }
+
+    private void OnMouseExit()
+    {
+        CursorManager.Instance.SetActiveCursorType(CursorManager.CursorType.Default);
+
     }
 }

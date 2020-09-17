@@ -19,4 +19,4 @@ MonoBehaviour:
   floatingDamagePrefab: {fileID: 222366804528847911, guid: 79884bb96a13b3b41919b30e61518047,
     type: 3}
   damageOffset: {x: 0, y: 3, z: 0}
-  errorDistance: 0.5
+  errorDistance: 2

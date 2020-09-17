@@ -7,7 +7,6 @@ public class CalculationManager : MonoBehaviour
 	public bool TakeDamage(float damage, Unit unit)
 	{
 		unit.currentHp -= (damage * (100 / (100 + unit.unitData._baseArmor)));
-		Debug.Log("current hp from calculations: " + unit.currentHp);
 		return unit.currentHp <= 0f;
 	}
 

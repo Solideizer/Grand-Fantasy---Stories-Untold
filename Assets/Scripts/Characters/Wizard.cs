@@ -32,20 +32,14 @@ public class Wizard : Unit
 		//damagePopup
 		GameObject floatingDamageGO = Instantiate(unitData.floatingDamagePrefab, enemyToAttackGO.transform.position + unitData.damageOffset,
 			Quaternion.identity);
-		//TextMeshPro damageText = unitData.floatingDamagePrefab.GetComponent<TextMeshPro>();
 		UIManager.DamagePopup(damageDone, unitData, floatingDamageGO);
 
-		// update hp
 		UIManager.SetEnemyHP(enemyToAttackGO.GetComponent<Unit>().currentHp, enemyID);
 
-		//enemy hit animation
 		AnimationManager.PlayAnim("Hit", enemyID);
-		//enemy hurt sound
 		AudioManager.PlaySound("hurtSound");
 		yield return new WaitForSeconds(0.5f);
-		//enemy goes back to idle animation
 		AnimationManager.PlayAnim("Idle", enemyID);
-		//unitData goes back to idle animation
 		AnimationManager.PlayAnim("Idle", 2);
 
 		if (isDead)

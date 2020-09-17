@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-
 public enum GameState
 {
 	START,
@@ -179,77 +176,6 @@ public class BattleSystem : MonoBehaviour
 				break;
 		}
 	}
-
-	//*********************************** ENEMY TURNS *****************************************
-	
-	public IEnumerator Enemy2Turn()
-	{
-		Vector2 startingPos = Enemy2.transform.position;
-
-		int randomPlayerUnitIndex = Random.Range(0, playerUnitGOs.Count);
-		GameObject _attackedPlayerGO = playerUnitGOs[randomPlayerUnitIndex];
-
-		_animationManager.PlayAnim("Dash", 5);
-
-		Enemy2.transform.position += -_attackedPlayerGO.transform.right * (Time.deltaTime * 500);
-		float errorDistance = 10f;
-
-		if (Vector3.Distance(_attackedPlayerGO.transform.position, Enemy2.transform.position) < errorDistance)
-		{
-			Enemy2.transform.position = _attackedPlayerGO.transform.position;
-		}
-
-		yield return new WaitForSeconds(0.5f);
-		_animationManager.PlayAnim("Attack", 5);
-		AudioManager.PlaySound("basicAttack");
-		_animationManager.PlayAnim("Hit", randomPlayerUnitIndex);
-
-		//calculate damage
-		float damageDone = _calculationManager.CalculateDamage(enemyUnits[1].unitData);
-		bool isDead = _calculationManager.TakeDamage(damageDone, _attackedPlayerGO.GetComponent<Unit>());
-
-		//damagePopup ******************************************************************************          
-
-		GameObject floatingDamageGO = Instantiate(floatingDamage, _attackedPlayerGO.transform.position + damageOffset,
-			Quaternion.identity);
-		if (damageDone > enemyUnits[1].unitData._baseDamage + (enemyUnits[1].unitData._baseDamage / 10))
-		{
-			Color newColor = new Color(0.8679f, 0.2941f, 0f, 1f);
-			floatingDamageGO.GetComponent<TextMeshPro>().fontSize = 250;
-			floatingDamageGO.GetComponent<TextMeshPro>().color = newColor;
-			floatingDamageGO.GetComponent<TextMeshPro>().text = damageDone.ToString("F0");
-
-			Destroy(floatingDamageGO, 2f);
-		}
-		else
-		{
-			floatingDamageGO.GetComponent<TextMeshPro>().text = damageDone.ToString("F0");
-			Destroy(floatingDamageGO, 1f);
-		}
-		//******************************************************************************************
-
-		_uiManager.SetPlayerUnitHP(_attackedPlayerGO.GetComponent<Unit>().currentHp, randomPlayerUnitIndex);
-		AudioManager.PlaySound("hurtSound");
-
-		yield return new WaitForSeconds(0.5f);
-		_animationManager.PlayAnim("Idle", randomPlayerUnitIndex);
-
-		Enemy2.transform.position = startingPos;
-		_animationManager.PlayAnim("Idle", 5);
-
-		if (isDead)
-		{
-			AudioManager.PlaySound("KnightDeath");
-			gameState = GameState.LOST;
-			EndBattle();
-		}
-		else
-		{
-			gameState = GameState.PLAYERTURN;
-			unitState = UnitState.KNIGHT;
-		}
-	}
-	//*********************************** ENEMY TURNS END *************************************
 
 	public void EndBattle()
 	{

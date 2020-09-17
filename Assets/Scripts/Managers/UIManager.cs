@@ -89,7 +89,6 @@ public class UIManager : MonoBehaviour
 	public void DamagePopup(float damageDone, UnitData unitData, GameObject cloneTextGO)
 	{
 		TextMeshPro damageText = cloneTextGO.GetComponent<TextMeshPro>();
-		Debug.Log("damageDone from uimanager: " + damageDone);
 
 		if (damageDone > (unitData._baseDamage + (unitData._baseDamage / 10)))
 		{

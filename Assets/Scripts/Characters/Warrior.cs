@@ -12,7 +12,6 @@ public class Warrior : Unit
 	private IEnumerator WarriorBasicAttack(int enemyID, GameObject enemyToAttackGO)
 	{
 		Vector2 startingPos = warriorGO.transform.position;
-		//play dashing animation
 		AnimationManager.PlayAnim("Dash", 1);
 
 		warriorGO.transform.Translate(Vector3.right * 800f * Time.deltaTime);

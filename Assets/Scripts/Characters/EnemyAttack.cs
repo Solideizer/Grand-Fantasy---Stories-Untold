@@ -7,8 +7,14 @@ public class EnemyAttack : Unit{
 #pragma warning disable 0649
 	[SerializeField] private GameObject enemyGO;
 #pragma warning restore 0649
+	private Enemy2 enemy2Class;
 	private Vector2 _enemyStartingPosition;
-	
+	protected override void Awake()
+	{
+		base.Awake();
+		enemy2Class = GetComponent<Enemy2>();
+	}
+
 	public IEnumerator EnemyTurn()
 	{
 		_enemyStartingPosition = enemyGO.transform.position;
@@ -37,7 +43,6 @@ public class EnemyAttack : Unit{
 		TextMeshPro damageText = unitData.floatingDamagePrefab.GetComponent<TextMeshPro>();
 
 		UIManager.DamagePopup(damageDone, unitData, cloneTextGO);
-		//******************************************************************************************
 
 		UIManager.SetPlayerUnitHP(_attackedPlayerGO.GetComponent<Unit>().currentHp, randomPlayerUnitIndex);
 		AudioManager.PlaySound("hurtSound");
@@ -59,7 +64,7 @@ public class EnemyAttack : Unit{
 			BattleSystemClass.gameState = GameState.ENEMYTURN;
 			BattleSystemClass.unitState = UnitState.ENEMY2;
 			yield return new WaitForSeconds(0.5f);
-			StartCoroutine(BattleSystemClass.Enemy2Turn());
+			StartCoroutine(enemy2Class.Enemy2Turn());
 		}
 	}
 

@@ -31,7 +31,6 @@ public class Knight : Unit
 
 		//calculate damage        
 		float damageDone = CalculationManager.CalculateDamage(unitData);
-		Debug.Log(damageDone);
 		bool isDead = CalculationManager.TakeDamage(damageDone, enemyToAttackGO.GetComponent<Unit>());
 
 		//damagePopup
@@ -39,10 +38,7 @@ public class Knight : Unit
 		TextMeshPro damageText = unitData.floatingDamagePrefab.GetComponent<TextMeshPro>();
 
 		UIManager.DamagePopup(damageDone, unitData, cloneTextGO);
-		Debug.Log("damageText: "+damageText.text);
-
 		UIManager.SetEnemyHP(enemyToAttackGO.GetComponent<Unit>().currentHp, enemyID);
-
 
 		AnimationManager.PlayAnim("Hit", enemyID);
 		AudioManager.PlaySound("hurtSound");
@@ -62,6 +58,7 @@ public class Knight : Unit
 			//Warrior's turn starts
 			BattleSystemClass.unitState = UnitState.WARRIOR;
 		}
+		
 	}
 
 	public void KnightAttack(int enemyID, GameObject enemyToAttackGO)

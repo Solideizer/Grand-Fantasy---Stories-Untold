@@ -6958,6 +6958,8 @@ GameObject:
   - component: {fileID: 1098618363}
   - component: {fileID: 1098618365}
   - component: {fileID: 1098618366}
+  - component: {fileID: 1098618368}
+  - component: {fileID: 1098618367}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -7229,6 +7231,36 @@ MonoBehaviour:
   unitData: {fileID: 11400000, guid: 6c49903bf60bf8642ab68864373b7f79, type: 2}
   currentHp: 500
   enemyGO: {fileID: 6739126713648804338}
+--- !u!114 &1098618367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098618355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab300735fd092445b951a34afc4dab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorAnimationList:
+  - {fileID: 11400000, guid: 258fb4c455946a0498c529182ebb9d64, type: 2}
+  - {fileID: 11400000, guid: b549626c14dc41849a76a6c2a64fba38, type: 2}
+--- !u!114 &1098618368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098618355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce8968128d544720873b770f67bc9678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitData: {fileID: 11400000, guid: e4e0fe1d6c9d9c242aaf5f487e0bf234, type: 2}
+  currentHp: 500
+  enemyGO: {fileID: 1397993519}
 --- !u!213 &1100643342
 Sprite:
   m_ObjectHideFlags: 0

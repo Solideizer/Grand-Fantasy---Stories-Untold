@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Characters" t="Include">
+            <e p="Enemy2.cs" t="Include" />
             <e p="EnemyAttack.cs" t="Include" />
             <e p="Knight.cs" t="Include" />
             <e p="Unit.cs" t="Include" />
@@ -20,6 +21,7 @@
             <e p="AudioManager.cs" t="Include" />
             <e p="BattleSystem.cs" t="Include" />
             <e p="CalculationManager.cs" t="Include" />
+            <e p="CursorManager.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
           </e>
           <e p="NOT IMPLEMENTED" t="Include">
@@ -29,6 +31,7 @@
           </e>
           <e p="Utilities" t="Include">
             <e p="CameraShake.cs" t="Include" />
+            <e p="CursorAnimation.cs" t="Include" />
             <e p="OnMouseOverScript.cs" t="Include" />
             <e p="Parallax.cs" t="Include" />
             <e p="Sorting.cs" t="Include" />
