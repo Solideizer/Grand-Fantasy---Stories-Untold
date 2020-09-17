@@ -19,6 +19,7 @@ public class Wizard : Unit
 
 	private IEnumerator WizardAttack1(int enemyID, GameObject enemyToAttackGO)
 	{
+		BattleSystemClass.gameState = GameState.WAITING;
 		AnimationManager.PlayAnim("Attack1", 2);
 
 		Vector3 enemyPos = new Vector3(4.05f, -3.28f, 5f);

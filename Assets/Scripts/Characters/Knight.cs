@@ -12,6 +12,7 @@ public class Knight : Unit
 
 	private IEnumerator KnightBasicAttack(int enemyID, GameObject enemyToAttackGO)
 	{
+		BattleSystemClass.gameState = GameState.WAITING;
 		AudioManager.PlaySound("KnightOpeners");
 
 		Vector2 startingPos = knightGO.transform.position;
@@ -56,6 +57,7 @@ public class Knight : Unit
 		else
 		{
 			//Warrior's turn starts
+			BattleSystemClass.gameState = GameState.PLAYERTURN;
 			BattleSystemClass.unitState = UnitState.WARRIOR;
 		}
 		

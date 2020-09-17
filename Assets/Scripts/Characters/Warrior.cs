@@ -11,6 +11,7 @@ public class Warrior : Unit
 	
 	private IEnumerator WarriorBasicAttack(int enemyID, GameObject enemyToAttackGO)
 	{
+		BattleSystemClass.gameState = GameState.WAITING;
 		Vector2 startingPos = warriorGO.transform.position;
 		AnimationManager.PlayAnim("Dash", 1);
 
@@ -52,6 +53,7 @@ public class Warrior : Unit
 		}
 		else
 		{
+			BattleSystemClass.gameState = GameState.PLAYERTURN;
 			BattleSystemClass.unitState = UnitState.WIZARD;
 		}
 	}

@@ -5,6 +5,7 @@ public enum GameState
 	START,
 	PLAYERTURN,
 	ENEMYTURN,
+	WAITING,
 	WON,
 	LOST
 }

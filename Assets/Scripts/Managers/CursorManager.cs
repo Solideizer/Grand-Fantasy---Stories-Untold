@@ -6,8 +6,9 @@ using Utilities;
 
 public class CursorManager : MonoBehaviour
 {
+#pragma warning disable 0649
     [SerializeField] private List<CursorAnimation> cursorAnimationList;
-    
+#pragma warning restore 0649
     public static CursorManager Instance { get; private set; }
     
     private int currentFrame;
