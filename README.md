@@ -13,7 +13,7 @@ A 2D pixel art RPG with a strong emphasis on turn based combat.
 - [x] Animations
 - [x] User Interface
 
-[![Grand Fantasy : Stories Untold](https://github.com/Solideizer/Grand-Fantasy---Stories-Untold/blob/master/Screenshots/1.jpg)](https://www.youtube.com/watch?v=a6fEhdbtpB4)
+[![Grand Fantasy : Stories Untold](https://github.com/Solideizer/Grand-Fantasy---Stories-Untold/blob/master/Screenshots/1.jpg)](https://youtu.be/t7TmiDfNPU8)
 
 ## **About Project :** 
 - There was a BattleSystem Class which were longer than 900 lines. I wrote that monolithic class quite some time ago but that doesn't changes the fact that it was a disgrace to Object-Oriented Programming and principles like SOLID. I started refacoring that.
