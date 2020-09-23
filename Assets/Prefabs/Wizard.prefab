@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3154411512756172926}
   - component: {fileID: 3154411512756172927}
-  - component: {fileID: 3154411512756172912}
   - component: {fileID: 3154411512756172913}
   m_Layer: 0
   m_Name: Wizard
@@ -84,24 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3154411512756172912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3154411512756172914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 127d9ad2e487beb499eb74cf7aa6d208, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unitName: Wizard
-  baseDamage: 200
-  maxHP: 500
-  currentHP: 500
-  baseArmor: 0
-  criticalStrikeChance: 0.2
 --- !u!95 &3154411512756172913
 Animator:
   serializedVersion: 3

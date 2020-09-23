@@ -1,22 +1,28 @@
-﻿using UnityEngine;
+﻿using Managers;
+using UnityEngine;
 
-public class Unit : MonoBehaviour
+namespace Characters
 {
-    public UnitData unitData;
-    public float currentHp;
-    
-    //*********** MANAGERS ***********************
-    protected AnimationManager AnimationManager;
-    protected UIManager UIManager;
-    protected BattleSystem BattleSystemClass;
-    protected CalculationManager CalculationManager;
-    //*********** END MANAGERS ********************
-    
-    protected virtual void Awake()
+    public class Unit : MonoBehaviour
     {
-        AnimationManager = GetComponent<AnimationManager>();
-        UIManager = GetComponent<UIManager>();
-        BattleSystemClass = GetComponent<BattleSystem>();
-        CalculationManager = GetComponent<CalculationManager>();
+        #region Variable Declarations
+    
+        public UnitData unitData;
+        public float currentHp;
+
+        protected AnimationManager AnimationManager;
+        protected UIManager UIManager;
+        protected BattleSystem BattleSystemClass;
+        protected CalculationManager CalculationManager;
+    
+        #endregion
+    
+        protected virtual void Awake()
+        {
+            AnimationManager = GetComponent<AnimationManager>();
+            UIManager = GetComponent<UIManager>();
+            BattleSystemClass = GetComponent<BattleSystem>();
+            CalculationManager = GetComponent<CalculationManager>();
+        }
     }
 }

@@ -1,18 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+namespace NOT_IMPLEMENTED
 {
-    public Vector2 offset = new Vector2(5,0);
-    public Transform playerTransform;   
-    
-    void LateUpdate()
+    public class CameraFollow : MonoBehaviour
     {
-        Vector3 temp = transform.position;
+        public Vector2 offset = new Vector2(5,0);
+        public Transform playerTransform;   
+    
+        void LateUpdate()
+        {
+            Vector3 temp = transform.position;
 
-        temp.x = playerTransform.position.x + offset.x;
+            temp.x = playerTransform.position.x + offset.x;
 
-        transform.position = temp;
+            transform.position = temp;
+        }
     }
 }

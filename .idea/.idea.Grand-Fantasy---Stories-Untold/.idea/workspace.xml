@@ -20,9 +20,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17d22c22-c70a-4618-ab9a-cb4b08a18ee4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Environment/New Material.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Environment/New Material.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Environment/leaf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Environment/leaf.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Grand-Fantasy---Stories-Untold/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grand-Fantasy---Stories-Untold/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Grand-Fantasy---Stories-Untold/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grand-Fantasy---Stories-Untold/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/FloatingDamage 1.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/FloatingDamage 1.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Undead/Undead.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Undead/Undead.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Warrior/Warrior.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Warrior/Warrior.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/damagepopup.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/damagepopup.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Knight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Knight.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skeleton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skeleton.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Warrior.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Warrior.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Wizard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Wizard.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level01.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level01.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/EnemyAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/EnemyAttack.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Knight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Knight.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Scriptable Objects/Knight.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Scriptable Objects/Knight.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Scriptable Objects/Skeleton.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Scriptable Objects/Skeleton.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Scriptable Objects/Undead.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Scriptable Objects/Undead.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Scriptable Objects/Warrior.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Scriptable Objects/Warrior.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Scriptable Objects/Wizard.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Scriptable Objects/Wizard.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/UnitData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/UnitData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Warrior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Warrior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Wizard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Wizard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/AnimationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/AnimationManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/AudioManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/BattleSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/BattleSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/CalculationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/CalculationManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/CursorManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/CursorManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NOT IMPLEMENTED/CameraFollow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NOT IMPLEMENTED/CameraFollow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NOT IMPLEMENTED/CharacterController2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NOT IMPLEMENTED/CharacterController2D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NOT IMPLEMENTED/DialogSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NOT IMPLEMENTED/DialogSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/CameraShake.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/CameraShake.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/CursorAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/CursorAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/OnMouseOverScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/OnMouseOverScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Parallax.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Parallax.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Sorting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Sorting.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,31 +80,41 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Calculate.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Character.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Characters/UnitData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/CameraShake.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/Cursor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/CursorAnimation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/OnMouseOverScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Characters/IAttack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/Observer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NOT IMPLEMENTED/DialogSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/BattleSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Wizard.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Knight.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CalculationManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Warrior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Wizard.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Characters/EnemyAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy2.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CalculationManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/BattleSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Knight.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Characters/UnitData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/AnimationManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CursorManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/Sorting.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/Parallax.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/CameraShake.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1hQjd7tZMdoVY3mMLuqHpI2GH1r" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -106,7 +156,11 @@
       <workItem from="1600351783375" duration="1663000" />
       <workItem from="1600356800972" duration="8325000" />
       <workItem from="1600373773862" duration="191000" />
-      <workItem from="1600375262843" duration="304000" />
+      <workItem from="1600375262843" duration="5672000" />
+      <workItem from="1600467204209" duration="5274000" />
+      <workItem from="1600518567113" duration="4669000" />
+      <workItem from="1600555551316" duration="890000" />
+      <workItem from="1600894554104" duration="2131000" />
     </task>
     <servers />
   </component>
@@ -125,6 +179,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">

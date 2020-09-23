@@ -25,6 +25,7 @@
       <Path>.vs</Path>
       <Path>.vscode</Path>
       <Path>Library</Path>
+      <Path>Recordings</Path>
       <Path>Screenshots</Path>
       <Path>Temp</Path>
       <Path>obj</Path>

@@ -1,70 +1,82 @@
-using System;
 using System.Collections;
+using Managers;
 using TMPro;
 using UnityEngine;
 
-public class Knight : Unit
+namespace Characters
 {
+	public class Knight : Unit
+	{
+		#region Variable Declarations
+
 #pragma warning disable 0649
-	[SerializeField] private GameObject knightGO;
+		[SerializeField] private GameObject knightGO;
 #pragma warning restore 0649
-	
 
-	private IEnumerator KnightBasicAttack(int enemyID, GameObject enemyToAttackGO)
-	{
-		BattleSystemClass.gameState = GameState.WAITING;
-		AudioManager.PlaySound("KnightOpeners");
+		private Transform camTransform;
 
-		Vector2 startingPos = knightGO.transform.position;
-		AnimationManager.PlayAnim("Dash", 0);
+		#endregion
 
-		//Knight.transform.position += Knight.transform.right * (Time.deltaTime * 1000);
-		knightGO.transform.Translate(Vector3.right * 800f * Time.deltaTime);
-
-		if (Vector3.Distance(knightGO.transform.position, enemyToAttackGO.transform.position) < unitData.errorDistance)
+		private void Start()
 		{
-			knightGO.transform.position = enemyToAttackGO.transform.position;
+			camTransform = Camera.main.transform;
 		}
 
-		yield return new WaitForSeconds(0.5f);
-		AnimationManager.PlayAnim("Attack", 0);
-		AudioManager.PlaySound("basicAttack");
-
-		//calculate damage        
-		float damageDone = CalculationManager.CalculateDamage(unitData);
-		bool isDead = CalculationManager.TakeDamage(damageDone, enemyToAttackGO.GetComponent<Unit>());
-
-		//damagePopup
-		GameObject cloneTextGO = Instantiate(unitData.floatingDamagePrefab, enemyToAttackGO.transform.position + unitData.damageOffset, Quaternion.identity);
-		TextMeshPro damageText = unitData.floatingDamagePrefab.GetComponent<TextMeshPro>();
-
-		UIManager.DamagePopup(damageDone, unitData, cloneTextGO);
-		UIManager.SetEnemyHP(enemyToAttackGO.GetComponent<Unit>().currentHp, enemyID);
-
-		AnimationManager.PlayAnim("Hit", enemyID);
-		AudioManager.PlaySound("hurtSound");
-		yield return new WaitForSeconds(0.5f);
-		AnimationManager.PlayAnim("Idle", enemyID);
-		knightGO.transform.position = startingPos;
-		AnimationManager.PlayAnim("Idle", 0);
-
-		if (isDead)
+		private IEnumerator KnightBasicAttack(int enemyID, GameObject enemyToAttackGO)
 		{
-			AnimationManager.PlayAnim("Dead", enemyID);
-			BattleSystemClass.gameState = GameState.WON;
-			BattleSystemClass.EndBattle();
-		}
-		else
-		{
-			//Warrior's turn starts
-			BattleSystemClass.gameState = GameState.PLAYERTURN;
-			BattleSystemClass.unitState = UnitState.WARRIOR;
-		}
-		
-	}
+			Unit enemyToAttackUnit = enemyToAttackGO.GetComponent<Unit>();
+			Vector3 enemyPos = enemyToAttackGO.transform.position;
 
-	public void KnightAttack(int enemyID, GameObject enemyToAttackGO)
-	{
-		StartCoroutine(KnightBasicAttack(enemyID, enemyToAttackGO));
+			BattleSystemClass.gameState = GameState.WAITING;
+			AudioManager.PlaySound("KnightOpeners");
+
+			Vector2 startingPos = knightGO.transform.position;
+			AnimationManager.PlayAnim("Dash", 0);
+
+			knightGO.transform.Translate(Time.deltaTime * 1000, 0, 0, camTransform);
+			if (Vector3.Distance(knightGO.transform.position, enemyPos) < unitData.errorDistance)
+			{
+				knightGO.transform.position = new Vector3(enemyPos.x - 2f, enemyPos.y, enemyPos.z);
+			}
+
+			yield return new WaitForSeconds(0.5f);
+			AnimationManager.PlayAnim("Attack", 0);
+			AudioManager.PlaySound("basicAttack");
+
+			//calculate damage        
+			float damageDone = CalculationManager.CalculateDamage(unitData);
+			bool isDead = CalculationManager.TakeDamage(damageDone, enemyToAttackUnit);
+
+			//damagePopup
+			GameObject cloneTextGO = Instantiate(unitData.floatingDamagePrefab, enemyPos + unitData.damageOffset,
+				Quaternion.identity);
+			TextMeshPro damageText = unitData.floatingDamagePrefab.GetComponent<TextMeshPro>();
+
+			UIManager.DamagePopup(damageDone, unitData, cloneTextGO, enemyToAttackGO);
+			UIManager.SetEnemyHp(enemyToAttackUnit.currentHp, enemyID);
+
+			AnimationManager.PlayAnim("Hit", enemyID);
+			AudioManager.PlaySound("hurtSound");
+			yield return new WaitForSeconds(0.5f);
+			AnimationManager.PlayAnim("Idle", enemyID);
+			knightGO.transform.position = startingPos;
+			AnimationManager.PlayAnim("Idle", 0);
+
+			if (isDead)
+			{
+				AnimationManager.PlayAnim("Dead", enemyID);
+			}
+			else
+			{
+				//Warrior's turn starts
+				BattleSystemClass.gameState = GameState.PLAYERTURN;
+				BattleSystemClass.unitState = UnitState.WARRIOR;
+			}
+		}
+
+		public void KnightAttack(int enemyID, GameObject enemyToAttackGO)
+		{
+			StartCoroutine(KnightBasicAttack(enemyID, enemyToAttackGO));
+		}
 	}
 }

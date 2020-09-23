@@ -1,15 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Serialization;
 
-public class Sorting : MonoBehaviour
+namespace Utilities
 {
-    public int SortingOrder = 0;
-    // Start is called before the first frame update
-    void Start()
+    public class Sorting : MonoBehaviour
     {
-        gameObject.GetComponent<MeshRenderer>().sortingOrder = SortingOrder;
-    }
+        [FormerlySerializedAs("SortingOrder")] public int sortingOrder = 0;
+        
+        void Start()
+        {
+            gameObject.GetComponent<MeshRenderer>().sortingOrder = sortingOrder;
+        }
 
     
+    }
 }

@@ -1,12 +1,18 @@
-﻿using System;
+﻿using Cinemachine;
 using UnityEngine;
-using Cinemachine;
+
+namespace Utilities
+{
 	public class CameraShake : MonoBehaviour
 	{
+		#region Variable Declarations
+
 		public static CameraShake Instance { get; private set; }
 		private CinemachineVirtualCamera virtualCam;
 		private float shakeTimer;
 		private CinemachineBasicMultiChannelPerlin shake;
+
+		#endregion
 			
 		private void Awake()
 		{
@@ -33,3 +39,4 @@ using Cinemachine;
 			}
 		}
 	}
+}

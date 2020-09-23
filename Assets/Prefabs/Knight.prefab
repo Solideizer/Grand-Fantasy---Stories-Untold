@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8910691357711287684}
   - component: {fileID: 8910691357711287682}
-  - component: {fileID: 6102489320406311927}
   - component: {fileID: 5683817604006682470}
   m_Layer: 0
   m_Name: Knight
@@ -84,23 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6102489320406311927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8910691357711287687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 127d9ad2e487beb499eb74cf7aa6d208, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unitName: Knight
-  unitLevel: 1
-  damage: 10
-  maxHP: 100
-  currentHP: 100
 --- !u!95 &5683817604006682470
 Animator:
   serializedVersion: 3

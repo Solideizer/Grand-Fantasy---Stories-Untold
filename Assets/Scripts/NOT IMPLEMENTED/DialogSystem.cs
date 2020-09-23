@@ -1,57 +1,78 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogSystem : MonoBehaviour
+namespace NOT_IMPLEMENTED
 {
-    public TextMeshProUGUI textDisplay;
-    public string[] sentences;
-    private int index;
-    public float typingSpeed;
-    public Button continueButton;
-
-    private CanvasGroup continueHUD;
-
-    private void Awake()
+    public class DialogSystem : MonoBehaviour
     {
-        continueHUD = continueButton.GetComponent<CanvasGroup>();
-    }
-    private void Update()
-    {
-        if(textDisplay.text == sentences[index])
+        public TextMeshProUGUI textDisplay;
+        public string[] sentences;
+        private int index;
+        public float typingSpeed;
+        public Button continueButton;
+
+        private CanvasGroup continueHUD;
+
+        private void Awake()
         {
-            continueHUD.alpha = 1f;
-            continueHUD.interactable = true;
-            continueHUD.blocksRaycasts = true;
+            continueHUD = continueButton.GetComponent<CanvasGroup>();
         }
-    }
-    IEnumerator Type()
-    {
-        foreach (char letter in sentences[index].ToCharArray())
-        {
-            textDisplay.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
-        }
-    }
 
-    public void NextSentence()
-    {
-        continueHUD.alpha = 0f;
-        continueHUD.interactable = false;
-        continueHUD.blocksRaycasts = false;
+        // private void OnEnable()
+        // {
+        //     UIManager.CriticalStrikeReceived += UIManagerOnCriticalStrikeReceived;
+        // }
+        //
+        // private void UIManagerOnCriticalStrikeReceived(UnitData unitData)
+        // {
+        //     throw new NotImplementedException();
+        // }
+        //
+        // private void OnDisable()
+        // {
+        //     UIManager.CriticalStrikeReceived -= UIManagerOnCriticalStrikeReceived;
+        // }
 
-        if (index < sentences.Length - 1)
+    
+    
+
+        private void Update()
         {
-            index++;
-            textDisplay.text = "";
-            StartCoroutine(Type());
+            if(textDisplay.text == sentences[index])
+            {
+                continueHUD.alpha = 1f;
+                continueHUD.interactable = true;
+                continueHUD.blocksRaycasts = true;
+            }
         }
-        else
+        IEnumerator Type()
         {
-            textDisplay.text = "";
-        }        
+            foreach (char letter in sentences[index].ToCharArray())
+            {
+                textDisplay.text += letter;
+                yield return new WaitForSeconds(typingSpeed);
+            }
+        }
+
+        public void NextSentence()
+        {
+            continueHUD.alpha = 0f;
+            continueHUD.interactable = false;
+            continueHUD.blocksRaycasts = false;
+
+            if (index < sentences.Length - 1)
+            {
+                index++;
+                textDisplay.text = "";
+                StartCoroutine(Type());
+            }
+            else
+            {
+                textDisplay.text = "";
+            }        
                 
+        }
     }
 }

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 890594291977343496}
   - component: {fileID: 890594291977343503}
-  - component: {fileID: -8108048568719607437}
   - component: {fileID: 4771336573070385722}
   m_Layer: 0
   m_Name: Warrior
@@ -84,23 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-8108048568719607437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890594291977343502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 127d9ad2e487beb499eb74cf7aa6d208, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unitName: Warrior
-  unitLevel: 1
-  damage: 20
-  maxHP: 100
-  currentHP: 100
 --- !u!95 &4771336573070385722
 Animator:
   serializedVersion: 3

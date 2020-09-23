@@ -1,27 +1,42 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using Managers;
 using TMPro;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
+namespace Characters
+{
 	public class Enemy2 : Unit
 	{
+		#region Variable Declerations
+	
 #pragma warning disable 0649
 		[SerializeField] private GameObject enemyGO;
 #pragma warning restore 0649
 		private Vector2 _enemyStartingPosition;
+		private Transform camTransform;
+	
+		#endregion
+	
+
+		private void Start()
+		{
+			camTransform = Camera.main.transform;
+		}
 
 		public IEnumerator Enemy2Turn()
 		{
 			_enemyStartingPosition = enemyGO.transform.position;
 			int randomPlayerUnitIndex = Random.Range(0, BattleSystemClass.playerUnitGOs.Count);
-			GameObject _attackedPlayerGO = BattleSystemClass.playerUnitGOs[randomPlayerUnitIndex];
+			GameObject attackedPlayerGO = BattleSystemClass.playerUnitGOs[randomPlayerUnitIndex];
+			Unit attackedPlayerUnit = attackedPlayerGO.GetComponent<Unit>();
+			Vector3 playerPos = attackedPlayerGO.transform.position;
 
 			AnimationManager.PlayAnim("Dash", 5);
-			enemyGO.transform.Translate(-Vector3.right * 800f * Time.deltaTime);
-
-			if (Vector3.Distance(_attackedPlayerGO.transform.position, enemyGO.transform.position) <
-			    unitData.errorDistance)
+			enemyGO.transform.Translate(-Time.deltaTime * 1000, 0, 0, camTransform);
+			if (Vector3.Distance(enemyGO.transform.position, playerPos) < unitData.errorDistance)
 			{
-				_enemyStartingPosition = _attackedPlayerGO.transform.position;
+				enemyGO.transform.position = new Vector3(playerPos.x + 2f, playerPos.y, playerPos.z);
 			}
 
 			yield return new WaitForSeconds(0.5f);
@@ -31,16 +46,16 @@ using TMPro;
 
 			//calculate damage
 			float damageDone = CalculationManager.CalculateDamage(unitData);
-			bool isDead = CalculationManager.TakeDamage(damageDone, _attackedPlayerGO.GetComponent<Unit>());
+			bool isDead = CalculationManager.TakeDamage(damageDone, attackedPlayerUnit);
 
 			//damagePopup
 			GameObject cloneTextGO = Instantiate(unitData.floatingDamagePrefab,
-				_attackedPlayerGO.transform.position + unitData.damageOffset, Quaternion.identity);
+				attackedPlayerGO.transform.position + unitData.damageOffset, Quaternion.identity);
 			TextMeshPro damageText = unitData.floatingDamagePrefab.GetComponent<TextMeshPro>();
 
-			UIManager.DamagePopup(damageDone, unitData, cloneTextGO);
+			UIManager.DamagePopup(damageDone, unitData, cloneTextGO, attackedPlayerGO);
 
-			UIManager.SetPlayerUnitHP(_attackedPlayerGO.GetComponent<Unit>().currentHp, randomPlayerUnitIndex);
+			UIManager.SetPlayerUnitHp(attackedPlayerUnit.currentHp, randomPlayerUnitIndex);
 			AudioManager.PlaySound("hurtSound");
 
 			yield return new WaitForSeconds(0.5f);
@@ -52,8 +67,7 @@ using TMPro;
 			if (isDead)
 			{
 				AudioManager.PlaySound("KnightDeath");
-				BattleSystemClass.gameState = GameState.LOST;
-				BattleSystemClass.EndBattle();
+				AnimationManager.PlayAnim("Dead", randomPlayerUnitIndex);
 			}
 			else
 			{
@@ -62,3 +76,4 @@ using TMPro;
 			}
 		}
 	}
+}
