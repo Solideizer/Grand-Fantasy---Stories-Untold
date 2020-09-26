@@ -6,9 +6,10 @@ A 2D pixel art RPG with a strong emphasis on turn based combat.
 - [x] 3 Different Player Units
 - [x] 2 Different Enemies
 - [x] Critical Strikes
-- [x] Damage Number Pop-ups
-- [x] Custom Cursor
-- [x] Camera Shake
+- [x] Damage Number Popups
+- [x] Dialogue Popups
+- [x] Custom Animated Cursor
+- [x] Camera Shake 
 - [x] Audio
 - [x] Animations
 - [x] User Interface
