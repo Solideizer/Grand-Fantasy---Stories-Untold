@@ -18,7 +18,7 @@ namespace Characters
 			enemyAttackClass = GetComponent<EnemyAttack>();
 		}
 
-		private IEnumerator WizardAttack1(int enemyID, GameObject enemyToAttackGO)
+		public IEnumerator WizardAttack1(int enemyID, GameObject enemyToAttackGO)
 		{
 			Unit enemyToAttackUnit = enemyToAttackGO.GetComponent<Unit>();
 			Vector3 enemyPos = enemyToAttackGO.transform.position;
@@ -27,6 +27,7 @@ namespace Characters
 			AnimationManager.PlayAnim("Attack1", 2);
 
 			GameObject explosionGO = Instantiate(explosionAnim, enemyPos, Quaternion.identity);
+			//StartCoroutine(CameraManager.MoveTowardsTarget(enemyToAttackGO));
 			Destroy(explosionGO, 1f);
 
 			//calculate damage        
@@ -60,9 +61,5 @@ namespace Characters
 			}
 		}
 
-		public void WizardAttack(int enemyID, GameObject enemyToAttackGO)
-		{
-			StartCoroutine(WizardAttack1(enemyID, enemyToAttackGO));
-		}
 	}
 }

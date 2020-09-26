@@ -121,13 +121,13 @@ namespace Managers
 			SetEnemyHud();
 		}
 
-		public void DamagePopup(float damageDone, UnitData unitData, GameObject cloneTextGO, GameObject enemyGo)
+		public void DamagePopup(float damageDone, UnitData unitData, GameObject cloneTextGO, GameObject attackedGo)
 		{
 			TextMeshPro damageText = cloneTextGO.GetComponent<TextMeshPro>();
 
 			if (damageDone > (unitData._baseDamage + (unitData._baseDamage / 10)))
 			{
-				CriticalStrikeReceived(enemyGo);
+				CriticalStrikeReceived(attackedGo);
 				Color newColor = new Color(1f, 0.1949452f, 0.145098f, 1f);
 				damageText.fontSize = 500f;
 				damageText.color = newColor;
@@ -150,23 +150,24 @@ namespace Managers
 			CriticalStrikeReceived += OnCriticalStrikeReceived;
 		}
 
-		private void OnCriticalStrikeReceived(GameObject obj)
+		private void OnCriticalStrikeReceived(GameObject attackedGo)
 		{
-			UnitData unitData = obj.GetComponent<Unit>().unitData;
-			DialoguePopup(obj, unitData);
+			UnitData unitData = attackedGo.GetComponent<Unit>().unitData;
+			DialoguePopup(attackedGo,unitData);
 		}
 
-		private void DialoguePopup(GameObject obj, UnitData unitData)
+		private void DialoguePopup(GameObject attackedGo, UnitData unitData)
 		{
-			GameObject floatingDialogueGO = Instantiate(floatingDialogue, obj.transform.position + new Vector3(0f, 6f, 0f),
-				Quaternion.identity);
+			GameObject floatingDialogueGO = Instantiate(
+				floatingDialogue, attackedGo.transform.position + new Vector3(0f, 6f, 0f),Quaternion.identity);
 			TextMeshPro dialogueText = floatingDialogue.GetComponent<TextMeshPro>();
-
+			floatingDialogueGO.SetActive(false);
 			Color newColor = new Color(1f, 0.8182157f, 0.145098f, 1f);
 			dialogueText.color = newColor;
 
 			int random = Random.Range(0, unitData.criticalDialogue.Length);
 			dialogueText.text = unitData.criticalDialogue[random];
+			floatingDialogueGO.SetActive(true);
 			Destroy(floatingDialogueGO, 3f);
 		}
 

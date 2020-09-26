@@ -33,11 +33,11 @@ namespace Managers
 		[SerializeField] private Vector3 damageOffset = new Vector3(0f, 3f, 0f);
 #pragma warning restore 0649
 
-		public GameObject Knight;
-		public GameObject Warrior;
-		public GameObject Wizard;
-		public GameObject Enemy1;
-		public GameObject Enemy2;
+		public GameObject knight;
+		public GameObject warrior;
+		public GameObject wizard;
+		public GameObject enemy1;
+		public GameObject enemy2;
 
 		public GameState gameState;
 		public UnitState unitState;
@@ -95,18 +95,18 @@ namespace Managers
 
 		private void PopulateUnitList()
 		{
-			playerUnits.Add(Knight.GetComponent<Unit>());
-			playerUnits.Add(Warrior.GetComponent<Unit>());
-			playerUnits.Add(Wizard.GetComponent<Unit>());
-			enemyUnits.Add(Enemy1.GetComponent<Unit>());
-			enemyUnits.Add(Enemy2.GetComponent<Unit>());
+			playerUnits.Add(knight.GetComponent<Unit>());
+			playerUnits.Add(warrior.GetComponent<Unit>());
+			playerUnits.Add(wizard.GetComponent<Unit>());
+			enemyUnits.Add(enemy1.GetComponent<Unit>());
+			enemyUnits.Add(enemy2.GetComponent<Unit>());
 		}
 
 		private void PopulateGameobjetList()
 		{
-			playerUnitGOs.Add(Knight);
-			playerUnitGOs.Add(Warrior);
-			playerUnitGOs.Add(Wizard);
+			playerUnitGOs.Add(knight);
+			playerUnitGOs.Add(warrior);
+			playerUnitGOs.Add(wizard);
 		}
 
 		private void SelectTarget()
@@ -135,13 +135,14 @@ namespace Managers
 					if (enemyName == "Skeleton")
 					{
 						enemyId = 4;
-						_knightClass.KnightAttack(enemyId, Enemy1);
+						StartCoroutine(_knightClass.KnightBasicAttack(enemyId, enemy1));
+						
 					}
 
 					if (enemyName == "Undead")
 					{
 						enemyId = 5;
-						_knightClass.KnightAttack(enemyId, Enemy2);
+						StartCoroutine(_knightClass.KnightBasicAttack(enemyId, enemy2));
 					}
 
 					break;
@@ -150,13 +151,15 @@ namespace Managers
 					if (enemyName == "Skeleton")
 					{
 						enemyId = 4;
-						_warriorClass.WarriorAttack(enemyId, Enemy1);
+						StartCoroutine(_warriorClass.WarriorBasicAttack(enemyId, enemy1));
+						
 					}
 
 					if (enemyName == "Undead")
 					{
 						enemyId = 5;
-						_warriorClass.WarriorAttack(enemyId, Enemy2);
+						StartCoroutine(_warriorClass.WarriorBasicAttack(enemyId, enemy2));
+						
 					}
 
 					break;
@@ -165,13 +168,13 @@ namespace Managers
 					if (enemyName == "Skeleton")
 					{
 						enemyId = 4;
-						_wizardClass.WizardAttack(enemyId, Enemy1);
+						StartCoroutine(_wizardClass.WizardAttack1(enemyId, enemy1));
 					}
 
 					if (enemyName == "Undead")
 					{
 						enemyId = 5;
-						_wizardClass.WizardAttack(enemyId, Enemy2);
+						StartCoroutine(_wizardClass.WizardAttack1(enemyId, enemy2));
 					}
 
 					break;

@@ -37,6 +37,7 @@ namespace Characters
 			}
 
 			yield return new WaitForSeconds(0.5f);
+			//StartCoroutine(CameraManager.MoveTowardsTarget(attackedPlayerGO));
 			AnimationManager.PlayAnim("Attack", 4);
 			AudioManager.PlaySound("basicAttack");
 			AnimationManager.PlayAnim("Hit", randomPlayerUnitIndex);

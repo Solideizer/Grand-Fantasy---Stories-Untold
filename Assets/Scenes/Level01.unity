@@ -4157,7 +4157,7 @@ MonoBehaviour:
   m_PivotOffset: {x: 0, y: 0, z: 0}
   m_AmplitudeGain: 0
   m_FrequencyGain: 5
-  mNoiseOffsets: {x: 0, y: 0, z: 0}
+  mNoiseOffsets: {x: -249.0636, y: 964.0381, z: -433.1337}
 --- !u!114 &729756643
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -6984,11 +6984,11 @@ MonoBehaviour:
   floatingDamage: {fileID: 222366804528847911, guid: 79884bb96a13b3b41919b30e61518047,
     type: 3}
   damageOffset: {x: 0, y: 3, z: 0}
-  Knight: {fileID: 2641961575148288959}
-  Warrior: {fileID: 890594293099458579}
-  Wizard: {fileID: 1565822773}
-  Enemy1: {fileID: 6739126713648804338}
-  Enemy2: {fileID: 1397993519}
+  knight: {fileID: 2641961575148288959}
+  warrior: {fileID: 890594293099458579}
+  wizard: {fileID: 1565822773}
+  enemy1: {fileID: 6739126713648804338}
+  enemy2: {fileID: 1397993519}
   gameState: 0
   unitState: 0
   playerUnitGOs: []

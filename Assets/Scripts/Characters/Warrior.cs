@@ -16,7 +16,7 @@ namespace Characters
 			camTransform = Camera.main.transform;
 		}
 
-		private IEnumerator WarriorBasicAttack(int enemyID, GameObject enemyToAttackGO)
+		public IEnumerator WarriorBasicAttack(int enemyID, GameObject enemyToAttackGO)
 		{
 			Unit enemyToAttackUnit = enemyToAttackGO.GetComponent<Unit>();
 			Vector3 enemyPos = enemyToAttackGO.transform.position;
@@ -34,7 +34,7 @@ namespace Characters
 			yield return new WaitForSeconds(0.5f);
 			AnimationManager.PlayAnim("Attack", 1);
 			AudioManager.PlaySound("basicAttack");
-
+			//StartCoroutine(CameraManager.MoveTowardsTarget(enemyToAttackGO));
 			//calculate damage        
 			float damageDone = CalculationManager.CalculateDamage(unitData);
 			bool isDead = CalculationManager.TakeDamage(damageDone, enemyToAttackUnit);
@@ -65,9 +65,5 @@ namespace Characters
 			}
 		}
 
-		public void WarriorAttack(int enemyID, GameObject enemyToAttackGO)
-		{
-			StartCoroutine(WarriorBasicAttack(enemyID, enemyToAttackGO));
-		}
 	}
 }

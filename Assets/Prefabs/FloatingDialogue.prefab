@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1153f08e71f6ef54f847be385c045a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SortingOrder: 11
+  sortingOrder: 11
 --- !u!95 &222366804528847898
 Animator:
   serializedVersion: 3
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '*Skeleton Noises* '
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e312cd0afac90334b9d1203352bc8733, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 15c29145a91de004680055ad96fd0af3, type: 2}
@@ -216,13 +216,13 @@ MonoBehaviour:
   m_margin: {x: 0.6101511, y: 0, z: 0.501302, w: 0}
   m_textInfo:
     textComponent: {fileID: 6584502931649153108}
-    characterCount: 18
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0

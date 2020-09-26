@@ -22,7 +22,7 @@ namespace Characters
 			camTransform = Camera.main.transform;
 		}
 
-		private IEnumerator KnightBasicAttack(int enemyID, GameObject enemyToAttackGO)
+		public IEnumerator KnightBasicAttack(int enemyID, GameObject enemyToAttackGO)
 		{
 			Unit enemyToAttackUnit = enemyToAttackGO.GetComponent<Unit>();
 			Vector3 enemyPos = enemyToAttackGO.transform.position;
@@ -38,7 +38,7 @@ namespace Characters
 			{
 				knightGO.transform.position = new Vector3(enemyPos.x - 2f, enemyPos.y, enemyPos.z);
 			}
-
+			//StartCoroutine(CameraManager.MoveTowardsTarget(enemyToAttackGO));
 			yield return new WaitForSeconds(0.5f);
 			AnimationManager.PlayAnim("Attack", 0);
 			AudioManager.PlaySound("basicAttack");
@@ -74,9 +74,5 @@ namespace Characters
 			}
 		}
 
-		public void KnightAttack(int enemyID, GameObject enemyToAttackGO)
-		{
-			StartCoroutine(KnightBasicAttack(enemyID, enemyToAttackGO));
-		}
 	}
 }

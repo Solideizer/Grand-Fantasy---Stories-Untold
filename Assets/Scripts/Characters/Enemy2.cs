@@ -14,14 +14,14 @@ namespace Characters
 		[SerializeField] private GameObject enemyGO;
 #pragma warning restore 0649
 		private Vector2 _enemyStartingPosition;
-		private Transform camTransform;
+		private Transform _camTransform;
 	
 		#endregion
 	
 
 		private void Start()
 		{
-			camTransform = Camera.main.transform;
+			_camTransform = Camera.main.transform;
 		}
 
 		public IEnumerator Enemy2Turn()
@@ -33,13 +33,14 @@ namespace Characters
 			Vector3 playerPos = attackedPlayerGO.transform.position;
 
 			AnimationManager.PlayAnim("Dash", 5);
-			enemyGO.transform.Translate(-Time.deltaTime * 1000, 0, 0, camTransform);
+			enemyGO.transform.Translate(-Time.deltaTime * 1000, 0, 0, _camTransform);
 			if (Vector3.Distance(enemyGO.transform.position, playerPos) < unitData.errorDistance)
 			{
 				enemyGO.transform.position = new Vector3(playerPos.x + 2f, playerPos.y, playerPos.z);
 			}
 
 			yield return new WaitForSeconds(0.5f);
+			//StartCoroutine(CameraManager.MoveTowardsTarget(attackedPlayerGO));
 			AnimationManager.PlayAnim("Attack", 5);
 			AudioManager.PlaySound("basicAttack");
 			AnimationManager.PlayAnim("Hit", randomPlayerUnitIndex);

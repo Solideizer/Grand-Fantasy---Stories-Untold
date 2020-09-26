@@ -14,6 +14,7 @@ namespace Characters
         protected UIManager UIManager;
         protected BattleSystem BattleSystemClass;
         protected CalculationManager CalculationManager;
+        //protected CameraManager CameraManager;
     
         #endregion
     
@@ -23,6 +24,7 @@ namespace Characters
             UIManager = GetComponent<UIManager>();
             BattleSystemClass = GetComponent<BattleSystem>();
             CalculationManager = GetComponent<CalculationManager>();
+            //CameraManager = GetComponent<CameraManager>();
         }
     }
 }

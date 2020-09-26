@@ -6,17 +6,17 @@ namespace Utilities
 {
     public class OnMouseOverScript : MonoBehaviour
     {
-        private bool coroutineAllowed;
-        private Vector2 localScale;
+        private bool _coroutineAllowed;
+        private Vector2 _localScale;
         private void Start()
         {
-            coroutineAllowed = true;
-            localScale = transform.localScale;
+            _coroutineAllowed = true;
+            _localScale = transform.localScale;
         }
 
         private void OnMouseOver()
         {
-            if (coroutineAllowed)
+            if (_coroutineAllowed)
             {
                 StartCoroutine("StartPulsing");
             }
@@ -24,25 +24,25 @@ namespace Utilities
 
         private IEnumerator StartPulsing()
         {
-            coroutineAllowed = false;
+            _coroutineAllowed = false;
 
             for (float i = 0f; i <= 1f; i+=0.2f)
             {
                 transform.localScale = new Vector3(
-                    (Mathf.Lerp(localScale.x, localScale.x + 0.2f, Mathf.SmoothStep(0f, 1f, i))),
-                    (Mathf.Lerp(localScale.y, localScale.y + 0.2f, Mathf.SmoothStep(0f, 1f, i))));
+                    (Mathf.Lerp(_localScale.x, _localScale.x + 0.2f, Mathf.SmoothStep(0f, 1f, i))),
+                    (Mathf.Lerp(_localScale.y, _localScale.y + 0.2f, Mathf.SmoothStep(0f, 1f, i))));
                 yield return  new WaitForSeconds(0.05f);
             }
        
             for (float i = 0; i <= 1f; i+=0.2f)
             {
                 transform.localScale = new Vector3(
-                    (Mathf.Lerp(localScale.x + 0.2f, localScale.x , Mathf.SmoothStep(0f, 1f, i))),
-                    (Mathf.Lerp(localScale.y + 0.2f, localScale.y, Mathf.SmoothStep(0f, 1f, i))));
+                    (Mathf.Lerp(_localScale.x + 0.2f, _localScale.x , Mathf.SmoothStep(0f, 1f, i))),
+                    (Mathf.Lerp(_localScale.y + 0.2f, _localScale.y, Mathf.SmoothStep(0f, 1f, i))));
                 yield return  new WaitForSeconds(0.05f);
             }
 
-            coroutineAllowed = true;
+            _coroutineAllowed = true;
 
         }
 

@@ -6,7 +6,7 @@ namespace Managers
 {
 	public class CalculationManager : MonoBehaviour
 	{
-		public bool TakeDamage(float damage, Unit unit)
+		public static bool TakeDamage(float damage, Unit unit)
 		{
 			unit.currentHp -= (damage * (100 / (100 + unit.unitData._baseArmor)));
 			return unit.currentHp <= 0f;
@@ -20,7 +20,7 @@ namespace Managers
 			return damage;
 		}
 
-		private float CalculateCrit(float baseDamage, UnitData unitData)
+		private static float CalculateCrit(float baseDamage, UnitData unitData)
 		{
 			float criticalMultiplier = Random.Range(1.5f, 3f);
 

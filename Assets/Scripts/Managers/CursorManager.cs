@@ -13,10 +13,10 @@ namespace Managers
 #pragma warning restore 0649
 		public static CursorManager Instance { get; private set; }
 
-		private int currentFrame;
-		private float frameTimer;
-		private int frameCount;
-		private CursorAnimation cursorAnimation;
+		private int _currentFrame;
+		private float _frameTimer;
+		private int _frameCount;
+		private CursorAnimation _cursorAnimation;
 
 		public enum CursorType
 		{
@@ -40,12 +40,12 @@ namespace Managers
 
 		private void Update()
 		{
-			frameTimer -= Time.deltaTime;
-			if (frameTimer <= 0f)
+			_frameTimer -= Time.deltaTime;
+			if (_frameTimer <= 0f)
 			{
-				frameTimer += cursorAnimation.frameRate;
-				currentFrame = (currentFrame + 1) % frameCount;
-				Cursor.SetCursor(cursorAnimation.textureArray[currentFrame], cursorAnimation.hotspot,
+				_frameTimer += _cursorAnimation.frameRate;
+				_currentFrame = (_currentFrame + 1) % _frameCount;
+				Cursor.SetCursor(_cursorAnimation.textureArray[_currentFrame], _cursorAnimation.hotspot,
 					CursorMode.ForceSoftware);
 			}
 		}
@@ -54,10 +54,10 @@ namespace Managers
 
 		private void SetActiveCursorAnimation(CursorAnimation cursorAnim)
 		{
-			this.cursorAnimation = cursorAnim;
-			currentFrame = 0;
-			frameTimer = 0;
-			frameCount = cursorAnimation.textureArray.Length;
+			this._cursorAnimation = cursorAnim;
+			_currentFrame = 0;
+			_frameTimer = 0;
+			_frameCount = _cursorAnimation.textureArray.Length;
 		}
 
 		public void SetActiveCursorType(CursorType cursorType)
