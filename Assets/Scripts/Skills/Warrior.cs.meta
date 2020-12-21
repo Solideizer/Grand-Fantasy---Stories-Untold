@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 89ed6d9fc72f8c4428d6c0a4206a5c10
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - unitData: {fileID: 11400000, guid: f2bcea5c192a7db4ebfd4573df460862, type: 2}
+  - warriorGO: {fileID: 890594291977343502, guid: fd1d14d7e25f1b3429ea2094cf3d7a96,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

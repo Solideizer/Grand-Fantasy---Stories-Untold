@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 357f89947ca9b7649b1cd3cfdb936bb1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - unitData: {fileID: 11400000, guid: ccf44c59a32c61347a9cb700f24f823f, type: 2}
+  - knightGO: {fileID: 8910691357711287687, guid: 704637d8b20bd3a4e8f748b47764fe7e,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

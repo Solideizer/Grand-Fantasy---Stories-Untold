@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 58dfcd92011a46ed8243b31620fa260f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - unitData: {fileID: 11400000, guid: 0e87ab45ca3f03d4cb671fa3b5662a07, type: 2}
+  - wizardGO: {fileID: 3154411512756172914, guid: 1903f1949e5374d428bc7d8adc0f2bd6,
+      type: 3}
+  - explosionAnim: {fileID: 6840546004793303992, guid: c2ec5867d47fb7344be2ce42af745501,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

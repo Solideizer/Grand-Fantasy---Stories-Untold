@@ -6,23 +6,16 @@ namespace Managers
 {
 	public class CalculationManager : MonoBehaviour
 	{
-		public static bool TakeDamage(float damage, Unit unit)
+		public float CalculateDamage (UnitData unitData)
 		{
-			unit.currentHp -= (damage * (100 / (100 + unit.unitData._baseArmor)));
-			return unit.currentHp <= 0f;
-		}
-
-		public float CalculateDamage(UnitData unitData)
-		{
-			float damage = Random.Range(unitData._baseDamage - (unitData._baseDamage / 10),
+			float damage = Random.Range (unitData._baseDamage - (unitData._baseDamage / 10),
 				unitData._baseDamage + (unitData._baseDamage / 10));
-			damage += CalculateCrit(damage, unitData);
+			damage += CalculateCrit (damage, unitData);
 			return damage;
 		}
-
-		private static float CalculateCrit(float baseDamage, UnitData unitData)
+		private static float CalculateCrit (float baseDamage, UnitData unitData)
 		{
-			float criticalMultiplier = Random.Range(1.5f, 3f);
+			float criticalMultiplier = Random.Range (1.5f, 3f);
 
 			if (Random.value <= unitData._criticalStrikeChance)
 			{
@@ -34,5 +27,11 @@ namespace Managers
 				return 0f;
 			}
 		}
+		public bool DealDamage (float damage, Unit unit)
+		{
+			unit.unitData._currentHp -= (damage * (100 / (100 + unit.unitData._baseArmor)));
+			return unit.unitData._currentHp <= 0f;
+		}
+
 	}
 }
