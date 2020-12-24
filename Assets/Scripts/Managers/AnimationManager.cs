@@ -6,11 +6,11 @@ namespace Managers
         
         #region Variable Declarations
         
-        public Animator KnightAnim;
-        public Animator WarriorAnim;
-        public Animator WizardAnim;
-        public Animator Enemy1Anim;
-        public Animator Enemy2Anim;
+        public Animator knightAnim;
+        public Animator warriorAnim;
+        public Animator wizardAnim;
+        public Animator enemy1Anim;
+        public Animator enemy2Anim;
 
         #endregion
         
@@ -18,19 +18,19 @@ namespace Managers
 
             switch (unitID) {
                 case 0: //Knight Animations
-                    KnightAnim.SetTrigger (animName);
+                    knightAnim.SetTrigger (animName);
                     break;
                 case 1: //Warrior Animations
-                    WarriorAnim.SetTrigger (animName);
+                    warriorAnim.SetTrigger (animName);
                     break;
                 case 2: //Wizard Animations
-                    WizardAnim.SetTrigger (animName);
+                    wizardAnim.SetTrigger (animName);
                     break;
                 case 4: //Skeleton Animations
-                    Enemy1Anim.SetTrigger (animName);
+                    enemy1Anim.SetTrigger (animName);
                     break;
                 case 5: //Undead Animations
-                    Enemy2Anim.SetTrigger (animName);
+                    enemy2Anim.SetTrigger (animName);
                     break;
             }
         }

@@ -49,7 +49,7 @@ namespace Characters
 			TextMeshPro damageText = unitData.floatingDamagePrefab.GetComponent<TextMeshPro> ();
 			UIManager.DamagePopup (damageDone, unitData, floatingDamageGO);
 
-			UIManager.SetEnemyHp (enemyToAttackUnit.unitData._currentHp, enemyID);
+			UIManager.SetEnemyHp (enemyToAttackUnit.unitData.currentHp, enemyID);
 
 			AnimationManager.PlayAnim ("Hit", enemyID);
 			AudioManager.PlaySound ("hurtSound");

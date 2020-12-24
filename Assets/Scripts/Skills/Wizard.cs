@@ -37,7 +37,7 @@ namespace Characters
 				Quaternion.identity);
 			UIManager.DamagePopup (damageDone, unitData, floatingDamageGO);
 
-			UIManager.SetEnemyHp (enemyToAttackUnit.unitData._currentHp, enemyID);
+			UIManager.SetEnemyHp (enemyToAttackUnit.unitData.currentHp, enemyID);
 
 			AnimationManager.PlayAnim ("Hit", enemyID);
 			AudioManager.PlaySound ("hurtSound");
@@ -89,8 +89,8 @@ namespace Characters
 
 				UIManager.DamagePopup (damageDone, unitData, floatingDamageGO);
 			}
-			UIManager.SetEnemyHp (attackedEnemies[0].GetComponent<Unit> ().unitData._currentHp, 4);
-			UIManager.SetEnemyHp (attackedEnemies[1].GetComponent<Unit> ().unitData._currentHp, 5);
+			UIManager.SetEnemyHp (attackedEnemies[0].GetComponent<Unit> ().unitData.currentHp, 4);
+			UIManager.SetEnemyHp (attackedEnemies[1].GetComponent<Unit> ().unitData.currentHp, 5);
 
 			AnimationManager.PlayAnim ("Hit", 4);
 			AnimationManager.PlayAnim ("Hit", 5);

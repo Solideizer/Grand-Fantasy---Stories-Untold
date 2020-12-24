@@ -8,34 +8,32 @@ namespace Utilities
 		#region Variable Declarations
 
 		public static CameraShake Instance { get; private set; }
-		private CinemachineVirtualCamera virtualCam;
-		private float shakeTimer;
-		private CinemachineBasicMultiChannelPerlin shake;
+		private CinemachineVirtualCamera _virtualCam;
+		private float _shakeTimer;
+		private CinemachineBasicMultiChannelPerlin _multiChannelPerlin;
 
 		#endregion
 			
 		private void Awake()
 		{
 			Instance = this;
-			virtualCam = GetComponent<CinemachineVirtualCamera>();
-			shake = virtualCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+			_virtualCam = GetComponent<CinemachineVirtualCamera>();
+			_multiChannelPerlin = _virtualCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 		}
 
 		public void ShakeCamera(float intensity,float time)
 		{
-			shake.m_AmplitudeGain = intensity;
-			shakeTimer = time;
+			_multiChannelPerlin.m_AmplitudeGain = intensity;
+			_shakeTimer = time;
 		}
 
 		private void Update()
 		{
-			if (shakeTimer > 0)
+			if (!(_shakeTimer > 0)) return;
+			_shakeTimer -= Time.deltaTime;
+			if (_shakeTimer <= 0)
 			{
-				shakeTimer -= Time.deltaTime;
-				if (shakeTimer <= 0)
-				{
-					shake.m_AmplitudeGain = 0f;
-				}
+				_multiChannelPerlin.m_AmplitudeGain = 0f;
 			}
 		}
 	}

@@ -5,12 +5,12 @@ namespace Managers
 {
     public class TurnManager : MonoBehaviour
     {
-        private BattleSystem BattleSystem;
-        private UIManager UIManager;
+        private BattleSystem _battleSystem;
+        private UIManager _uiManager;
         private void Awake ()
         {
-            UIManager = GetComponent<UIManager> ();
-            BattleSystem = GetComponent<BattleSystem> ();
+            _uiManager = GetComponent<UIManager> ();
+            _battleSystem = GetComponent<BattleSystem> ();
 
         }
         private void OnEnable ()
@@ -32,50 +32,50 @@ namespace Managers
             {
                 case 0: // knight is dead
                     Debug.Log ("knight is dead");
-                    UIManager.DisableKnightUI ();
-                    if (BattleSystem.gameState == GameState.PLAYERTURN &&
-                        BattleSystem.unitState == UnitState.KNIGHT)
+                    _uiManager.DisableKnightUI ();
+                    if (_battleSystem.gameState == GameState.PLAYERTURN &&
+                        _battleSystem.unitState == UnitState.KNIGHT)
                     {
-                        BattleSystem.unitState++;
+                        _battleSystem.unitState++;
                     }
                     break;
                 case 1: // warrior is dead
                     Debug.Log ("warrior is dead");
-                    UIManager.DisableWarriorUI ();
-                    if (BattleSystem.gameState == GameState.PLAYERTURN &&
-                        BattleSystem.unitState == UnitState.WARRIOR)
+                    _uiManager.DisableWarriorUI ();
+                    if (_battleSystem.gameState == GameState.PLAYERTURN &&
+                        _battleSystem.unitState == UnitState.WARRIOR)
                     {
-                        BattleSystem.unitState++;
+                        _battleSystem.unitState++;
                     }
                     break;
                 case 2: // wizard is dead
                     Debug.Log ("wizard is dead");
-                    UIManager.DisableWizardUI ();
-                    if (BattleSystem.gameState == GameState.PLAYERTURN &&
-                        BattleSystem.unitState == UnitState.WIZARD)
+                    _uiManager.DisableWizardUI ();
+                    if (_battleSystem.gameState == GameState.PLAYERTURN &&
+                        _battleSystem.unitState == UnitState.WIZARD)
                     {
-                        BattleSystem.unitState++;
-                        BattleSystem.gameState = GameState.ENEMYTURN;
+                        _battleSystem.unitState++;
+                        _battleSystem.gameState = GameState.ENEMYTURN;
                     }
                     break;
                 case 4: // enemy1 is dead
                     Debug.Log ("enemy1 is dead");
-                    UIManager.DisableEnemy1UI ();
-                    if (BattleSystem.gameState == GameState.ENEMYTURN &&
-                        BattleSystem.unitState == UnitState.ENEMY1)
+                    _uiManager.DisableEnemy1UI ();
+                    if (_battleSystem.gameState == GameState.ENEMYTURN &&
+                        _battleSystem.unitState == UnitState.ENEMY1)
                     {
-                        BattleSystem.unitState++;
-                        BattleSystem.gameState = GameState.ENEMYTURN;
+                        _battleSystem.unitState++;
+                        _battleSystem.gameState = GameState.ENEMYTURN;
                     }
                     break;
                 case 5: // enemy2 is dead
                     Debug.Log ("enemy2 is dead");
-                    UIManager.DisableEnemy2UI ();
-                    if (BattleSystem.gameState == GameState.ENEMYTURN &&
-                        BattleSystem.unitState == UnitState.ENEMY2)
+                    _uiManager.DisableEnemy2UI ();
+                    if (_battleSystem.gameState == GameState.ENEMYTURN &&
+                        _battleSystem.unitState == UnitState.ENEMY2)
                     {
-                        BattleSystem.unitState = UnitState.KNIGHT;
-                        BattleSystem.gameState = GameState.PLAYERTURN;
+                        _battleSystem.unitState = UnitState.KNIGHT;
+                        _battleSystem.gameState = GameState.PLAYERTURN;
                     }
                     break;
             }

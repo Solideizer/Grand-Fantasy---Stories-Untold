@@ -1,16 +1,16 @@
-using System;
 using System.Collections.Generic;
 using Characters;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Utilities;
+
 namespace Managers
 {
 	public class UIManager : MonoBehaviour
 	{
 		#region Variable Declarations		
-		public static event Action<GameObject> CriticalStrikeReceived = delegate { };
+		//public static event Action<GameObject> CriticalStrikeReceived = delegate { };
 
 #pragma warning disable 0649
 		[SerializeField] private TextMeshProUGUI knightNameText;
@@ -23,7 +23,7 @@ namespace Managers
 		[SerializeField] private Slider wizardHpSlider;
 		[SerializeField] private Slider enemy1HpSlider;
 		[SerializeField] private Slider enemy2HpSlider;
-		[SerializeField] private GameObject floatingDialogue;
+		//[SerializeField] private GameObject floatingDialogue;
 		[SerializeField] private Canvas knightSkillBar;
 		[SerializeField] private Canvas warriorSkillBar;
 		[SerializeField] private Canvas wizardSkillBar;
@@ -49,15 +49,15 @@ namespace Managers
 			{
 				case 0:
 					knightHpSlider.value = hp;
-					playerUnits[0].unitData._currentHp = knightHpSlider.value;
+					playerUnits[0].unitData.currentHp = knightHpSlider.value;
 					break;
 				case 1:
 					warriorHpSlider.value = hp;
-					playerUnits[1].unitData._currentHp = warriorHpSlider.value;
+					playerUnits[1].unitData.currentHp = warriorHpSlider.value;
 					break;
 				case 2:
 					wizardHpSlider.value = hp;
-					playerUnits[2].unitData._currentHp = wizardHpSlider.value;
+					playerUnits[2].unitData.currentHp = wizardHpSlider.value;
 					break;
 			}
 		}
@@ -68,11 +68,11 @@ namespace Managers
 			{
 				case 4:
 					enemy1HpSlider.value = hp;
-					enemyUnits[0].unitData._currentHp = enemy1HpSlider.value;
+					enemyUnits[0].unitData.currentHp = enemy1HpSlider.value;
 					break;
 				case 5:
 					enemy2HpSlider.value = hp;
-					enemyUnits[1].unitData._currentHp = enemy2HpSlider.value;
+					enemyUnits[1].unitData.currentHp = enemy2HpSlider.value;
 					break;
 			}
 		}
@@ -110,7 +110,7 @@ namespace Managers
 		{
 			TextMeshPro damageText = cloneTextGO.GetComponent<TextMeshPro> ();
 
-			if (damageDone > (unitData._baseDamage + (unitData._baseDamage / 10)))
+			if (damageDone > (unitData.baseDamage + (unitData.baseDamage / 10)))
 			{
 				Color newColor = new Color (1f, 0.1949452f, 0.145098f, 1f);
 				damageText.fontSize = 500f;
@@ -148,39 +148,43 @@ namespace Managers
 		{
 			//Knight
 			knightNameText.text = playerUnits[0].name;
-			knightHpSlider.maxValue = playerUnits[0].unitData._maxHp;
-			knightHpSlider.value = playerUnits[0].unitData._currentHp;
+			knightHpSlider.maxValue = playerUnits[0].unitData.maxHp;
+			knightHpSlider.value = playerUnits[0].unitData.currentHp;
 
 			//Warrior
 			warriorNameText.text = playerUnits[1].name;
-			warriorHpSlider.maxValue = playerUnits[1].unitData._maxHp;
-			warriorHpSlider.value = playerUnits[1].unitData._currentHp;
+			warriorHpSlider.maxValue = playerUnits[1].unitData.maxHp;
+			warriorHpSlider.value = playerUnits[1].unitData.currentHp;
 
 			//Wizard
 			wizardNameText.text = playerUnits[2].name;
-			wizardHpSlider.maxValue = playerUnits[2].unitData._maxHp;
-			wizardHpSlider.value = playerUnits[2].unitData._currentHp;
+			wizardHpSlider.maxValue = playerUnits[2].unitData.maxHp;
+			wizardHpSlider.value = playerUnits[2].unitData.currentHp;
 		}
 
 		private void SetEnemyHud ()
 		{
 			// Enemy1
 			enemy1NameText.text = enemyUnits[0].name;
-			enemy1HpSlider.maxValue = enemyUnits[0].unitData._maxHp;
-			enemy1HpSlider.value = enemyUnits[0].unitData._currentHp;
+			enemy1HpSlider.maxValue = enemyUnits[0].unitData.maxHp;
+			enemy1HpSlider.value = enemyUnits[0].unitData.currentHp;
 
 			// Enemy2
 			enemy2NameText.text = enemyUnits[1].name;
-			enemy2HpSlider.maxValue = enemyUnits[1].unitData._maxHp;
-			enemy2HpSlider.value = enemyUnits[1].unitData._currentHp;
+			enemy2HpSlider.maxValue = enemyUnits[1].unitData.maxHp;
+			enemy2HpSlider.value = enemyUnits[1].unitData.currentHp;
 		}
 
-		private void Start ()
+		private void Awake()
 		{
+			DisableWarriorSkillBar ();
+			DisableWizardSkillBar ();
+			EnableKnightSkillBar ();
 			PopulateUnitList ();
 			PopulateGameobjetList ();
 			SetupBattle ();
 		}
+
 		private void PopulateUnitList ()
 		{
 			playerUnits.Add (knight.GetComponent<Unit> ());
@@ -198,12 +202,12 @@ namespace Managers
 		}
 		private void SetupBattle ()
 		{
-			SetPlayerUnitHp (playerUnits[0].unitData._maxHp, 0);
-			SetPlayerUnitHp (playerUnits[1].unitData._maxHp, 1);
-			SetPlayerUnitHp (playerUnits[2].unitData._maxHp, 2);
+			SetPlayerUnitHp (playerUnits[0].unitData.maxHp, 0);
+			SetPlayerUnitHp (playerUnits[1].unitData.maxHp, 1);
+			SetPlayerUnitHp (playerUnits[2].unitData.maxHp, 2);
 
-			SetEnemyHp (enemyUnits[0].unitData._maxHp, 4);
-			SetEnemyHp (enemyUnits[1].unitData._maxHp, 5);
+			SetEnemyHp (enemyUnits[0].unitData.maxHp, 4);
+			SetEnemyHp (enemyUnits[1].unitData.maxHp, 5);
 
 			SetPlayerHud ();
 			SetEnemyHud ();

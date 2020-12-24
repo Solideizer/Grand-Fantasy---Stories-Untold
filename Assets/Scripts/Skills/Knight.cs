@@ -14,7 +14,7 @@ namespace Characters
 		[SerializeField] private GameObject knightGO;
 #pragma warning restore 0649
 
-		private Transform camTransform;
+		private Transform _camTransform;
 		//private ObserverPattern observer;
 
 		public static event Action<int> UnitDied = delegate { };
@@ -23,9 +23,8 @@ namespace Characters
 
 		private void Start ()
 		{
-			camTransform = Camera.main.transform;
+			if (!(Camera.main is null)) _camTransform = Camera.main.transform;
 			//observer = FindObjectOfType<ObserverPattern> ();
-
 		}
 
 		public IEnumerator KnightBasicAttack (int enemyID, GameObject enemyToAttackGO)
@@ -39,7 +38,7 @@ namespace Characters
 			Vector2 startingPos = knightGO.transform.position;
 			AnimationManager.PlayAnim ("Dash", 0);
 
-			knightGO.transform.Translate (Time.deltaTime * 1000, 0, 0, camTransform);
+			knightGO.transform.Translate (Time.deltaTime * 1000, 0, 0, _camTransform);
 			if (Vector3.Distance (knightGO.transform.position, enemyPos) < unitData.errorDistance)
 			{
 				knightGO.transform.position = new Vector3 (enemyPos.x - 2f, enemyPos.y, enemyPos.z);
@@ -58,7 +57,7 @@ namespace Characters
 				Quaternion.identity);
 
 			UIManager.DamagePopup (damageDone, unitData, cloneTextGO);
-			UIManager.SetEnemyHp (attackedEnemyUnit.unitData._currentHp, enemyID);
+			UIManager.SetEnemyHp (attackedEnemyUnit.unitData.currentHp, enemyID);
 
 			AnimationManager.PlayAnim ("Hit", enemyID);
 			AudioManager.PlaySound ("hurtSound");
@@ -89,12 +88,12 @@ namespace Characters
 			BattleSystemClass.gameState = GameState.WAITING;
 
 			AnimationManager.PlayAnim ("Hit", 0);
-			Debug.Log (base.unitData._baseArmor);
-			base.unitData._baseArmor += 30;
-			GameObject TextGO = Instantiate (unitData.floatingDamagePrefab, transform.position, Quaternion.identity);
+			Debug.Log (unitData.baseArmor);
+			unitData.baseArmor += 30;
+			Instantiate (unitData.floatingDamagePrefab, transform.position, Quaternion.identity);
 			TextMeshPro damageText = unitData.floatingDamagePrefab.GetComponent<TextMeshPro> ();
 			damageText.SetText ("Defence ++");
-			Debug.Log (base.unitData._baseArmor);
+			Debug.Log (unitData.baseArmor);
 			yield return new WaitForSeconds (0.5f);
 			AnimationManager.PlayAnim ("Idle", 0);
 

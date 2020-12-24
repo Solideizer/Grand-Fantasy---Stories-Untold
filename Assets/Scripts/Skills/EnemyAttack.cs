@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using Managers;
-using TMPro;
 using UnityEngine;
 
 namespace Characters
@@ -12,24 +11,24 @@ namespace Characters
 #pragma warning disable 0649
 		[SerializeField] private GameObject enemyGO;
 #pragma warning restore 0649		
-		private Enemy2 enemy2Class;
+		private Enemy2 _enemy2Class;
 		private Vector2 _enemyStartingPosition;
-		private Transform camTransform;
+		private Transform _camTransform;
 		protected override void Awake ()
 		{
 			base.Awake ();
-			enemy2Class = GetComponent<Enemy2> ();
-			camTransform = Camera.main.transform;
+			_enemy2Class = GetComponent<Enemy2> ();
+			if (!(Camera.main is null)) _camTransform = Camera.main.transform;
 		}
 
 		public IEnumerator EnemyTurn ()
 		{
-			Debug.Log (unitData._currentHp);
-			if (unitData._currentHp <= 0)
+			Debug.Log (unitData.currentHp);
+			if (unitData.currentHp <= 0)
 			{
 				BattleSystemClass.gameState = GameState.ENEMYTURN;
 				BattleSystemClass.unitState = UnitState.ENEMY2;
-				StartCoroutine (enemy2Class.Enemy2Turn ());
+				StartCoroutine (_enemy2Class.Enemy2Turn ());
 			}
 
 			_enemyStartingPosition = enemyGO.transform.position;
@@ -40,7 +39,7 @@ namespace Characters
 
 			AnimationManager.PlayAnim ("Dash", 4);
 
-			enemyGO.transform.Translate (-Time.deltaTime * 1000, 0, 0, camTransform);
+			enemyGO.transform.Translate (-Time.deltaTime * 1000, 0, 0, _camTransform);
 			if (Vector3.Distance (enemyGO.transform.position, playerPos) < unitData.errorDistance)
 			{
 				enemyGO.transform.position = new Vector3 (playerPos.x + 2f, playerPos.y, playerPos.z);
@@ -58,11 +57,11 @@ namespace Characters
 
 			//damagePopup
 			GameObject cloneTextGO = Instantiate (unitData.floatingDamagePrefab, playerPos + unitData.damageOffset, Quaternion.identity);
-			TextMeshPro damageText = unitData.floatingDamagePrefab.GetComponent<TextMeshPro> ();
+			
 
 			UIManager.DamagePopup (damageDone, unitData, cloneTextGO);
 
-			UIManager.SetPlayerUnitHp (attackedPlayerUnit.unitData._currentHp, randomPlayerUnitIndex);
+			UIManager.SetPlayerUnitHp (attackedPlayerUnit.unitData.currentHp, randomPlayerUnitIndex);
 			AudioManager.PlaySound ("hurtSound");
 
 			yield return new WaitForSeconds (0.5f);
@@ -81,7 +80,7 @@ namespace Characters
 			BattleSystemClass.gameState = GameState.ENEMYTURN;
 			BattleSystemClass.unitState = UnitState.ENEMY2;
 			yield return new WaitForSeconds (0.5f);
-			StartCoroutine (enemy2Class.Enemy2Turn ());
+			StartCoroutine (_enemy2Class.Enemy2Turn ());
 
 		}
 

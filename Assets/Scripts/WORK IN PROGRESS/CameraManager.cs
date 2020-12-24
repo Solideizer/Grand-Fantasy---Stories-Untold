@@ -7,17 +7,17 @@ namespace Managers
 {
     public class CameraManager : MonoBehaviour
     {
-        private Vector2 defaultPosition;
+        private Vector2 _defaultPosition;
         public CinemachineVirtualCamera cam;
         private void Awake()
         {
-            defaultPosition = new Vector3(0f,0f,-10f);
+            _defaultPosition = new Vector3(0f,0f,-10f);
 
         }
         public IEnumerator MoveTowardsTarget(GameObject target)
         {
             Vector2 targetPos = target.transform.position;
-            var transformPosition = defaultPosition;
+            var transformPosition = _defaultPosition;
             
             if (target.CompareTag("EnemyUnit"))
             {
@@ -27,7 +27,7 @@ namespace Managers
             {
                 Mathf.Lerp(transformPosition.x, targetPos.x - 10f, 20f);
             }
-            Mathf.Lerp(transformPosition.y,targetPos.y,0.05f);;
+            Mathf.Lerp(transformPosition.y,targetPos.y,0.05f);
             
             
             cam.m_Lens.OrthographicSize = Mathf.Lerp(7,5,1f);

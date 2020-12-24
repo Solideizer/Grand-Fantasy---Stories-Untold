@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace NOT_IMPLEMENTED
+namespace WORK_IN_PROGRESS
 {
     public class DialogSystem : MonoBehaviour
     {

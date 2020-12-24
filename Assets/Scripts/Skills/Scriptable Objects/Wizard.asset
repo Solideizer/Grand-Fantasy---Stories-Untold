@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 127d9ad2e487beb499eb74cf7aa6d208, type: 3}
   m_Name: Wizard
   m_EditorClassIdentifier: 
-  _maxHp: 200
-  _baseDamage: 70
-  _baseArmor: 10
-  _criticalStrikeChance: 0.4
+  currentHp: 250
+  maxHp: 250
+  baseDamage: 100
+  baseArmor: 30
+  criticalStrikeChance: 0.25
   criticalDialogue:
   - Foul creature !
   floatingDamagePrefab: {fileID: 222366804528847911, guid: 79884bb96a13b3b41919b30e61518047,

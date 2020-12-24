@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using Managers;
-using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -20,13 +19,13 @@ namespace Characters
 
 		private void Start ()
 		{
-			_camTransform = Camera.main.transform;
+			if (!(Camera.main is null)) _camTransform = Camera.main.transform;
 		}
 
 		public IEnumerator Enemy2Turn ()
 		{
-			Debug.Log (unitData._currentHp);
-			if (unitData._currentHp <= 0)
+			Debug.Log (unitData.currentHp);
+			if (unitData.currentHp <= 0)
 			{
 				BattleSystemClass.gameState = GameState.PLAYERTURN;
 				BattleSystemClass.unitState = UnitState.KNIGHT;
@@ -62,7 +61,7 @@ namespace Characters
 
 			UIManager.DamagePopup (damageDone, unitData, cloneTextGO);
 
-			UIManager.SetPlayerUnitHp (attackedPlayerUnit.unitData._currentHp, randomPlayerUnitIndex);
+			UIManager.SetPlayerUnitHp (attackedPlayerUnit.unitData.currentHp, randomPlayerUnitIndex);
 			AudioManager.PlaySound ("hurtSound");
 
 			yield return new WaitForSeconds (0.5f);

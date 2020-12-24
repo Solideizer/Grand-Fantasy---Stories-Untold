@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 127d9ad2e487beb499eb74cf7aa6d208, type: 3}
   m_Name: Undead
   m_EditorClassIdentifier: 
-  _maxHp: 500
-  _baseDamage: 50
-  _baseArmor: 20
-  _criticalStrikeChance: 0.2
+  currentHp: 500
+  maxHp: 500
+  baseDamage: 50
+  baseArmor: 50
+  criticalStrikeChance: 0.15
   criticalDialogue:
   - '@#$%&!'
   - Ugrhh !

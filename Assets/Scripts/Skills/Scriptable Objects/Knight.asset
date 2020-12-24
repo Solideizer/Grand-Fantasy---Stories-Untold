@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 127d9ad2e487beb499eb74cf7aa6d208, type: 3}
   m_Name: Knight
   m_EditorClassIdentifier: 
-  _maxHp: 500
-  _baseDamage: 30
-  _baseArmor: 50
-  _criticalStrikeChance: 0.2
+  currentHp: 500
+  maxHp: 500
+  baseDamage: 50
+  baseArmor: 130
+  criticalStrikeChance: 0.1
   criticalDialogue:
   - Tis but a scratch !
   - I'm invincible !

@@ -56,12 +56,12 @@ namespace Utilities
 
         private void OnMouseEnter ()
         {
-            CursorManager.Instance.SetActiveCursorType (CursorManager.CursorType.Attack);
+            CursorManager.Instance.SetActiveCursorType (CursorManager.CursorType.ATTACK);
         }
 
         private void OnMouseExit ()
         {
-            CursorManager.Instance.SetActiveCursorType (CursorManager.CursorType.Default);
+            CursorManager.Instance.SetActiveCursorType (CursorManager.CursorType.DEFAULT);
 
         }
     }

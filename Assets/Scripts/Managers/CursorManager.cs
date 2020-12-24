@@ -20,8 +20,8 @@ namespace Managers
 
 		public enum CursorType
 		{
-			Default,
-			Attack
+			DEFAULT,
+			ATTACK
 		}
 
 		#endregion
@@ -35,7 +35,7 @@ namespace Managers
 
 		void Start()
 		{
-			SetActiveCursorType(CursorType.Default);
+			SetActiveCursorType(CursorType.DEFAULT);
 		}
 
 		private void Update()

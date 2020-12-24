@@ -26,7 +26,7 @@ namespace Characters
             CalculationManager = GetComponent<CalculationManager> ();
             TurnManager = GetComponent<TurnManager> ();
             //CameraManager = GetComponent<CameraManager>();
-            unitData._currentHp = unitData._maxHp;
+            unitData.currentHp = unitData.maxHp;
 
         }
     }

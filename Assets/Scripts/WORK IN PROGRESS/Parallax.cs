@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Utilities
 {
@@ -11,7 +10,7 @@ namespace Utilities
         private Camera _mainCamera;
         private Vector2 _screenBounds;
 
-        private Vector3 lastScreenPosition;
+        private Vector3 _lastScreenPosition;
 
         void Start()
         {
@@ -21,18 +20,18 @@ namespace Utilities
             {
                 LoadChildObjects(obj);
             }
-            lastScreenPosition = transform.position;
+            _lastScreenPosition = transform.position;
         }
         void LoadChildObjects(GameObject obj)
         {
             float objectWidth = obj.GetComponent<SpriteRenderer>().bounds.size.x - choke;
             int childsNeeded = (int)Mathf.Ceil(_screenBounds.x * 2 / objectWidth);
-            GameObject clone = Instantiate(obj) as GameObject;
+            GameObject clone = Instantiate(obj);
             for (int i = 0; i <= childsNeeded; i++)
             {
-                GameObject c = Instantiate(clone) as GameObject;
-                c.transform.SetParent(obj.transform);
-                c.transform.position = new Vector3(objectWidth * i, obj.transform.position.y, obj.transform.position.z);
+                GameObject c = Instantiate(clone, obj.transform, true);
+                var position = obj.transform.position;
+                c.transform.position = new Vector3(objectWidth * i, position.y, position.z);
                 c.name = obj.name + i;
             }
             Destroy(clone);
@@ -49,12 +48,14 @@ namespace Utilities
                 if (transform.position.x + _screenBounds.x > lastChild.transform.position.x + halfObjectWidth)
                 {
                     firstChild.transform.SetAsLastSibling();
-                    firstChild.transform.position = new Vector3(lastChild.transform.position.x + halfObjectWidth * 2, lastChild.transform.position.y, lastChild.transform.position.z);
+                    var position = lastChild.transform.position;
+                    firstChild.transform.position = new Vector3(position.x + halfObjectWidth * 2, position.y, position.z);
                 }
                 else if (transform.position.x - _screenBounds.x < firstChild.transform.position.x - halfObjectWidth)
                 {
                     lastChild.transform.SetAsFirstSibling();
-                    lastChild.transform.position = new Vector3(firstChild.transform.position.x - halfObjectWidth * 2, firstChild.transform.position.y, firstChild.transform.position.z);
+                    var position = firstChild.transform.position;
+                    lastChild.transform.position = new Vector3(position.x - halfObjectWidth * 2, position.y, position.z);
                 }
             }
         }   
@@ -63,11 +64,12 @@ namespace Utilities
             foreach (GameObject obj in levels)
             {
                 RepositionChildObjects(obj);
-                float parallaxSpeed = 1 - Mathf.Clamp01(Mathf.Abs(transform.position.z / obj.transform.position.z));
-                float difference = transform.position.x - lastScreenPosition.x;
+                var position = transform.position;
+                var parallaxSpeed = 1 - Mathf.Clamp01(Mathf.Abs(position.z / obj.transform.position.z));
+                var difference = position.x - _lastScreenPosition.x;
                 obj.transform.Translate(Vector3.right * difference * parallaxSpeed);
             }
-            lastScreenPosition = transform.position;
+            _lastScreenPosition = transform.position;
         }
     }
 }

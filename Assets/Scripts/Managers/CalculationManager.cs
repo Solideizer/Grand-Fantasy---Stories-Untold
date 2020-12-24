@@ -8,8 +8,8 @@ namespace Managers
 	{
 		public float CalculateDamage (UnitData unitData)
 		{
-			float damage = Random.Range (unitData._baseDamage - (unitData._baseDamage / 10),
-				unitData._baseDamage + (unitData._baseDamage / 10));
+			float damage = Random.Range (unitData.baseDamage - (unitData.baseDamage / 10),
+				unitData.baseDamage + (unitData.baseDamage / 10));
 			damage += CalculateCrit (damage, unitData);
 			return damage;
 		}
@@ -17,7 +17,7 @@ namespace Managers
 		{
 			float criticalMultiplier = Random.Range (1.5f, 3f);
 
-			if (Random.value <= unitData._criticalStrikeChance)
+			if (Random.value <= unitData.criticalStrikeChance)
 			{
 				float criticalDamage = baseDamage * criticalMultiplier;
 				return criticalDamage;
@@ -29,8 +29,8 @@ namespace Managers
 		}
 		public bool DealDamage (float damage, Unit unit)
 		{
-			unit.unitData._currentHp -= (damage * (100 / (100 + unit.unitData._baseArmor)));
-			return unit.unitData._currentHp <= 0f;
+			unit.unitData.currentHp -= (damage * (100 / (100 + unit.unitData.baseArmor)));
+			return unit.unitData.currentHp <= 0f;
 		}
 
 	}

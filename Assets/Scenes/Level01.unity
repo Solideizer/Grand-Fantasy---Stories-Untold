@@ -5345,7 +5345,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 200
+  m_MaxValue: 250
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -7792,11 +7792,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fed0d87a0d62a274ab9c296552534183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KnightAnim: {fileID: 5968309218217518343}
-  WarriorAnim: {fileID: 4771336572015640615}
-  WizardAnim: {fileID: 1565822774}
-  Enemy1Anim: {fileID: 6868692422638294010}
-  Enemy2Anim: {fileID: 1397993521}
+  knightAnim: {fileID: 5968309218217518343}
+  warriorAnim: {fileID: 4771336572015640615}
+  wizardAnim: {fileID: 1565822774}
+  enemy1Anim: {fileID: 6868692422638294010}
+  enemy2Anim: {fileID: 1397993521}
 --- !u!82 &1098618359
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7927,8 +7927,6 @@ MonoBehaviour:
   wizardHpSlider: {fileID: 944083028}
   enemy1HpSlider: {fileID: 1016583104}
   enemy2HpSlider: {fileID: 1351766182}
-  floatingDialogue: {fileID: 222366804528847911, guid: e6e8b48b31357cb49a004f18a6cfc477,
-    type: 3}
   knightSkillBar: {fileID: 26874781}
   warriorSkillBar: {fileID: 156124637}
   wizardSkillBar: {fileID: 897568578}
@@ -7958,8 +7956,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitData: {fileID: 11400000, guid: 0e87ab45ca3f03d4cb671fa3b5662a07, type: 2}
-  wizardGO: {fileID: 3154411512756172914, guid: 1903f1949e5374d428bc7d8adc0f2bd6,
-    type: 3}
   explosionAnim: {fileID: 6840546004793303992, guid: c2ec5867d47fb7344be2ce42af745501,
     type: 3}
 --- !u!114 &1098618363
@@ -9001,7 +8997,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 300
+  m_MaxValue: 400
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:

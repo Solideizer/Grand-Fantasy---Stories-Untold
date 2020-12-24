@@ -20,12 +20,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17d22c22-c70a-4618-ab9a-cb4b08a18ee4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Grand-Fantasy---Stories-Untold/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grand-Fantasy---Stories-Untold/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Grand-Fantasy---Stories-Untold/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grand-Fantasy---Stories-Untold/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Grand-Fantasy---Stories-Untold/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grand-Fantasy---Stories-Untold/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level01.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level01.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/AnimationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/AnimationManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/BattleSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/BattleSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/CalculationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/CalculationManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/CursorManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/CursorManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/TurnManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/TurnManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Enemy2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/Enemy2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/EnemyAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/EnemyAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Knight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/Knight.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Knight.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Knight.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Skeleton.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Skeleton.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Undead.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Undead.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Warrior.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Warrior.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Wizard.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Wizard.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/UnitData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/UnitData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Warrior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/Warrior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Wizard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/Wizard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/CameraShake.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/CameraShake.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/OnMouseOverScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/OnMouseOverScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Sorting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Sorting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/CameraFollow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/CameraFollow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/CameraManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/CameraManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/CharacterController2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/CharacterController2D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/DialogSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/DialogSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/Parallax.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/Parallax.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +57,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Unit.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -49,24 +69,33 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/Observer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NOT IMPLEMENTED/DialogSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Characters/UnitData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/AnimationManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/Sorting.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/CameraShake.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CursorManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/OnMouseOverScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/Parallax.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CalculationManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/AnimateCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CameraManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/BattleSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Characters/EnemyAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy2.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Wizard.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Warrior.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Knight.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/AnimationManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CursorManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/TurnManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Skills/Enemy2.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Skills/EnemyAttack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Skills/Knight.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/CameraShake.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/Sorting.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/CameraFollow.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/CameraManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/CharacterController2D.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/Parallax.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Skills/UnitData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/BattleSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" />
       </list>
     </option>
   </component>
@@ -131,6 +160,7 @@
       <workItem from="1601069458560" duration="7346000" />
       <workItem from="1602784159502" duration="700000" />
       <workItem from="1602957759080" duration="161000" />
+      <workItem from="1608772633593" duration="1969000" />
     </task>
     <servers />
   </component>
@@ -165,5 +195,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1602957823478" />
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1608773851014">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608773851014" />
   </component>
 </project>

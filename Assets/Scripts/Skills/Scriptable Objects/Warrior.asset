@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 127d9ad2e487beb499eb74cf7aa6d208, type: 3}
   m_Name: Warrior
   m_EditorClassIdentifier: 
-  _maxHp: 300
-  _currentHp: 222.22417
-  _baseDamage: 50
-  _baseArmor: 30
-  _criticalStrikeChance: 0.5
+  currentHp: 400
+  maxHp: 400
+  baseDamage: 70
+  baseArmor: 70
+  criticalStrikeChance: 0.2
   criticalDialogue:
   - You pathetic fool!
   floatingDamagePrefab: {fileID: 222366804528847911, guid: 79884bb96a13b3b41919b30e61518047,

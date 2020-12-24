@@ -36,10 +36,6 @@ namespace Managers
 		private Vector3 _mousePos;
 		private Vector2 _mousePos2D;
 
-		private AnimationManager _animationManager;
-		private UIManager _uiManager;
-		private CalculationManager _calculationManager;
-
 		private Knight _knightClass;
 		private Warrior _warriorClass;
 		private Wizard _wizardClass;
@@ -52,25 +48,15 @@ namespace Managers
 		private void Awake ()
 		{
 			_cameraMain = Camera.main;
-			_animationManager = GetComponent<AnimationManager> ();
-			_uiManager = GetComponent<UIManager> ();
-			_calculationManager = GetComponent<CalculationManager> ();
-
 			_knightClass = GetComponent<Knight> ();
 			_warriorClass = GetComponent<Warrior> ();
 			_wizardClass = GetComponent<Wizard> ();
-		}
-
-		private void Start ()
-		{
+			
 			gameState = GameState.START;
 			gameState = GameState.PLAYERTURN;
 			unitState = UnitState.KNIGHT;
-			_uiManager.DisableWarriorSkillBar ();
-			_uiManager.DisableWizardSkillBar ();
-			_uiManager.EnableKnightSkillBar ();
-
 		}
+
 		private void Update ()
 		{
 			SelectTarget ();
