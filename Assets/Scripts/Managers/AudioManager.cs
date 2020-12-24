@@ -6,16 +6,16 @@ namespace Managers
     
         #region Variable Declarations
     
-        public static AudioClip BasicAttackSound;
-        public static readonly AudioClip[] HurtSounds = new AudioClip[15];
-        public static readonly AudioClip[] KnightOpenerSounds = new AudioClip[5];
-        public static readonly AudioClip[] KnightDeathSounds = new AudioClip[2];
+        private static AudioClip _basicAttackSound;
+        private static readonly AudioClip[] HurtSounds = new AudioClip[15];
+        private static readonly AudioClip[] KnightOpenerSounds = new AudioClip[5];
+        private static readonly AudioClip[] KnightDeathSounds = new AudioClip[2];
 
-        public static AudioSource AudioSource;
+        private static AudioSource _audioSource;
     
         #endregion
         private void Start () {
-            BasicAttackSound = Resources.Load<AudioClip> ("basicAttack");
+            _basicAttackSound = Resources.Load<AudioClip> ("basicAttack");
 
             KnightOpenerSounds[0] = Resources.Load<AudioClip> ("FallByMyHand1");
             KnightOpenerSounds[1] = Resources.Load<AudioClip> ("TasteMySteel1");
@@ -42,26 +42,26 @@ namespace Managers
             HurtSounds[13] = Resources.Load<AudioClip> ("HitIntense4");
             HurtSounds[14] = Resources.Load<AudioClip> ("HitIntense5");
 
-            AudioSource = GetComponent<AudioSource> ();
+            _audioSource = GetComponent<AudioSource> ();
         }
 
         public static void PlaySound (string clip) {
             int random;
             switch (clip) {
                 case "basicAttack":
-                    AudioSource.PlayOneShot (BasicAttackSound);
+                    _audioSource.PlayOneShot (_basicAttackSound);
                     break;
                 case "hurtSound":
                     random = Random.Range (0, HurtSounds.Length);
-                    AudioSource.PlayOneShot (HurtSounds[random]);
+                    _audioSource.PlayOneShot (HurtSounds[random]);
                     break;
                 case "KnightOpeners":
                     random = Random.Range (0, KnightOpenerSounds.Length);
-                    AudioSource.PlayOneShot (KnightOpenerSounds[random]);
+                    _audioSource.PlayOneShot (KnightOpenerSounds[random]);
                     break;
                 case "KnightDeath":
                     random = Random.Range (0, KnightDeathSounds.Length);
-                    AudioSource.PlayOneShot (KnightOpenerSounds[random]);
+                    _audioSource.PlayOneShot (KnightOpenerSounds[random]);
                     break;
 
             }

@@ -37,6 +37,15 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Characters_Skills" t="Include">
+            <e p="Enemy2.cs" t="Include" />
+            <e p="EnemyAttack.cs" t="Include" />
+            <e p="Knight.cs" t="Include" />
+            <e p="Unit.cs" t="Include" />
+            <e p="UnitData.cs" t="Include" />
+            <e p="Warrior.cs" t="Include" />
+            <e p="Wizard.cs" t="Include" />
+          </e>
           <e p="Managers" t="Include">
             <e p="AnimationManager.cs" t="Include" />
             <e p="AudioManager.cs" t="Include" />
@@ -45,15 +54,6 @@
             <e p="CursorManager.cs" t="Include" />
             <e p="TurnManager.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
-          </e>
-          <e p="Skills" t="Include">
-            <e p="Enemy2.cs" t="Include" />
-            <e p="EnemyAttack.cs" t="Include" />
-            <e p="Knight.cs" t="Include" />
-            <e p="Unit.cs" t="Include" />
-            <e p="UnitData.cs" t="Include" />
-            <e p="Warrior.cs" t="Include" />
-            <e p="Wizard.cs" t="Include" />
           </e>
           <e p="Utilities" t="Include">
             <e p="CameraShake.cs" t="Include" />

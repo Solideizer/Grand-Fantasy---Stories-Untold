@@ -4,7 +4,7 @@ using Managers;
 using TMPro;
 using UnityEngine;
 
-namespace Characters
+namespace Characters_Skills
 {
 	public class Knight : Unit
 	{
@@ -14,18 +14,9 @@ namespace Characters
 		[SerializeField] private GameObject knightGO;
 #pragma warning restore 0649
 
-		private Transform _camTransform;
-		//private ObserverPattern observer;
-
 		public static event Action<int> UnitDied = delegate { };
 
 		#endregion
-
-		private void Start ()
-		{
-			if (!(Camera.main is null)) _camTransform = Camera.main.transform;
-			//observer = FindObjectOfType<ObserverPattern> ();
-		}
 
 		public IEnumerator KnightBasicAttack (int enemyID, GameObject enemyToAttackGO)
 		{
@@ -38,7 +29,7 @@ namespace Characters
 			Vector2 startingPos = knightGO.transform.position;
 			AnimationManager.PlayAnim ("Dash", 0);
 
-			knightGO.transform.Translate (Time.deltaTime * 1000, 0, 0, _camTransform);
+			knightGO.transform.Translate (Time.deltaTime * 1000, 0, 0, CameraTransform);
 			if (Vector3.Distance (knightGO.transform.position, enemyPos) < unitData.errorDistance)
 			{
 				knightGO.transform.position = new Vector3 (enemyPos.x - 2f, enemyPos.y, enemyPos.z);

@@ -2,7 +2,7 @@
 using Managers;
 using UnityEngine;
 
-namespace Characters
+namespace Characters_Skills
 {
 
 	public class EnemyAttack : Unit
@@ -13,12 +13,12 @@ namespace Characters
 #pragma warning restore 0649		
 		private Enemy2 _enemy2Class;
 		private Vector2 _enemyStartingPosition;
-		private Transform _camTransform;
+		
 		protected override void Awake ()
 		{
 			base.Awake ();
 			_enemy2Class = GetComponent<Enemy2> ();
-			if (!(Camera.main is null)) _camTransform = Camera.main.transform;
+			
 		}
 
 		public IEnumerator EnemyTurn ()
@@ -39,7 +39,7 @@ namespace Characters
 
 			AnimationManager.PlayAnim ("Dash", 4);
 
-			enemyGO.transform.Translate (-Time.deltaTime * 1000, 0, 0, _camTransform);
+			enemyGO.transform.Translate (-Time.deltaTime * 1000, 0, 0, CameraTransform);
 			if (Vector3.Distance (enemyGO.transform.position, playerPos) < unitData.errorDistance)
 			{
 				enemyGO.transform.position = new Vector3 (playerPos.x + 2f, playerPos.y, playerPos.z);

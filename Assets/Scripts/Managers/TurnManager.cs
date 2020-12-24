@@ -1,4 +1,4 @@
-using Characters;
+using Characters_Skills;
 using UnityEngine;
 
 namespace Managers

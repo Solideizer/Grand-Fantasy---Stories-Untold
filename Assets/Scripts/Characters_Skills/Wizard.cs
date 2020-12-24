@@ -3,17 +3,17 @@ using System.Collections;
 using Managers;
 using UnityEngine;
 
-namespace Characters
+namespace Characters_Skills
 {
 	public class Wizard : Unit
 	{
 		public GameObject explosionAnim;
-		private EnemyAttack enemyAttackClass;
+		private EnemyAttack _enemyAttackClass;
 		public static event Action<int> UnitDied = delegate { };
 		protected override void Awake ()
 		{
 			base.Awake ();
-			enemyAttackClass = GetComponent<EnemyAttack> ();
+			_enemyAttackClass = GetComponent<EnemyAttack> ();
 		}
 
 		public IEnumerator WizardBasicAttack (int enemyID, GameObject enemyToAttackGO)
@@ -56,7 +56,7 @@ namespace Characters
 			BattleSystemClass.unitState = UnitState.ENEMY1;
 			UIManager.DisableWizardSkillBar ();
 			yield return new WaitForSeconds (1f);
-			StartCoroutine (enemyAttackClass.EnemyTurn ());
+			StartCoroutine (_enemyAttackClass.EnemyTurn ());
 
 		}
 		public IEnumerator WizardAreaAttack ()
@@ -117,7 +117,7 @@ namespace Characters
 				BattleSystemClass.unitState = UnitState.ENEMY1;
 				UIManager.DisableWizardSkillBar ();
 				yield return new WaitForSeconds (1f);
-				StartCoroutine (enemyAttackClass.EnemyTurn ());
+				StartCoroutine (_enemyAttackClass.EnemyTurn ());
 			}
 		}
 

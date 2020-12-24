@@ -3,7 +3,7 @@ using Managers;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Characters
+namespace Characters_Skills
 {
 	public class Enemy2 : Unit
 	{
@@ -13,14 +13,9 @@ namespace Characters
 		[SerializeField] private GameObject enemyGO;
 #pragma warning restore 0649
 		private Vector2 _enemyStartingPosition;
-		private Transform _camTransform;
-
+		
 		#endregion
-
-		private void Start ()
-		{
-			if (!(Camera.main is null)) _camTransform = Camera.main.transform;
-		}
+	
 
 		public IEnumerator Enemy2Turn ()
 		{
@@ -39,7 +34,7 @@ namespace Characters
 			Vector3 playerPos = attackedPlayerGO.transform.position;
 
 			AnimationManager.PlayAnim ("Dash", 5);
-			enemyGO.transform.Translate (-Time.deltaTime * 1000, 0, 0, _camTransform);
+			enemyGO.transform.Translate (-Time.deltaTime * 1000, 0, 0, CameraTransform);
 			if (Vector3.Distance (enemyGO.transform.position, playerPos) < unitData.errorDistance)
 			{
 				enemyGO.transform.position = new Vector3 (playerPos.x + 2f, playerPos.y, playerPos.z);

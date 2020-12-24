@@ -22,33 +22,37 @@
     <list default="true" id="17d22c22-c70a-4618-ab9a-cb4b08a18ee4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Grand-Fantasy---Stories-Untold/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grand-Fantasy---Stories-Untold/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Grand-Fantasy---Stories-Untold/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grand-Fantasy---Stories-Untold/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level01.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level01.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/AnimationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/AnimationManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/AudioManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/BattleSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/BattleSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/CalculationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/CalculationManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/CursorManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/CursorManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/TurnManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/TurnManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Enemy2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/Enemy2.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/EnemyAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/EnemyAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Knight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/Knight.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Knight.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Knight.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Skeleton.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Skeleton.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Undead.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Undead.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Warrior.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Warrior.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Wizard.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Wizard.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/UnitData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/UnitData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Warrior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/Warrior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Wizard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/Wizard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/CameraShake.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/CameraShake.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/OnMouseOverScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/OnMouseOverScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Sorting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Sorting.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/CameraFollow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/CameraFollow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/CameraManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/CameraManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/CharacterController2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/CharacterController2D.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/DialogSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/DialogSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/Parallax.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/Parallax.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Enemy2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Enemy2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Enemy2.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Enemy2.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/EnemyAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/EnemyAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/EnemyAttack.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/EnemyAttack.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Knight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Knight.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Knight.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Knight.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Scriptable Objects.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Knight.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Scriptable Objects/Knight.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Knight.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Scriptable Objects/Knight.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Skeleton.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Scriptable Objects/Skeleton.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Skeleton.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Scriptable Objects/Skeleton.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Undead.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Scriptable Objects/Undead.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Undead.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Scriptable Objects/Undead.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Warrior.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Scriptable Objects/Warrior.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Warrior.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Scriptable Objects/Warrior.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Wizard.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Scriptable Objects/Wizard.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Wizard.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Scriptable Objects/Wizard.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Unit.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Unit.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/UnitData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/UnitData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/UnitData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/UnitData.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Warrior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Warrior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Warrior.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Warrior.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Wizard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Wizard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Wizard.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Wizard.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +75,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Characters/UnitData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/OnMouseOverScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/Parallax.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CalculationManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/AnimateCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/CameraManager.cs" />
@@ -86,7 +89,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/TurnManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Skills/Enemy2.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Skills/EnemyAttack.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Skills/Knight.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/CameraShake.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/Sorting.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/CameraFollow.cs" />
@@ -95,6 +97,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/WORK IN PROGRESS/Parallax.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Skills/UnitData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/BattleSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Skills/Warrior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Skills/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Skills/Knight.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Skills/Wizard.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Warrior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Enemy2.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/EnemyAttack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" />
       </list>
     </option>
@@ -161,6 +171,7 @@
       <workItem from="1602784159502" duration="700000" />
       <workItem from="1602957759080" duration="161000" />
       <workItem from="1608772633593" duration="1969000" />
+      <workItem from="1608821480215" duration="781000" />
     </task>
     <servers />
   </component>

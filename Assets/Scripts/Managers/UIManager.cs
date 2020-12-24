@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Characters;
+using Characters_Skills;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -144,7 +144,7 @@ namespace Managers
 		// 	Destroy (floatingDialogueGO, 3f);
 		// }
 		#endregion
-		public void SetPlayerHud ()
+		private void SetPlayerHud ()
 		{
 			//Knight
 			knightNameText.text = playerUnits[0].name;
