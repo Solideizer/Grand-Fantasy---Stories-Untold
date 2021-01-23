@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Characters_Skills
 {
 
-	public class EnemyAttack : Unit
+	public class Enemy1 : Unit
 	{
 
 #pragma warning disable 0649

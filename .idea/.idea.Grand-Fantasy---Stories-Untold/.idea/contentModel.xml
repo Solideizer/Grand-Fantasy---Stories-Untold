@@ -38,8 +38,8 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Characters_Skills" t="Include">
+            <e p="Enemy1.cs" t="Include" />
             <e p="Enemy2.cs" t="Include" />
-            <e p="EnemyAttack.cs" t="Include" />
             <e p="Knight.cs" t="Include" />
             <e p="Unit.cs" t="Include" />
             <e p="UnitData.cs" t="Include" />
@@ -55,6 +55,9 @@
             <e p="TurnManager.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
           </e>
+          <e p="Tooltip.cs" t="Include" />
+          <e p="TooltipManager.cs" t="Include" />
+          <e p="TooltipTrigger.cs" t="Include" />
           <e p="Utilities" t="Include">
             <e p="CameraShake.cs" t="Include" />
             <e p="CursorAnimation.cs" t="Include" />

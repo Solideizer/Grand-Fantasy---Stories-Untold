@@ -20,39 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17d22c22-c70a-4618-ab9a-cb4b08a18ee4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Enemy1.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Enemy1.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tooltip.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tooltip.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TooltipManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TooltipTrigger.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TooltipTrigger.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Import/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline 1.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Import/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline 1.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Import/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF 1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Import/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF 1.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Grand-Fantasy---Stories-Untold/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grand-Fantasy---Stories-Untold/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Grand-Fantasy---Stories-Untold/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Grand-Fantasy---Stories-Untold/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/AudioManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/BattleSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/BattleSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/CalculationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/CalculationManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/TurnManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/TurnManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Enemy2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Enemy2.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Enemy2.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Enemy2.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/EnemyAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/EnemyAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/EnemyAttack.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/EnemyAttack.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Knight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Knight.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Knight.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Knight.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Scriptable Objects.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Knight.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Scriptable Objects/Knight.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Knight.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Scriptable Objects/Knight.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Skeleton.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Scriptable Objects/Skeleton.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Skeleton.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Scriptable Objects/Skeleton.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Undead.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Scriptable Objects/Undead.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Undead.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Scriptable Objects/Undead.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Warrior.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Scriptable Objects/Warrior.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Warrior.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Scriptable Objects/Warrior.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Wizard.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Scriptable Objects/Wizard.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Scriptable Objects/Wizard.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Scriptable Objects/Wizard.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Unit.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Unit.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/UnitData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/UnitData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/UnitData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/UnitData.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Warrior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Warrior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Warrior.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Warrior.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Wizard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Wizard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Wizard.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Wizard.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level01.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level01.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/EnemyAttack.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/EnemyAttack.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Wizard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Wizard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Import/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Import/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +46,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TooltipManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -106,6 +94,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/EnemyAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Characters_Skills/Enemy1.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TooltipManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TooltipTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tooltip.cs" />
       </list>
     </option>
   </component>
@@ -172,6 +164,8 @@
       <workItem from="1602957759080" duration="161000" />
       <workItem from="1608772633593" duration="1969000" />
       <workItem from="1608821480215" duration="781000" />
+      <workItem from="1608822351812" duration="82000" />
+      <workItem from="1608840125558" duration="4583000" />
     </task>
     <servers />
   </component>
@@ -202,6 +196,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="254" key="IDE.errors.dialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600207630308" />
+    <state x="761" y="236" key="RiderGenerateDialog" timestamp="1608840597826">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="761" y="236" key="RiderGenerateDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608840597826" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1602957823478">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
